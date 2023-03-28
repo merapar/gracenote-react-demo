@@ -1,51 +1,81 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useReducer } from "react";
 
-export const useFetchData = (
+interface State<T> {
+  isLoading?: boolean;
+  data?: T;
+  error?: Error;
+}
+
+type Action<T> =
+  | { type: "loading" }
+  | { type: "aborted" }
+  | { type: "fetched"; payload: T }
+  | { type: "error"; payload: Error };
+
+const initialState = {
+  isLoadin: false,
+  data: undefined,
+  error: undefined,
+};
+
+export const useFetchData = <T = unknown>(
   baseUrl: string,
   pathName: string = "/",
   queryString?: Record<string, string>,
   options?: object
-) => {
-  console.log({ baseUrl, pathName, queryString, options });
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [data, setData] = useState<any>(null);
-  const [error, setError] = useState<Error | null>(null);
+): State<T> => {
+  const fetchDataReducer = (state: State<T>, action: Action<T>): State<T> => {
+    switch (action.type) {
+      case "aborted":
+        return { ...initialState, isLoading: false };
 
-  const url = useMemo(() => {
-    const urlObj = new URL(pathName, baseUrl);
+      case "loading":
+        return { ...initialState, isLoading: true };
 
-    urlObj.search = new URLSearchParams(queryString ?? {}).toString();
+      case "fetched":
+        return { ...initialState, data: action.payload };
 
-    return urlObj.toString();
-  }, [baseUrl, pathName, queryString]);
+      case "error":
+        return { ...initialState, error: action.payload };
+
+      default:
+        return state;
+    }
+  };
+
+  const [fetchDataState, dispatch] = useReducer(fetchDataReducer, initialState);
 
   useEffect(() => {
+    if (!baseUrl) return;
+
     const abortController = new AbortController();
     const { signal } = abortController;
 
-    // const url = new URL(pathName, baseUrl);
+    const url = new URL(pathName, baseUrl);
 
-    // url.search = new URLSearchParams(queryString ?? {}).toString();
+    url.search = new URLSearchParams(queryString ?? {}).toString();
 
     const fetchData = async () => {
+      dispatch({ type: "loading" });
       try {
         const response = await fetch(url, { ...(options ?? {}), signal });
         if (!response.ok) {
           throw new Error(response.statusText);
         }
         const returnedData = await response.json();
-        setIsLoading(false);
-        setData(returnedData);
+
+        dispatch({ type: "fetched", payload: returnedData });
       } catch (error) {
-        setIsLoading(false);
-        setError(error as Error);
+        dispatch({ type: "aborted" });
+        if (!abortController.signal.aborted) {
+          dispatch({ type: "error", payload: error as Error });
+        }
       }
     };
     fetchData();
 
     return () => abortController.abort();
-    //   }, [baseUrl, options, pathName, queryString]);
-  }, [options, url]);
+  }, [baseUrl, options, pathName, queryString]);
 
-  return { isLoading, data, error };
+  return fetchDataState;
 };

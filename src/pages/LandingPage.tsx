@@ -1,42 +1,9 @@
-// import { useMemo, useState } from "react";
-
-// import { useFetchData } from "../hooks/useFetchData";
-
-// export const LandingPage = () => {
-//   const [zipcode, setZipcode] = useState("");
-
-//   const sq = useMemo(() => {
-//     return { foo: "bar" };
-//   }, []);
-
-//   const { isLoading, data, error } = useFetchData(
-//     "https://httpbin.org",
-//     "get",
-//     sq,
-//     { method: "GET" }
-//   );
-
-//   // const baseUrl = "http://data.tmsapi.com";
-//   // const pathName = "v1.1/movies/showings";
-//   // const params = useMemo(() => {
-//   //   return {
-//   //     startDate: startDate,
-//   //     zip: zipcode,
-//   //     api_key: process.env.API_KEY as string,
-//   //   };
-//   // }, [startDate, zipcode]);
-
-//   return (
-//     <div>
-//       <p>{JSON.stringify(data)}</p>
-//     </div>
-//   );
-// };
-
 import { useMemo, useState } from "react";
 import styled from "styled-components";
 
 import { useFetchData } from "../hooks/useFetchData";
+
+import { Title } from "../components/Title";
 
 const Content = styled.div`
   background-color: aliceblue;
@@ -50,20 +17,24 @@ export const LandingPage = () => {
     .REACT_APP_MOVIES_THEATRE_PATH_NAME as string;
 
   const [zipcode, setZipcode] = useState("49464");
-  // const [queryString, setQueryString] = useState<Record<string, string>>();
-
-  // let queryString: Record<string, string> = {};
 
   const now = new Date();
-  const startDate =
-    now.getFullYear() +
-    "-" +
-    (now.getMonth() + 1).toLocaleString("en-UK", {
-      minimumIntegerDigits: 2,
-      useGrouping: false,
-    }) +
-    "-" +
-    now.getDate();
+  const ISODate = now.toISOString();
+  const startDate = ISODate.split("T")[0];
+
+  // const startDate =
+  //   now.getFullYear() +
+  //   "-" +
+  //   (now.getMonth() + 1).toLocaleString("en-UK", {
+  //     minimumIntegerDigits: 2,
+  //     useGrouping: false,
+  //   }) +
+  //   "-" +
+  //   now.getDate();
+
+  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28T00:26:55.724Z&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
+  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28T00:36:20.082Z&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
+  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
 
   const queryString = useMemo(() => {
     return {
@@ -73,19 +44,21 @@ export const LandingPage = () => {
     };
   }, [apiKey, startDate, zipcode]);
 
-  const { isLoading, data, error } = useFetchData(
-    baseUrl,
-    moviesTheatrePathName,
-    queryString
-  );
+  interface FetchData {
+    isLoading?: boolean;
+    data?: [] | undefined;
+    error?: Error;
+  }
 
-  let result;
+  interface Show {
+    tmsId: string;
+  }
 
-  if (isLoading) result = "Loading...";
-
-  if (error) result = JSON.stringify(error);
-
-  if (data) result = JSON.stringify(data);
+  const {
+    isLoading,
+    data: shows,
+    error,
+  }: FetchData = useFetchData(baseUrl, moviesTheatrePathName, queryString);
 
   return (
     <Content>
@@ -101,7 +74,13 @@ export const LandingPage = () => {
         <option value="60067">3</option>
         <option value="01886">4</option>
       </select>
-      <div>{result}</div>
+      <div>
+        {isLoading && "Loading..."}
+        {error && JSON.stringify(error)}
+        {shows &&
+          !!shows.length &&
+          shows.map((show: Show) => <Title key={show.tmsId} show={show} />)}
+      </div>
     </Content>
   );
 };
