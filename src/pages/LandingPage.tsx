@@ -22,20 +22,6 @@ export const LandingPage = () => {
   const ISODate = now.toISOString();
   const startDate = ISODate.split("T")[0];
 
-  // const startDate =
-  //   now.getFullYear() +
-  //   "-" +
-  //   (now.getMonth() + 1).toLocaleString("en-UK", {
-  //     minimumIntegerDigits: 2,
-  //     useGrouping: false,
-  //   }) +
-  //   "-" +
-  //   now.getDate();
-
-  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28T00:26:55.724Z&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
-  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28T00:36:20.082Z&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
-  // http://data.tmsapi.com/v1.1/movies/showings?startDate=2023-03-28&zip=49464&api_key=44vyhctscd4p7ahf69b8drag
-
   const queryString = useMemo(() => {
     return {
       startDate: startDate,
