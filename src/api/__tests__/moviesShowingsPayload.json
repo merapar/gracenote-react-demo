@@ -1,0 +1,2754 @@
+[
+  {
+    "tmsId": "MV018249080000",
+    "rootId": "22081030",
+    "subType": "Feature Film",
+    "title": "Serengeti: An IMAX 3D Experience",
+    "releaseYear": 2022,
+    "releaseDate": "2022",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Documentary"
+    ],
+    "longDescription": "Showcasing wildlife on the Serengeti, which is home to some of Africa's most iconic animals.",
+    "shortDescription": "Showcasing wildlife on the Serengeti, which is home to some of Africa's most iconic animals.",
+    "directors": [
+      "Michael Dalton-Smith"
+    ],
+    "runTime": "PT00H45M",
+    "preferredImage": {
+      "uri": "tvbanners/generic/generic_tvbanners_v5.png"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T11:00",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T14:00",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV013835760000",
+    "rootId": "17965742",
+    "subType": "Feature Film",
+    "title": "Dinosaurs of Antarctica",
+    "releaseYear": 2020,
+    "releaseDate": "2020",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Documentary"
+    ],
+    "longDescription": "Prehistoric dinosaurs inhabit the forests and swamplands of Antarctica millions of years ago.",
+    "shortDescription": "Prehistoric dinosaurs inhabit the forests and swamplands of Antarctica millions of years ago.",
+    "directors": [
+      "David Clark"
+    ],
+    "runTime": "PT00H45M",
+    "preferredImage": {
+      "uri": "tvbanners/generic/generic_tvbanners_v5.png"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T12:00",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV016066490000",
+    "rootId": "19647425",
+    "subType": "Feature Film",
+    "title": "The Arctic: Our Last Great Wilderness",
+    "releaseYear": 2021,
+    "releaseDate": "2021",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Documentary"
+    ],
+    "longDescription": "Princess Daazhraii Johnson of the Gwich'in tribe reveals the land that has sustained her people for untold generations. A journey with photographer Florian Schulz on his five-year quest to film the elusive 200,000 strong Porcupine caribou herd as it migrates to the Arctic Coastal Plain, one of the longest animal migrations on Earth.",
+    "shortDescription": "Princess Daazhraii Johnson reveals the land that has sustained her people for untold generations.",
+    "topCast": [
+      "Daazhraii Johnson",
+      "Florian Schulz"
+    ],
+    "directors": [
+      "Myles Connolly",
+      "Florian Schulz"
+    ],
+    "runTime": "PT00H45M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p19647425_v_v12_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV013711470000",
+    "rootId": "17843098",
+    "subType": "Feature Film",
+    "title": "John Wick: Chapter 4",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-22",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Action"
+    ],
+    "longDescription": "With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.",
+    "shortDescription": "Hit man John Wick takes his fight against the High Table global as the price on his head grows.",
+    "topCast": [
+      "Keanu Reeves",
+      "Donnie Yen",
+      "Bill Skarsgård"
+    ],
+    "directors": [
+      "Chad Stahelski"
+    ],
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Graphic Violence"
+    ],
+    "runTime": "PT02H49M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p17843098_v_v12_ah.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T16:00",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "4604",
+          "name": "Bullock Museum Spirit Theater"
+        },
+        "dateTime": "2023-03-28T20:00",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T11:40",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T13:40",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T14:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T15:35",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T17:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T17:35",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T18:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T18:50",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T19:30",
+        "quals": "Open-Captioned",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T21:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T22:10",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T22:45",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T10:40",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T11:20",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T11:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T14:35",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T15:25",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T15:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T18:30",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T19:25",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T19:50",
+        "quals": "Open-Captioned",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "quals": "Closed Captioned|Descriptive Video Services|Dolby Cinema at AMC Prime|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T14:35",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:00",
+        "quals": "Open Captioned|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:45",
+        "quals": "Closed Captioned|Descriptive Video Services|Dolby Cinema at AMC Prime|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T18:15",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T19:40",
+        "quals": "Spanish Sub-Titles|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T20:30",
+        "quals": "Closed Captioned|Descriptive Video Services|Dolby Cinema at AMC Prime|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T11:45",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:45",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T13:15",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:30",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T16:30",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T17:00",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:00",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T19:15",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T20:15",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T20:45",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:35",
+        "quals": "Advance Tickets Available|No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=204215&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T13:30",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T14:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T15:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T15:30",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T17:00",
+        "quals": "Descriptive Audio Services|No Passes|ALD",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T17:30",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T20:05",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T21:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T21:30",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV013604680000",
+    "rootId": "17745824",
+    "subType": "Feature Film",
+    "title": "Shazam! Fury of the Gods",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-15",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "longDescription": "Bestowed with the powers of the gods, Billy Batson and his fellow foster kids are still learning how to juggle teenage life with their adult superhero alter egos. When a vengeful trio of ancient gods arrives on Earth in search of the magic stolen from them long ago, Shazam and his allies get thrust into a battle for their superpowers, their lives, and the fate of the world.",
+    "shortDescription": "Shazam and his allies must save the world from a vengeful trio of ancient gods.",
+    "topCast": [
+      "Zachary Levi",
+      "Asher Angel",
+      "Jack Dylan Grazer"
+    ],
+    "directors": [
+      "David F. Sandberg"
+    ],
+    "officialUrl": "https://www.shazammovie.com/",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT02H10M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p17745824_v_v12_af.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T11:30",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T14:45",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T18:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T21:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T12:30",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T15:45",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T19:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T14:05",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T17:05",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T20:05",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:00",
+        "quals": "No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:00",
+        "quals": "No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T19:00",
+        "quals": "No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:20",
+        "quals": "No Passes|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=203822&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T13:15",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T16:15",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T19:15",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T22:15",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018422090000",
+    "rootId": "22304165",
+    "subType": "Feature Film",
+    "title": "A Good Person",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-24",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "Allison is a young woman with a wonderful fiance, a blossoming career, and supportive family and friends. However, her world crumbles in the blink of an eye when she survives an unimaginable tragedy, emerging from recovery with an opioid addiction and unresolved grief. In the following years, she forms an unlikely friendship with her would-be father-in-law that gives her a fighting chance to put her life back together and move forward.",
+    "shortDescription": "An opioid addict develops an unlikely friendship with her would-be father-in-law.",
+    "topCast": [
+      "Florence Pugh",
+      "Morgan Freeman",
+      "Zoe Lister-Jones"
+    ],
+    "directors": [
+      "Zach Braff"
+    ],
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations"
+    ],
+    "runTime": "PT02H09M",
+    "preferredImage": {
+      "uri": "tvbanners/generic/generic_tvbanners_v5.png"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T11:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T15:05",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T18:40",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T21:50",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:15",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:15",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T19:15",
+        "quals": "Open Captioned|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:15",
+        "quals": "Advance Tickets Available|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:25",
+        "quals": "Advance Tickets Available|Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:30",
+        "quals": "Advance Tickets Available|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216134&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T22:00",
+        "quals": "Advance Tickets Available|Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216134&d=2023-03-28"
+      }
+    ]
+  },
+  {
+    "tmsId": "MV017996460000",
+    "rootId": "21718173",
+    "subType": "Feature Film",
+    "title": "Creed III",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-03",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "Still dominating the boxing world, Adonis Creed is thriving in his career and family life. When Damian, a childhood friend and former boxing prodigy resurfaces after serving time in prison, he's eager to prove that he deserves his shot in the ring. The face-off between former friends is more than just a fight. To settle the score, Adonis must put his future on the line to battle Damian -- a fighter who has nothing to lose.",
+    "shortDescription": "Boxer Adonis Creed puts his future on the line to take on a former friend who has nothing to lose.",
+    "topCast": [
+      "Michael B. Jordan",
+      "Tessa Thompson",
+      "Jonathan Majors"
+    ],
+    "directors": [
+      "Michael B. Jordan"
+    ],
+    "officialUrl": "https://www.creedthemovie.com/",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT01H56M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p21718173_v_v12_ab.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T12:20",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T15:20",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T18:20",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T21:20",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T12:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T15:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T18:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:45",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:30",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T19:15",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=214061&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T14:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T16:50",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T19:45",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T22:30",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018581740000",
+    "rootId": "22549793",
+    "subType": "Feature Film",
+    "title": "Inside",
+    "releaseYear": 2023,
+    "releaseDate": "2023-02-20",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "A high-end art thief becomes trapped inside a luxury, high-tech penthouse in New York's Times Square after his heist doesn't go as planned. Locked inside with nothing but priceless works of art, he must use all his cunning and invention to survive.",
+    "shortDescription": "A high-end art thief becomes trapped in a luxury, high-tech penthouse in New York's Times Square.",
+    "topCast": [
+      "Willem Dafoe",
+      "Gene Bervoets",
+      "Eliza Stuyck"
+    ],
+    "directors": [
+      "Vasilis Katsoupis"
+    ],
+    "officialUrl": "https://www.focusfeatures.com/inside",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Nudity"
+    ],
+    "runTime": "PT01H45M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p22549793_v_v12_ah.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T12:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=221257&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:20",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T14:45",
+        "quals": "Reserved Seating|Closed Captioned|Descriptive Video Services|Recliners",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018325480000",
+    "rootId": "22179066",
+    "subType": "Feature Film",
+    "title": "Scream VI",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-10",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "longDescription": "Four survivors of the Ghostface murders leave Woodsboro behind for a fresh start in New York City. However, they soon find themselves in a fight for their lives when a new killer embarks on a bloody rampage.",
+    "shortDescription": "A new killer follows four survivors of the Ghostface murders to New York City.",
+    "topCast": [
+      "Melissa Barrera",
+      "Jenna Ortega",
+      "Courteney Cox"
+    ],
+    "directors": [
+      "Matt Bettinelli-Olpin",
+      "Tyler Gillett"
+    ],
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Graphic Violence"
+    ],
+    "runTime": "PT02H03M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p22179066_v_v12_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T13:15",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T16:35",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T19:50",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T22:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T11:40",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T14:55",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "11470",
+          "name": "Alamo Drafthouse Mueller"
+        },
+        "dateTime": "2023-03-28T18:00",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AAYBF&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:30",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:25",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T19:25",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:30",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:30",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:30",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:30",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=215698&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "quals": "ALD|Descriptive Audio Services|No Passes",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T16:05",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T19:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T22:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018325830000",
+    "rootId": "22180370",
+    "subType": "Feature Film",
+    "title": "Cocaine Bear",
+    "releaseYear": 2023,
+    "releaseDate": "2023-02-24",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Thriller",
+      "Comedy"
+    ],
+    "longDescription": "An oddball group of cops, criminals, tourists and teens converges in a Georgia forest after a 500-pound black bear ingests a large amount of cocaine and goes on a drug-fueled rampage.",
+    "shortDescription": "A 500-pound black bear ingests a large amount of cocaine and goes on a drug-fueled rampage.",
+    "topCast": [
+      "Keri Russell",
+      "Margo Martindale",
+      "Ray Liotta"
+    ],
+    "directors": [
+      "Elizabeth Banks"
+    ],
+    "officialUrl": "https://www.universalpictures.com/movies/cocaine-bear",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Graphic Violence"
+    ],
+    "runTime": "PT01H35M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p22180370_v_v12_ac.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5084",
+          "name": "Alamo Drafthouse South Lamar"
+        },
+        "dateTime": "2023-03-28T15:45",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AATHS&m=215722&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T17:30",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T20:00",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=215722&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T18:45",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T21:40",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019129060000",
+    "rootId": "23275378",
+    "subType": "Feature Film",
+    "title": "Jacir",
+    "releaseYear": 2022,
+    "releaseDate": "2022-09-30",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "A young Syrian refugee faces hard truths chasing the American dream on the streets of Memphis, Tenn., while living in poverty, dealing with social injustice and witnessing his neighbor's opioid addiction.",
+    "shortDescription": "A Syrian refugee faces hard truths chasing the American dream on the streets of Memphis, Tenn.",
+    "topCast": [
+      "Malek Rahbani",
+      "Lorraine Bracco",
+      "Tutweezy"
+    ],
+    "directors": [
+      "Waheed AlQawasmi"
+    ],
+    "advisories": [
+      "Adult Situations"
+    ],
+    "preferredImage": {
+      "uri": "tvbanners/generic/generic_tvbanners_v5.png"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:05",
+        "quals": "ARABIC w/ENGLISHSUBTITLE|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T15:40",
+        "quals": "ARABIC w/ENGLISHSUBTITLE|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T18:20",
+        "quals": "ARABIC w/ENGLISHSUBTITLE|Recliners|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019202610000",
+    "rootId": "17843098",
+    "subType": "Feature Film",
+    "title": "John Wick: Chapter 4 -- The IMAX 2D Experience",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-24",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Action"
+    ],
+    "longDescription": "With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.",
+    "shortDescription": "Hit man John Wick takes his fight against the High Table global as the price on his head grows.",
+    "topCast": [
+      "Keanu Reeves",
+      "Donnie Yen",
+      "Bill Skarsgård"
+    ],
+    "directors": [
+      "Chad Stahelski"
+    ],
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Graphic Violence"
+    ],
+    "runTime": "PT02H49M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p17843098_v_v12_ah.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:30",
+        "quals": "Closed Captioned|Descriptive Video Services|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T17:15",
+        "quals": "Closed Captioned|Descriptive Video Services|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T21:00",
+        "quals": "Closed Captioned|Descriptive Video Services|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019848310000",
+    "rootId": "24047091",
+    "subType": "Feature Film",
+    "title": "Moving On",
+    "releaseYear": 2022,
+    "releaseDate": "2022-09-13",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Comedy drama"
+    ],
+    "longDescription": "Two estranged women reunite to seek revenge against the husband of their recently deceased best friend. Along the way, they learn to make peace with the past and each other.",
+    "shortDescription": "Two estranged women reunite to seek revenge against the husband of their deceased best friend.",
+    "topCast": [
+      "Jane Fonda",
+      "Lily Tomlin",
+      "Malcolm McDowell"
+    ],
+    "directors": [
+      "Paul Weitz"
+    ],
+    "officialUrl": "https://www.movingonthemovie.com/",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations"
+    ],
+    "runTime": "PT01H25M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "caption": {
+        "content": "Moving On (2022)",
+        "lang": "en"
+      },
+      "uri": "assets/p24047091_p_v11_aa.jpg?w=240&h=360",
+      "category": "Poster Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T13:35",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T15:50",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV017467570000",
+    "rootId": "20933619",
+    "subType": "Feature Film",
+    "title": "Ant-Man and the Wasp: Quantumania",
+    "releaseYear": 2023,
+    "releaseDate": "2023-02-15",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Comedy"
+    ],
+    "longDescription": "Ant-Man and the Wasp find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that pushes them beyond the limits of what they thought was possible.",
+    "shortDescription": "Ant-Man and the Wasp embark on a mind-bending adventure in the Quantum Realm.",
+    "topCast": [
+      "Paul Rudd",
+      "Evangeline Lilly",
+      "Jonathan Majors"
+    ],
+    "directors": [
+      "Peyton Reed"
+    ],
+    "officialUrl": "https://movies.disney.com/ant-man-and-the-wasp-quantumania",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT02H04M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "caption": {
+        "content": "Ant-Man and the Wasp: Quantumania (2023)",
+        "lang": "en"
+      },
+      "uri": "assets/p20933619_p_v12_aa.jpg?w=240&h=360",
+      "category": "Poster Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T14:00",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T16:55",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T19:50",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:15",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=212077&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=212077&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:15",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=212077&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T22:00",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=212077&d=2023-03-28"
+      }
+    ]
+  },
+  {
+    "tmsId": "MV009778540000",
+    "rootId": "12460960",
+    "subType": "Feature Film",
+    "title": "Avatar: The Way of Water 3D",
+    "releaseYear": 2022,
+    "releaseDate": "2022-12-16",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Science fiction",
+      "Adventure",
+      "Action",
+      "Fantasy"
+    ],
+    "longDescription": "Jake Sully, Neytiri and their children explore the mysterious lands of Pandora. When a familiar threat resurfaces, they must fight a difficult war to protect their planet.",
+    "shortDescription": "When a familiar threat resurfaces, Jake and Neytiri must protect their children and their planet.",
+    "topCast": [
+      "Sam Worthington",
+      "Zoe Saldaña",
+      "Sigourney Weaver"
+    ],
+    "directors": [
+      "James Cameron"
+    ],
+    "officialUrl": "https://www.avatar.com/movies/avatar-the-way-of-water",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Nudity",
+      "Violence"
+    ],
+    "runTime": "PT03H12M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p12460960_v_v12_ah.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T14:15",
+        "quals": "Closed Captioned|Descriptive Video Services|RealD 3D|Recliners|Reserved Seating",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T18:15",
+        "quals": "Closed Captioned|Descriptive Video Services|RealD 3D|Recliners|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV017677400000",
+    "rootId": "21252841",
+    "subType": "Feature Film",
+    "title": "Everything Everywhere All at Once",
+    "releaseYear": 2022,
+    "releaseDate": "2022-03-11",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Comedy",
+      "Adventure",
+      "Science fiction"
+    ],
+    "longDescription": "When an interdimensional rupture unravels reality, an unlikely hero must channel her newfound powers to fight bizarre and bewildering dangers from the multiverse as the fate of the world hangs in the balance.",
+    "shortDescription": "An unlikely hero uses newfound powers to fight fearsome and bewildering dangers from the multiverse.",
+    "topCast": [
+      "Michelle Yeoh",
+      "Stephanie Hsu",
+      "Ke Huy Quan"
+    ],
+    "directors": [
+      "Daniel Kwan",
+      "Daniel Scheinert"
+    ],
+    "officialUrl": "https://a24films.com/films/everything-everywhere-all-at-once",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT02H19M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p21252841_v_v12_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T15:45",
+        "quals": "Closed Captioned|Descriptive Video Services|Recliners|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019947110000",
+    "rootId": "24243885",
+    "subType": "Feature Film",
+    "title": "Full River Red",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-17",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "longDescription": "In 12th-century China, an ambassador is killed and a letter meant for the emperor is stolen. As the search for the letter unfolds, alliances are formed, secrets are revealed, and no one can stop the truth that's destined to leave its mark on history.",
+    "shortDescription": "Secrets are revealed as the search for the emperor's stolen letter unfolds in 12th-century China.",
+    "topCast": [
+      "Teng Shen",
+      "Jackson Yee",
+      "Yi Zhang"
+    ],
+    "directors": [
+      "Yimou Zhang"
+    ],
+    "officialUrl": "https://www.beyondevents.ca/",
+    "advisories": [
+      "Adult Situations"
+    ],
+    "runTime": "PT02H36M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "caption": {
+        "content": "Full River Red (2023)",
+        "lang": "en"
+      },
+      "uri": "assets/p24243885_p_v12_aa.jpg?w=240&h=360",
+      "category": "Poster Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "5320",
+          "name": "AMC Barton Creek Square 14"
+        },
+        "dateTime": "2023-03-28T18:05",
+        "quals": "MANDARIN w/ENGLISH SUBTITLE|Recliners|Reserved Seating",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019130350000",
+    "rootId": "22734416",
+    "subType": "Feature Film",
+    "title": "One Fine Morning",
+    "releaseYear": 2022,
+    "releaseDate": "2022",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "longDescription": "A young single mother raising an 8-year-old daughter struggles to take care of her father, who's been diagnosed with a neurodegenerative disease. While trying to secure a decent nursing home, she runs into a married friend and they begin an affair.",
+    "shortDescription": "A single mother struggles to take care of her father, who has a neurodegenerative disease.",
+    "topCast": [
+      "Léa Seydoux",
+      "Pascal Greggory",
+      "Melvil Poupaud"
+    ],
+    "directors": [
+      "Mia Hansen-Løve"
+    ],
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "R"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Nudity"
+    ],
+    "runTime": "PT01H52M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "caption": {
+        "content": "One Fine Morning (2022)",
+        "lang": "en"
+      },
+      "uri": "assets/p22734416_p_v8_af.jpg?w=240&h=360",
+      "category": "Poster Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "11546",
+          "name": "AFS Cinema"
+        },
+        "dateTime": "2023-03-28T16:15",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV019036700000",
+    "rootId": "22999203",
+    "subType": "Feature Film",
+    "title": "Rodeo",
+    "releaseYear": 2022,
+    "releaseDate": "2022-05-19",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "A young woman with a passion for riding embeds herself in the underground world of dirt biking.",
+    "shortDescription": "A young woman with a passion for riding embeds herself in the underground world of dirt biking.",
+    "topCast": [
+      "Julie Ledru",
+      "Yanis Lafki",
+      "Antonia Buresi"
+    ],
+    "directors": [
+      "Lola Quivoron"
+    ],
+    "officialUrl": "https://www.musicboxfilms.com/film/rodeo/",
+    "runTime": "PT01H50M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "caption": {
+        "content": "Rodeo (2022)",
+        "lang": "en"
+      },
+      "uri": "assets/p22999203_p_v8_ab.jpg?w=240&h=360",
+      "category": "Poster Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "11546",
+          "name": "AFS Cinema"
+        },
+        "dateTime": "2023-03-28T17:00",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV004573080000",
+    "rootId": "9718883",
+    "subType": "Feature Film",
+    "title": "Computer Chess",
+    "releaseYear": 2013,
+    "releaseDate": "2013-07-17",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Comedy"
+    ],
+    "longDescription": "In the early 1980s, young computer geniuses take part in a tournament to see who can create a program that will enable a computer to beat a human player at chess.",
+    "shortDescription": "In the 1980s, young geniuses try to create a chess program to beat a human player.",
+    "topCast": [
+      "Myles Paige",
+      "James Curry",
+      "Robin Schwartz"
+    ],
+    "directors": [
+      "Andrew Bujalski"
+    ],
+    "officialUrl": "http://www.computerchessmovie.com/",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3"
+    },
+    "runTime": "PT01H31M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p9718883_v_v8_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "11546",
+          "name": "AFS Cinema"
+        },
+        "dateTime": "2023-03-28T19:00",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV000383830000",
+    "rootId": "57018",
+    "subType": "Feature Film",
+    "title": "River of Grass",
+    "releaseYear": 1994,
+    "releaseDate": "1994-01-21",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "A bored housewife (Lisa Bowman) and her boozing lover (Larry Fessenden) almost go on the lam after she thinks she shot a man.",
+    "shortDescription": "Bored housewife (Lisa Bowman) and lover (Larry Fessenden) are almost on-the-lam outlaws.",
+    "topCast": [
+      "Lisa Bowman",
+      "Larry Fessenden",
+      "Dick Russell"
+    ],
+    "directors": [
+      "Kelly Reichardt"
+    ],
+    "officialUrl": "http://riverofgrass.oscilloscope.net/",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Brief Nudity"
+    ],
+    "runTime": "PT01H15M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p57018_v_v8_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "11546",
+          "name": "AFS Cinema"
+        },
+        "dateTime": "2023-03-28T19:30",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV016116060000",
+    "rootId": "19688397",
+    "subType": "Feature Film",
+    "title": "Puss in Boots: The Last Wish",
+    "releaseYear": 2022,
+    "releaseDate": "2022-12-21",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Animated",
+      "Children",
+      "Comedy",
+      "Adventure"
+    ],
+    "audience": "Children",
+    "longDescription": "After burning though eight lives, Puss in Boots sets out on an epic journey to find the mythical Last Wish and restore all nine.",
+    "shortDescription": "Puss in Boots sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+    "topCast": [
+      "Antonio Banderas",
+      "Salma Hayek Pinault",
+      "Olivia Colman"
+    ],
+    "directors": [
+      "Joel Crawford"
+    ],
+    "officialUrl": "https://www.universalpictures.com/movies/puss-in-boots-the-last-wish",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "3.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT01H42M",
+    "animation": "Animated",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p19688397_v_v12_am.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:00",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=208458&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T14:30",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=208458&d=2023-03-28"
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018061860000",
+    "rootId": "21802820",
+    "subType": "Feature Film",
+    "title": "Champions",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-10",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Comedy"
+    ],
+    "longDescription": "A former minor-league basketball coach receives a court order to manage a team of players with intellectual disabilities. Despite his doubts, he soon realizes that together they can go further than they ever imagined.",
+    "shortDescription": "A former minor-league basketball coach manages a team of players with intellectual disabilities.",
+    "topCast": [
+      "Woody Harrelson",
+      "Kaitlin Olson",
+      "Matt Cook"
+    ],
+    "directors": [
+      "Bobby Farrelly"
+    ],
+    "officialUrl": "https://www.focusfeatures.com/champions",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2.5"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations"
+    ],
+    "runTime": "PT02H03M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p21802820_v_v12_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T12:45",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216725&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T18:50",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=216725&d=2023-03-28"
+      }
+    ]
+  },
+  {
+    "tmsId": "MV017835720000",
+    "rootId": "21472315",
+    "subType": "Feature Film",
+    "title": "65",
+    "releaseYear": 2023,
+    "releaseDate": "2023-03-10",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Science fiction",
+      "Adventure",
+      "Action",
+      "Thriller"
+    ],
+    "longDescription": "After a catastrophic crash on an unknown planet, pilot Mills quickly discovers he's actually stranded on Earth -- 65 million years ago. Now, with only one chance at a rescue, Mills and the only other survivor, Koa, must make their way across an unknown terrain riddled with dangerous prehistoric creatures.",
+    "shortDescription": "Two survivors of a deadly crash battle prehistoric creatures on Earth -- 65 million years ago.",
+    "topCast": [
+      "Adam Driver",
+      "Ariana Greenblatt",
+      "Chloe Coleman"
+    ],
+    "directors": [
+      "Scott Beck",
+      "Bryan Woods"
+    ],
+    "officialUrl": "https://www.sonypictures.com/movies/65",
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations",
+      "Violence"
+    ],
+    "runTime": "PT01H33M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p21472315_v_v12_ac.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T13:00",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=213364&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T15:15",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=213364&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T21:15",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": false,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=213364&d=2023-03-28"
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T14:05",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T16:40",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T19:15",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T21:45",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  },
+  {
+    "tmsId": "MV018892320000",
+    "rootId": "22922615",
+    "subType": "Feature Film",
+    "title": "Jesus Revolution",
+    "releaseYear": 2023,
+    "releaseDate": "2023-02-24",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "longDescription": "In the 1970s, Greg Laurie and a sea of young people descend on sunny Southern California to redefine truth through all means of liberation. Inadvertently, Laurie meets a charismatic street preacher and a pastor who open the doors to a church to a stream of wandering youth. What unfolds is a counterculture movement that becomes the greatest spiritual awakening in American history.",
+    "shortDescription": "A street preacher and a pastor spark the greatest spiritual awakening in American history.",
+    "topCast": [
+      "Joel Courtney",
+      "Jonathan Roumie",
+      "Kimberly Williams-Paisley"
+    ],
+    "directors": [
+      "Jon Erwin",
+      "Brent McCorkle"
+    ],
+    "qualityRating": {
+      "ratingsBody": "TMS",
+      "value": "2"
+    },
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG-13"
+      }
+    ],
+    "advisories": [
+      "Adult Situations"
+    ],
+    "runTime": "PT02H00M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p22922615_v_v12_aa.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "8298",
+          "name": "Regal Westgate Stadium 11"
+        },
+        "dateTime": "2023-03-28T16:00",
+        "quals": "Closed Captioned|Descriptive Video Services",
+        "barg": true,
+        "ticketURI": "http://www.fandango.com/tms.asp?t=AANOT&m=219716&d=2023-03-28"
+      }
+    ]
+  },
+  {
+    "tmsId": "MV015811350000",
+    "rootId": "19374415",
+    "subType": "Feature Film",
+    "title": "School of Magical Animals",
+    "releaseYear": 2021,
+    "releaseDate": "2021",
+    "titleLang": "en",
+    "descriptionLang": "en",
+    "entityType": "Movie",
+    "genres": [
+      "Children",
+      "Fantasy",
+      "Adventure"
+    ],
+    "audience": "Children",
+    "longDescription": "Ida attends a new school after her family moves. Her strange teacher announces that all pupils will receive a magical companion, and Ida gets a talking fox named Rabbat. When the animals are in danger, Ida teams up with other kids to save them.",
+    "shortDescription": "Ida attends a new school and receives a magical companion in the form of a talking fox named Rabbat.",
+    "topCast": [
+      "Emilia Maier",
+      "Leonard Conrads",
+      "Loris Sichrovsky"
+    ],
+    "directors": [
+      "Gregor Schnitzler"
+    ],
+    "officialUrl": "https://www.bluefoxentertainment.com/films/magical-animals",
+    "ratings": [
+      {
+        "body": "Motion Picture Association",
+        "code": "PG"
+      }
+    ],
+    "advisories": [
+      "Adult Language",
+      "Adult Situations"
+    ],
+    "runTime": "PT01H33M",
+    "preferredImage": {
+      "width": "240",
+      "height": "360",
+      "uri": "assets/p19374415_v_v12_ag.jpg?w=240&h=360",
+      "category": "VOD Art",
+      "text": "yes",
+      "primary": "true"
+    },
+    "showtimes": [
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T13:20",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      },
+      {
+        "theatre": {
+          "id": "8749",
+          "name": "Galaxy Highland"
+        },
+        "dateTime": "2023-03-28T16:00",
+        "quals": "No Passes|ALD|Descriptive Audio Services",
+        "barg": false
+      }
+    ]
+  }
+]
