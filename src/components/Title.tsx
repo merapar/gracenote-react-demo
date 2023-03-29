@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+interface TitleParams {
+  title: string;
+  uri: string;
+}
+
 const DivImage = styled.div`
   display: inline-block;
   border: 1px solid grey;
@@ -10,17 +15,14 @@ const DivImage = styled.div`
   width: 250px;
 `;
 
-export const Title = ({ show }: any) => {
+export const Title = ({ title, uri }: TitleParams) => {
   const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
 
   return (
     <DivImage>
-      <img
-        src={`${imageBaseUrl}${show.preferredImage?.uri}`}
-        alt={show.title}
-      />
+      <img src={`${imageBaseUrl}${uri}`} alt={title} />
       <br />
-      {show.title}
+      {title}
     </DivImage>
   );
 };
