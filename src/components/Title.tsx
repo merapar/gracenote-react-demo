@@ -12,7 +12,7 @@ const DivImage = styled.div`
   padding: 4px;
   text-align: center;
   font-size: 15px;
-  width: 250px;
+  width: 251px;
 `;
 
 export const Title = ({ title, uri }: TitleParams) => {
