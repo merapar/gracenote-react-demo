@@ -1,0 +1,18 @@
+{
+    "theatreId": "8749",
+    "name": "Galaxy Highland",
+    "location": {
+        "telephone": "512-467-7305",
+        "geoCode": {
+            "latitude": "30.3292",
+            "longitude": "-97.7064"
+        },
+        "address": {
+            "street": "6700 Middle Fiskville Rd.",
+            "state": "TX",
+            "city": "Austin",
+            "country": "USA",
+            "postalCode": "78752"
+        }
+    }
+}

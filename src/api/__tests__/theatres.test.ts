@@ -1,13 +1,10 @@
-import { theatresByPostalCodeRequest } from "../theatres";
+import { getTheatreRequest } from "../theatres";
 
-test("fetches theaters near 78701 postal code area", async () => {
-  const response = await theatresByPostalCodeRequest({
-    zipCode: "78701",
-    startDate: "2023-03-27",
+test("fetches one theater object by theater id", async () => {
+  const response = await getTheatreRequest({
+    theatreId: 8749,
   });
   expect(response?.status).toBe(200);
   const payload = await response?.json();
-  console.log(payload.length);
-  console.log(payload);
-  expect(payload.length).toBeGreaterThan(0);
+  expect(Object.keys(payload).length).toBeGreaterThan(0);
 });

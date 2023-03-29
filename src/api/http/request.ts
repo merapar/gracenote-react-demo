@@ -29,7 +29,6 @@ export async function request(
     delete requestOptions.queryParams;
   }
   try {
-    console.log({ url: url.toString() });
     response = await fetch(url.toString(), requestOptions);
   } catch (e) {
     if (e instanceof TypeError) {

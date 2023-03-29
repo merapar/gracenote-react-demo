@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { theatresByPostalCodeRequest } from "../../api/theatres";
+import { moviesShowingsByPostalCodeRequest } from "../../api/moviesShowings";
 
 type Params = {
   mapper?: Array<any>["map"];
@@ -20,7 +20,7 @@ export const getTheatresHook = (params: Params) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsFetching(true);
-      const response = await theatresByPostalCodeRequest({
+      const response = await moviesShowingsByPostalCodeRequest({
         zipCode: params.zipCode,
         startDate: params.startDate,
       });

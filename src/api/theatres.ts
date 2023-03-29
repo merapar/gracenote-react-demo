@@ -1,8 +1,8 @@
 import { request } from "./http/request";
 import { API_URL } from "./http/url";
+import { getAuthHeaders } from "./http/getAuthHeaders";
 
-const ON_API_KEY = "sm62qj2z9t43spub2mg22stu";
-const ON_CONNECT_KEY = "44vyhctscd4p7ahf69b8drag";
+const THEATRES_URL = `${API_URL}/theatres`;
 
 type ResponseTheater = {
   theatreId: string; // 	Resource identifier for theatre
@@ -25,19 +25,13 @@ type ResponseTheater = {
 };
 
 type Params = {
-  zipCode: string;
-  startDate: string;
+  theatreId: string | number;
 };
 
-export const theatresByPostalCodeRequest = async ({
-  zipCode,
-  startDate,
-}: Params) => {
-  return await request(THEATERS_URL, {
+export const getTheatreRequest = async ({ theatreId }: Params) => {
+  return await request(`${THEATRES_URL}/${theatreId}`, {
     queryParams: {
-      startDate,
-      zip: zipCode,
-      api_key: ON_CONNECT_KEY,
+      ...getAuthHeaders(),
     },
   });
 };
