@@ -46,7 +46,10 @@ export const useFetchData = <T = unknown>(
   const [fetchDataState, dispatch] = useReducer(fetchDataReducer, initialState);
 
   useEffect(() => {
-    if (!baseUrl) return;
+    if (!baseUrl) {
+      dispatch({ type: "aborted" });
+      return;
+    }
 
     const abortController = new AbortController();
     const { signal } = abortController;
