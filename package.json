@@ -1,5 +1,6 @@
 {
   "name": "gracenote-poc",
+  "homepage": "https://merapar.github.io/gracenote-react-demo/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
