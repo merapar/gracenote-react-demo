@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gracenote-react-demo/static/css/main.a1489eb6.css",
+    "main.js": "/gracenote-react-demo/static/js/main.f629f66f.js",
+    "static/js/787.91ea5d09.chunk.js": "/gracenote-react-demo/static/js/787.91ea5d09.chunk.js",
+    "index.html": "/gracenote-react-demo/index.html",
+    "main.a1489eb6.css.map": "/gracenote-react-demo/static/css/main.a1489eb6.css.map",
+    "main.f629f66f.js.map": "/gracenote-react-demo/static/js/main.f629f66f.js.map",
+    "787.91ea5d09.chunk.js.map": "/gracenote-react-demo/static/js/787.91ea5d09.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1489eb6.css",
+    "static/js/main.f629f66f.js"
+  ]
+}
