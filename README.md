@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Before running the app copy the `.env.example` to `.env` and fill in the GraceNote API key. Don not commit the `.env` file.
+
 In the project directory, you can run:
 
 ### `npm start`
