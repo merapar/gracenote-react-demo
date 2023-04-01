@@ -25,14 +25,22 @@ const NoShows = styled.div`
   top: 1rem;
 `;
 
+const getDateString = () => {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export const LandingPage = () => {
   const apiKey = process.env.REACT_APP_API_KEY as string;
   const baseUrl = process.env.REACT_APP_BASE_URL as string;
   const moviesTheatrePathName = process.env
     .REACT_APP_MOVIES_THEATRE_PATH_NAME as string;
 
-  const [selectedDate, setSelectedDate] = useState("");
-  const [zipcode, setZipcode] = useState(0);
+  const [selectedDate, setSelectedDate] = useState(getDateString());
+  const [zipcode, setZipcode] = useState(11554);
 
   const queryString = useMemo(() => {
     return {
@@ -53,7 +61,7 @@ export const LandingPage = () => {
   return (
     <Container>
       <LocationSelector zipcode={zipcode} setZipcode={setZipcode} />
-      <DateSelector setSelectedDate={setSelectedDate} />
+      <DateSelector selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
 
       {isLoading && <Loading />}
 
