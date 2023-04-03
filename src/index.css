@@ -1,26 +1,55 @@
-html {
-  font-size: 20px; /* only for root DOM element
-  every descendant of HTML element should use
-  "rem" units to describe dimensions in CSS or SC */
+:root {
+  --brand-color-01: #4485A8;
+  --brand-color-02: #3C849E;
+  --brand-color-03: #EC6434;
+  --brand-color-04: #E65C2C;
+  --brand-color-05: #3C7C9C;
+  --brand-color-06: #C85874;
+  --brand-color-07: #447890;
+  --brand-color-08: #3C7C94;
+  --brand-color-09: #DC5C2C;
+  --brand-color-10: #D4542C;
+  --brand-color-11: #3C7491;
+  --brand-color-12: #CC542C;
+  --brand-color-13: #346D8C;
+  --brand-color-14: #346C84;
+  --brand-color-15: #C44C2C;
+  --brand-color-16: #BC4C29;
+  --brand-color-17: #B44C24;
+  --brand-color-18: #34647D;
+  --brand-color-19: #B0442C;
+  --brand-color-20: #2C647C;
+  --brand-color-21: #B44424;
+  --brand-color-22: #346C4C;
+  --brand-color-23: #AC4424;
+  --brand-color-24: #944C3C;
+  --brand-color-25: #2C5C7C;
+  --brand-color-26: #545454;
+  --brand-color-27: #A73C25;
+  --brand-color-28: #A44424;
+  --brand-color-29: #2C5C74;
+  --brand-color-30: #2C566C;
+  --brand-color-31: #9C3C25;
+  --brand-color-32: #913424;
+  --brand-color-33: #8E3C26;
+  --brand-color-34: #244F64;
+  --brand-color-35: #2C4C64;
+  --brand-color-36: #8C341C;
+  --brand-color-37: #244C5C;
+  --brand-color-38: #84341C;
+  --brand-color-39: #742C1C;
+  --brand-color-40: #24445C;
+  --brand-color-41: #244454;
+  --brand-color-42: #1C4454;
+  --brand-color-43: #7C2C1C;
+  --brand-color-44: #6C241C;
+  --brand-color-45: #1C3C54;
 }
+
 @media (max-width: 900px) {
   html { font-size: 16px; }
 }
 
 @media (max-width: 400px) {
   html { font-size: 12px; }
-}
-body {
-  font-size: 1rem; /* 12px for up to 400px width, 16px for up to 900px width, ... */
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
