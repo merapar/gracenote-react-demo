@@ -4,16 +4,38 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StyleSheetManager } from "styled-components";
+import CssBaseline from "@mui/material/CssBaseline";
+import { createTheme, ThemeProvider } from "@mui/material";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/700.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#4485A8", //TODO investigate why can't use var(--brand....)
+    },
+    secondary: {
+      main: "#EC6434",
+    },
+    background: {
+      default: "var(--brand-color-45)",
+    },
+  },
+});
+
 root.render(
   <React.StrictMode>
     <StyleSheetManager
       disableVendorPrefixes={process.env.NODE_ENV === "development"}
     >
-      <App />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
     </StyleSheetManager>
   </React.StrictMode>
 );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "@mui/material/Button";
 
 const Locations = {
   // Oak Creek,
@@ -23,6 +24,9 @@ const LocationDiv = styled.div`
   @media (max-width: 520px) {
     flex-direction: column;
   }
+  .MuiButton-root {
+    margin: 1rem;
+  }
 `;
 
 type SetZipCodeShape = (zipCode: number) => void;
@@ -31,34 +35,6 @@ interface LocationParams {
   zipcode: number;
   setZipcode: SetZipCodeShape;
 }
-
-const Button = styled.button`
-  display: inline-flex;
-  justify-content: center;
-  box-sizing: border-box;
-  background-color: transparent;
-  outline: 0;
-  margin: 0.2rem;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.2rem;
-  line-height: 1.75;
-  text-transform: uppercase;
-  min-width: 6rem;
-  padding: 5px 15px;
-  border-radius: 4px;
-  border: #000;
-  color: #000;
-  &.current {
-    border: #fff;
-    color: #fff;
-    background-color: #000;
-  }
-`;
 
 type RenderButtonParams = {
   stateShort: string;
@@ -78,8 +54,11 @@ const renderButton = ({
       onClick={() => {
         setZipCode(zipCode);
       }}
+      size={"large"}
       key={stateShort}
-      {...(currentZipCode === zipCode ? { className: "current" } : {})}
+      {...(currentZipCode === zipCode
+        ? { variant: "outlined", color: "secondary" }
+        : { variant: "contained" })}
     >
       {stateShort}
     </Button>
