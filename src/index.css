@@ -53,3 +53,17 @@
 @media (max-width: 400px) {
   html { font-size: 12px; }
 }
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: radial-gradient(50% 80% at 71% -5%,
+  var(--brand-color-03) -5%,
+  var(--brand-color-44) 25%,
+  #073AFF00 100%
+  );
+
+}
