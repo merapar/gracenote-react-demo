@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with Gracenote React Demo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The project is automatically deployed to [https://merapar.github.io/gracenote-react-demo/](https://merapar.github.io/gracenote-react-demo/) on every push to the `main` branch.
+
 ## Available Scripts
+
+Before running the app copy the `.env.example` to `.env` and fill in the GraceNote API key. Don not commit the `.env` file.
 
 In the project directory, you can run:
 
