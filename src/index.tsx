@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { StyleSheetManager } from "styled-components";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { CircularProgress, createTheme, ThemeProvider } from "@mui/material";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
+import { StyleSheetManager } from "styled-components";
+
+import reportWebVitals from "./reportWebVitals";
+
+import App from "./App";
+import "./index.css";
+import { ErrorPage } from "./pages/ErrorPage";
+import { AboutPage } from "./pages/About";
+import { LandingPage } from "./pages/LandingPage";
 
 const theme = createTheme({
   palette: {
@@ -22,6 +28,40 @@ const theme = createTheme({
     },
   },
 });
+const URL_LANDING_PAGE = "/";
+const URL_WHATS_ON_TV = "/whats-on-tv";
+const URL_ABOUT = "/about";
+
+export const routesConfig = [
+  { title: "Showings near you", url: URL_LANDING_PAGE },
+  { title: "What's on TV", url: URL_WHATS_ON_TV },
+  { title: "About", url: URL_ABOUT },
+];
+
+const router = createBrowserRouter(
+  [
+    {
+      element: <App />,
+      errorElement: <ErrorPage />,
+
+      children: [
+        {
+          path: URL_LANDING_PAGE,
+          element: <LandingPage />,
+        },
+        {
+          path: URL_WHATS_ON_TV,
+          element: <div>TV</div>,
+        },
+        {
+          path: URL_ABOUT,
+          element: <AboutPage />,
+        },
+      ],
+    },
+  ],
+  { basename: process.env.PUBLIC_URL }
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -33,7 +73,10 @@ root.render(
     >
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <RouterProvider
+          router={router}
+          fallbackElement={<CircularProgress />}
+        />
       </ThemeProvider>
     </StyleSheetManager>
   </React.StrictMode>
