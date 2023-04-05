@@ -1,64 +1,60 @@
-import { useState } from "react";
-import styled from "styled-components";
+import {
+  Button,
+  Container,
+  Grid,
+  CardActions,
+  CardMedia,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
 
-import { Title } from "./Title";
-import { ShowDetails } from "./ShowDetails";
+import type { Show } from "./MainContent";
 
-interface Show {
-  tmsId: string;
-  preferredImage: {
-    uri: string;
-  };
-  title: string;
+interface ShowsDetailsData {
+  shows: Show[];
+  showDetailsHandler: Function;
 }
 
-// interface AvailableShows extends Array<Show> {}
-
-const MainContent = styled.main``;
-
-const ShowShowsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  @media ((min-width: 768px)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media (((min-width: 1024px))) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  gap: 20px;
-`;
-
-const ShowDetailsContainer = styled.div`
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 20px;
-`;
-
-export const Shows = ({ shows }: any) => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [showId, setShowId] = useState<string>("");
-
-  const show = showId ? shows.filter((show: any) => show.tmsId === showId) : "";
-
-  const content = showDetails ? (
-    <ShowDetailsContainer>
-      <ShowDetails setShowDetails={setShowDetails} show={show} />
-    </ShowDetailsContainer>
-  ) : (
-    <ShowShowsContainer>
-      {shows.map((show: Show) => {
-        return (
-          <Title
-            key={show.tmsId}
-            uri={show.preferredImage.uri}
-            title={show.title}
-            id={show.tmsId}
-            setShowDetails={setShowDetails}
-            setShowId={setShowId}
-          />
-        );
-      })}
-    </ShowShowsContainer>
+export const Shows = ({ shows, showDetailsHandler }: ShowsDetailsData) => {
+  const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
+  return (
+    <Container sx={{ py: 8 }} maxWidth="md">
+      <Grid container spacing={4}>
+        {shows &&
+          !!shows.length &&
+          shows.map((show: Show) => (
+            <Grid item key={show.tmsId} xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={`${imageBaseUrl}${show.preferredImage.uri}`}
+                  alt={show.title}
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {show.title}
+                  </Typography>
+                  <Typography>{show.shortDescription}</Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    onClick={() => showDetailsHandler(show.tmsId)}
+                    size="small"
+                  >
+                    View Details
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+      </Grid>
+    </Container>
   );
-
-  return <MainContent>{content}</MainContent>;
 };
