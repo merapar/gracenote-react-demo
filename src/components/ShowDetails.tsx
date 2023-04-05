@@ -7,6 +7,7 @@ import {
   CardActions,
   Typography,
 } from "@mui/material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 import { Hero } from "./Hero";
 
@@ -39,6 +40,7 @@ export const ShowDetails = ({
               <Hero imageUrl={`${imageBaseUrl}${show.preferredImage.uri}`} />
               <CardActions>
                 <Button onClick={() => showDetailsHandler("")} size="small">
+                  <ArrowBackIosIcon />
                   Back
                 </Button>
               </CardActions>
