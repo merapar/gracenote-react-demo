@@ -1,18 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { StyleSheetManager } from "styled-components";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CircularProgress, createTheme, ThemeProvider } from "@mui/material";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { StyleSheetManager } from "styled-components";
+
+import reportWebVitals from "./reportWebVitals";
+
+import App from "./App";
+import "./index.css";
 import { ErrorPage } from "./pages/ErrorPage";
 import { AboutPage } from "./pages/About";
 import { LandingPage } from "./pages/LandingPage";
-import { basename } from "path";
 
 const theme = createTheme({
   palette: {
