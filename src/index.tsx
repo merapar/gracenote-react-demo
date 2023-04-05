@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./pages/ErrorPage";
 import { AboutPage } from "./pages/About";
 import { LandingPage } from "./pages/LandingPage";
+import { basename } from "path";
 
 const theme = createTheme({
   palette: {
@@ -36,27 +37,32 @@ export const routesConfig = [
   { title: "About", url: URL_ABOUT },
 ];
 
-const router = createBrowserRouter([
-  {
-    element: <App />,
-    errorElement: <ErrorPage />,
+const router = createBrowserRouter(
+  [
+    {
+      element: <App />,
+      errorElement: <ErrorPage />,
 
-    children: [
-      {
-        path: URL_LANDING_PAGE,
-        element: <LandingPage />,
-      },
-      {
-        path: URL_WHATS_ON_TV,
-        element: <div>TV</div>,
-      },
-      {
-        path: URL_ABOUT,
-        element: <AboutPage />,
-      },
-    ],
-  },
-]);
+      children: [
+        {
+          path: URL_LANDING_PAGE,
+          element: <LandingPage />,
+        },
+        {
+          path: URL_WHATS_ON_TV,
+          element: <div>TV</div>,
+        },
+        {
+          path: URL_ABOUT,
+          element: <AboutPage />,
+        },
+      ],
+    },
+  ],
+  { basename: process.env.PUBLIC_URL }
+);
+
+console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
