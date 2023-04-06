@@ -1,32 +1,12 @@
-import styled from "styled-components";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
+
 const Locations = {
-  // Oak Creek,
-  WI: 53154,
-
   // East Meadow,
-  NY: 11554,
-
-  // Key West,
-  FL: 33040,
-
-  // Moorhead,
-  MN: 56560,
+  "New York": 11554,
 
   // Oxnard,
-  CA: 93035,
+  California: 93035,
 };
-
-const LocationDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  @media (max-width: 520px) {
-    flex-direction: column;
-  }
-  .MuiButton-root {
-    margin: 1rem;
-  }
-`;
 
 type SetZipCodeShape = (zipCode: number) => void;
 
@@ -36,30 +16,31 @@ interface LocationParams {
 }
 
 type RenderButtonParams = {
-  stateShort: string;
+  state: string;
   zipCode: number;
   currentZipCode: number;
   setZipCode: SetZipCodeShape;
 };
 
 const renderButton = ({
-  stateShort,
+  state,
   zipCode,
   setZipCode,
   currentZipCode,
 }: RenderButtonParams) => {
   return (
     <Button
+      style={{ margin: "1rem" }}
       onClick={() => {
         setZipCode(zipCode);
       }}
       size={"large"}
-      key={stateShort}
+      key={state}
       {...(currentZipCode === zipCode
         ? { variant: "outlined", color: "secondary" }
         : { variant: "contained" })}
     >
-      {stateShort}
+      {state}
     </Button>
   );
 };
@@ -69,10 +50,15 @@ export const LocationSelector = ({
   setZipcode: setZipCode,
 }: LocationParams) => {
   return (
-    <LocationDiv>
-      {Object.entries(Locations).map(([stateShort, zipCode]) =>
-        renderButton({ stateShort, zipCode, setZipCode, currentZipCode })
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      {Object.entries(Locations).map(([state, zipCode]) =>
+        renderButton({ state, zipCode, setZipCode, currentZipCode })
       )}
-    </LocationDiv>
+    </div>
   );
 };

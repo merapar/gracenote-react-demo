@@ -5,7 +5,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CircularProgress, createTheme, ThemeProvider } from "@mui/material";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
-import { StyleSheetManager } from "styled-components";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -68,17 +67,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <StyleSheetManager
-      disableVendorPrefixes={process.env.NODE_ENV === "development"}
-    >
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <RouterProvider
-          router={router}
-          fallbackElement={<CircularProgress />}
-        />
-      </ThemeProvider>
-    </StyleSheetManager>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} fallbackElement={<CircularProgress />} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
