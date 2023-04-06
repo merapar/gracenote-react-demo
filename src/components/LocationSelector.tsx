@@ -1,17 +1,8 @@
 import { Button } from "@mui/material";
 
 const Locations = {
-  // Oak Creek,
-  // WI: 53154,
-
   // East Meadow,
   "New York": 11554,
-
-  // Key West,
-  // FL: 33040,
-
-  // Moorhead,
-  // MN: 56560,
 
   // Oxnard,
   California: 93035,
