@@ -2,19 +2,19 @@ import { Button } from "@mui/material";
 
 const Locations = {
   // Oak Creek,
-  WI: 53154,
+  // WI: 53154,
 
   // East Meadow,
-  NY: 11554,
+  "New York": 11554,
 
   // Key West,
-  FL: 33040,
+  // FL: 33040,
 
   // Moorhead,
-  MN: 56560,
+  // MN: 56560,
 
   // Oxnard,
-  CA: 93035,
+  California: 93035,
 };
 
 type SetZipCodeShape = (zipCode: number) => void;
