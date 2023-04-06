@@ -25,14 +25,14 @@ interface LocationParams {
 }
 
 type RenderButtonParams = {
-  stateShort: string;
+  state: string;
   zipCode: number;
   currentZipCode: number;
   setZipCode: SetZipCodeShape;
 };
 
 const renderButton = ({
-  stateShort,
+  state,
   zipCode,
   setZipCode,
   currentZipCode,
@@ -44,12 +44,12 @@ const renderButton = ({
         setZipCode(zipCode);
       }}
       size={"large"}
-      key={stateShort}
+      key={state}
       {...(currentZipCode === zipCode
         ? { variant: "outlined", color: "secondary" }
         : { variant: "contained" })}
     >
-      {stateShort}
+      {state}
     </Button>
   );
 };
@@ -65,8 +65,8 @@ export const LocationSelector = ({
         justifyContent: "center",
       }}
     >
-      {Object.entries(Locations).map(([stateShort, zipCode]) =>
-        renderButton({ stateShort, zipCode, setZipCode, currentZipCode })
+      {Object.entries(Locations).map(([state, zipCode]) =>
+        renderButton({ state, zipCode, setZipCode, currentZipCode })
       )}
     </div>
   );
