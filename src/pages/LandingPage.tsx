@@ -21,9 +21,7 @@ export const LandingPage = () => {
         setZipcode={setZipcode}
         setSelectedDate={setSelectedDate}
       />
-
       <MainContent isLoading={isLoading} moviesShowings={moviesShowings} />
-
       <Footer />
     </>
   );
