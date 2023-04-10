@@ -1,78 +1,36 @@
 import { useState } from "react";
 import { LinearProgress } from "@mui/material";
 
-import { ErrorMessage } from "./ErrorMessage";
 import { Shows } from "./Shows";
 import { ShowDetails } from "./ShowDetails";
-// import { Hero } from "./Hero";
+import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
 
-interface TheatreData {
-  id: string;
-  name: string;
+interface MainContentProps {
+  isLoading: boolean;
+  moviesShowings: GetMoviesShowingsQueryResponseType | undefined;
 }
 
-interface TimeAndLocationData {
-  theatre: TheatreData;
-  dateTime: string;
-}
+export const MainContent = ({ isLoading, moviesShowings }: MainContentProps) => {
 
-export interface ShowTimesData {
-  showtimes: TimeAndLocationData[];
-}
+  const [showMovieDetails, setShowMovieDetails] = useState(false);
+  const [movieId, setMovieId] = useState<string>("");
 
-interface PreferredImage {
-  uri: string;
-}
-
-export interface Show {
-  tmsId: string;
-  preferredImage: PreferredImage;
-  title: string;
-  shortDescription: string;
-  longDescription: string;
-  showtimes: ShowTimesData;
-}
-
-interface MainContentData {
-  isLoading: boolean | undefined;
-  data: Show[] | undefined;
-  error: Error | undefined;
-}
-
-export const MainContent = ({ isLoading, data, error }: MainContentData) => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [showId, setShowId] = useState<string>("");
-
-  const showDetailsHandler = (selectedShowId: string) => {
-    setShowId(selectedShowId);
-    setShowDetails((state) => !state);
+  const movieDetailsHandler = (selectedShowId: string) => {
+    setMovieId(selectedShowId);
+    setShowMovieDetails((state) => !state);
   };
 
-  const selectedShow =
-    showId && data ? data.filter((show: Show) => show.tmsId === showId) : "";
+  const selectedMovie = moviesShowings ? moviesShowings.filter((movie) => movie.tmsId === movieId) : "";
 
-  let content;
-
-  if (isLoading) content = <LinearProgress />;
-
-  if (error) content = <ErrorMessage message={error.message} />;
-
-  if (data && !!data.length && !showDetails)
-    content = (
-      <>
-        {/* <Hero imageUrl="https://source.unsplash.com/random" /> */}
-
-        <Shows shows={data} showDetailsHandler={showDetailsHandler} />
-      </>
-    );
-
-  if (data && !!data.length && showDetails && selectedShow)
-    content = (
-      <ShowDetails
-        selectedShow={selectedShow}
-        showDetailsHandler={showDetailsHandler}
-      />
-    );
-
-  return <main>{content}</main>;
+   return (
+    <>
+      {isLoading && <LinearProgress />}
+      {moviesShowings && !!moviesShowings.length && !showMovieDetails && (
+        <Shows shows={moviesShowings} showDetailsHandler={movieDetailsHandler} />
+      )}
+      {moviesShowings && !!moviesShowings.length && showMovieDetails && selectedMovie && (
+        <ShowDetails selectedShow={selectedMovie} showDetailsHandler={movieDetailsHandler} />
+      )}
+    </>
+  );
 };

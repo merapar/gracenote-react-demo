@@ -13,6 +13,7 @@ import "./index.css";
 import { ErrorPage } from "./pages/ErrorPage";
 import { AboutPage } from "./pages/About";
 import { LandingPage } from "./pages/LandingPage";
+import ClientProvider from "./state/ClientProvider";
 
 const theme = createTheme({
   palette: {
@@ -68,8 +69,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} fallbackElement={<CircularProgress />} />
+      <ClientProvider>
+        <CssBaseline />
+        <RouterProvider router={router} fallbackElement={<CircularProgress />} />
+      </ClientProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

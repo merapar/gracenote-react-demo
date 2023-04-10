@@ -9,10 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 
-import type { Show } from "./MainContent";
+import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
+
+
 
 interface ShowsDetailsData {
-  shows: Show[];
+  shows: GetMoviesShowingsQueryResponseType;
   showDetailsHandler: Function;
 }
 
@@ -23,7 +25,7 @@ export const Shows = ({ shows, showDetailsHandler }: ShowsDetailsData) => {
       <Grid container spacing={4}>
         {shows &&
           !!shows.length &&
-          shows.map((show: Show) => (
+          shows.map((show) => (
             <Grid item key={show.tmsId} xs={12} sm={6} md={4}>
               <Card
                 sx={{

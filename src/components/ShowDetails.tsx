@@ -8,14 +8,14 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
 
 import { Hero } from "./Hero";
 
-import type { Show } from "./MainContent";
 import { ShowTimes } from "./ShowTimes";
 
 interface ShowDetailsData {
-  selectedShow: Show[];
+  selectedShow: GetMoviesShowingsQueryResponseType;
   showDetailsHandler: Function;
 }
 
@@ -28,7 +28,7 @@ export const ShowDetails = ({
   return (
     <Container maxWidth="md">
       <Grid container pb={5}>
-        {selectedShow.map((show: Show) => (
+        {selectedShow.map((show) => (
           <Grid item key={show.tmsId} xs={12}>
             <Card
               sx={{
