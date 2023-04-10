@@ -1,76 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
-import { CircularProgress, createTheme, ThemeProvider } from "@mui/material";
+import { CircularProgress, ThemeProvider } from "@mui/material";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
+import { theme } from "./App/theme";
+import { routes } from "./App/routes";
 
-import reportWebVitals from "./reportWebVitals";
-
-import App from "./App";
-import "./index.css";
-import { ErrorPage } from "./pages/ErrorPage";
-import { AboutPage } from "./pages/About";
-import { LandingPage } from "./pages/LandingPage";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#4485A8", //TODO investigate why can't use var(--brand....)
-    },
-    secondary: {
-      main: "#EC6434",
-    },
-    background: {
-      default: "var(--brand-color-45)",
-    },
-  },
+const emotionCache = createCache({
+  key: "gracenote-cache",
+  ...(process.env.NODE_ENV === "development" && { stylisPlugins: [] }),
 });
-const URL_LANDING_PAGE = "/";
-const URL_WHATS_ON_TV = "/whats-on-tv";
-const URL_ABOUT = "/about";
-
-export const routesConfig = [
-  { title: "Showings near you", url: URL_LANDING_PAGE },
-  { title: "What's on TV", url: URL_WHATS_ON_TV },
-  { title: "About", url: URL_ABOUT },
-];
-
-const router = createBrowserRouter(
-  [
-    {
-      element: <App />,
-      errorElement: <ErrorPage />,
-
-      children: [
-        {
-          path: URL_LANDING_PAGE,
-          element: <LandingPage />,
-        },
-        {
-          path: URL_WHATS_ON_TV,
-          element: <div>TV</div>,
-        },
-        {
-          path: URL_ABOUT,
-          element: <AboutPage />,
-        },
-      ],
-    },
-  ],
-  { basename: process.env.PUBLIC_URL }
-);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} fallbackElement={<CircularProgress />} />
-    </ThemeProvider>
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RouterProvider
+          router={routes}
+          fallbackElement={<CircularProgress />}
+        />
+      </ThemeProvider>
+    </CacheProvider>
   </React.StrictMode>
 );
 

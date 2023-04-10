@@ -6,6 +6,7 @@ import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { getTodayDateISO } from "../utils/getTodaysDateISO";
+import { useLocationSelector } from "../App";
 
 interface FetchData {
   isLoading?: boolean;
@@ -20,17 +21,19 @@ export const LandingPage = () => {
     .REACT_APP_MOVIES_THEATRE_PATH_NAME as string;
 
   const [selectedDate, setSelectedDate] = useState(getTodayDateISO());
-  const [zipcode, setZipcode] = useState(93035);
+  const {
+    locationSelector: { currentZipCode },
+  } = useLocationSelector();
 
   const queryString = useMemo(() => {
     return {
       startDate: selectedDate,
-      zip: zipcode.toString(),
+      zip: currentZipCode.toString(),
       api_key: apiKey,
     };
-  }, [apiKey, selectedDate, zipcode]);
+  }, [apiKey, selectedDate, currentZipCode]);
 
-  const url = zipcode && selectedDate ? baseUrl : "";
+  const url = currentZipCode && selectedDate ? baseUrl : "";
 
   const { isLoading, data, error }: FetchData = useFetchData(
     url,
@@ -40,11 +43,7 @@ export const LandingPage = () => {
 
   return (
     <>
-      <Navigation
-        zipcode={zipcode}
-        setZipcode={setZipcode}
-        setSelectedDate={setSelectedDate}
-      />
+      <Navigation setSelectedDate={setSelectedDate} />
 
       <MainContent isLoading={isLoading} data={data} error={error} />
 

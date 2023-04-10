@@ -1,6 +1,7 @@
-import { Button } from "@mui/material";
+import { Button, ListItem } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-const Locations = {
+export const Locations = {
   // East Meadow,
   "New York": 11554,
 
@@ -8,11 +9,11 @@ const Locations = {
   California: 93035,
 };
 
-type SetZipCodeShape = (zipCode: number) => void;
+export type SetZipCodeShape = (zipCode: number) => void;
 
 interface LocationParams {
-  zipcode: number;
-  setZipcode: SetZipCodeShape;
+  currentZipCode: number;
+  setZipCode: SetZipCodeShape;
 }
 
 type RenderButtonParams = {
@@ -28,37 +29,45 @@ const renderButton = ({
   setZipCode,
   currentZipCode,
 }: RenderButtonParams) => {
+  const showArrow = currentZipCode === zipCode;
   return (
-    <Button
-      style={{ margin: "1rem" }}
-      onClick={() => {
-        setZipCode(zipCode);
+    <ListItem
+      disablePadding
+      sx={{
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
       }}
-      size={"large"}
       key={state}
-      {...(currentZipCode === zipCode
-        ? { variant: "outlined", color: "secondary" }
-        : { variant: "contained" })}
     >
-      {state}
-    </Button>
+      {showArrow && <NavigateNextIcon sx={{ transform: "translateX(3px)" }} />}
+      <Button
+        style={{
+          margin: `.8rem 1.5rem .8rem ${showArrow ? 0 : "1.5rem"}`,
+          width: "8rem",
+        }}
+        onClick={() => {
+          setZipCode(zipCode);
+        }}
+        size={"large"}
+        key={state}
+        variant={"contained"}
+      >
+        {state}
+      </Button>
+    </ListItem>
   );
 };
 
 export const LocationSelector = ({
-  zipcode: currentZipCode,
-  setZipcode: setZipCode,
+  currentZipCode,
+  setZipCode,
 }: LocationParams) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <>
       {Object.entries(Locations).map(([state, zipCode]) =>
         renderButton({ state, zipCode, setZipCode, currentZipCode })
       )}
-    </div>
+    </>
   );
 };

@@ -9,11 +9,22 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { KeyboardEvent, MouseEvent, useState } from "react";
-import { renderDrawerMenu, ToggleDrawer } from "./App/renderDrawerMenu";
+import { ScreensMenu, ToggleDrawer } from "./App/ScreensMenu";
 import { horizontalGradient } from "./App/gradients";
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
+import { Locations } from "./components/LocationSelector";
 
+type ContextType = {
+  locationSelector: {
+    currentZipCode: number;
+  };
+};
+export const useLocationSelector = () => {
+  return useOutletContext<ContextType>();
+};
 function App() {
+  const [currentZipCode, setZipCode] = useState(Locations.California);
+
   const [state, setState] = useState({ open: false });
 
   const toggleDrawer: ToggleDrawer =
@@ -30,7 +41,11 @@ function App() {
     };
 
   return (
-    <Container sx={{ display: "flex", flexDirection: "column" }}>
+    <Container
+      disableGutters
+      maxWidth={false}
+      sx={{ display: "flex", flexDirection: "column" }}
+    >
       <AppBar
         sx={{
           background: horizontalGradient,
@@ -53,7 +68,7 @@ function App() {
             open={state.open}
             onClose={toggleDrawer(false)}
           >
-            {renderDrawerMenu(toggleDrawer)}
+            <ScreensMenu {...{ toggleDrawer, setZipCode, currentZipCode }} />
           </Drawer>
           <Typography variant={"h6"} component={"div"} sx={{ flexGrow: 1 }}>
             GRACENOTE
@@ -61,7 +76,13 @@ function App() {
         </Toolbar>
       </AppBar>
       <Box>
-        <Outlet />
+        <Outlet
+          context={{
+            locationSelector: {
+              currentZipCode,
+            },
+          }}
+        />
       </Box>
     </Container>
   );
