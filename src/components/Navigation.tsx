@@ -1,13 +1,14 @@
 import { DateSelector } from "./DateSelector";
 import { LocationSelector } from "./LocationSelector";
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import { Box } from "./Box";
+import { Dayjs } from "dayjs";
 
 type Props = {
-  setSelectedDate: any;
-  currentZipCode: any;
-  setZipCode: any;
-  selectedDate: string;
+  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
+  currentZipCode: number;
+  setZipCode: Dispatch<SetStateAction<number>>;
+  selectedDate: Dayjs | null;
 };
 
 export const Navigation: FC<Props> = ({
@@ -16,6 +17,7 @@ export const Navigation: FC<Props> = ({
   setZipCode,
   selectedDate,
 }) => {
+  console.log({ selectedDate });
   return (
     <Box flexDirection={"row"} justifyContent={"center"}>
       <DateSelector
