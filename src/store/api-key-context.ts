@@ -13,8 +13,9 @@ export function resetApiKey() {
   apiKey = "";
 }
 
-export const ApiKeyContext = createContext({
-  apiKey,
-  setApiKey,
-  resetApiKey,
-});
+export const getApiKeyContext = () =>
+  createContext({
+    apiKey,
+    setApiKey,
+    resetApiKey,
+  });

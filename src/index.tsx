@@ -20,7 +20,7 @@ import { AboutPage } from "./pages/About";
 import { LandingPage } from "./pages/LandingPage";
 import { APIKeyPage } from "./pages/APIKeyPage";
 import {
-  ApiKeyContext,
+  getApiKeyContext,
   apiKey,
   setApiKey,
   resetApiKey,
@@ -55,7 +55,7 @@ export const routesConfig = [
 function RequireApiKey({ children }: { children: JSX.Element }) {
   const location = useLocation();
 
-  const ApiKeyContextObj = useContext(ApiKeyContext);
+  const ApiKeyContextObj = useContext(getApiKeyContext());
 
   if (!ApiKeyContextObj.apiKey) {
     return (
@@ -99,6 +99,8 @@ const router = createBrowserRouter(
   ],
   { basename: process.env.PUBLIC_URL }
 );
+
+const ApiKeyContext = getApiKeyContext();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
