@@ -1,13 +1,11 @@
 import { useContext, useMemo, useState } from "react";
-
 import { useFetchData } from "../hooks/useFetchData";
-
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
-import { getTodayDateISO } from "../utils/getTodaysDateISO";
 import { useLocationSelector } from "../App";
 import { getApiKeyContext } from "../store/api-key-context";
+import dayjs, { Dayjs } from "dayjs";
 
 interface FetchData {
   isLoading?: boolean;
@@ -22,14 +20,14 @@ export const LandingPage = () => {
   const moviesTheatrePathName = process.env
     .REACT_APP_MOVIES_THEATRE_PATH_NAME as string;
 
-  const [selectedDate, setSelectedDate] = useState(getTodayDateISO());
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
 
   const queryString = useMemo(() => {
     return {
-      startDate: selectedDate,
+      startDate: selectedDate?.format("YYYY-MM-DD") ?? "",
       zip: currentZipCode.toString(),
       api_key: ApiKeyContextObj.apiKey,
     };
@@ -43,7 +41,6 @@ export const LandingPage = () => {
     moviesTheatrePathName,
     queryString
   );
-
   return (
     <>
       <Navigation
