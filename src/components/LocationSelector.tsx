@@ -1,19 +1,23 @@
-import { Button } from "@mui/material";
+import { Button, styled } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { Box } from "./Box";
+import { Label } from "./Label";
+import { FC } from "react";
 
-const Locations = {
+export const Locations = {
   // East Meadow,
   "New York": 11554,
 
   // Oxnard,
-  California: 93035,
+  "Los Angeles": 90210,
 };
 
-type SetZipCodeShape = (zipCode: number) => void;
+export type SetZipCodeShape = (zipCode: number) => void;
 
-interface LocationParams {
-  zipcode: number;
-  setZipcode: SetZipCodeShape;
-}
+type Props = {
+  currentZipCode: number;
+  setZipCode: SetZipCodeShape;
+};
 
 type RenderButtonParams = {
   state: string;
@@ -22,43 +26,48 @@ type RenderButtonParams = {
   setZipCode: SetZipCodeShape;
 };
 
+const StateSelectionArrow = styled(NavigateNextIcon)(({ theme }) => ({
+  color: theme.palette.background.paper,
+  transform: "translateX(3px)",
+}));
+
 const renderButton = ({
   state,
   zipCode,
   setZipCode,
   currentZipCode,
 }: RenderButtonParams) => {
+  const showArrow = currentZipCode === zipCode;
   return (
-    <Button
-      style={{ margin: "1rem" }}
-      onClick={() => {
-        setZipCode(zipCode);
-      }}
-      size={"large"}
-      key={state}
-      {...(currentZipCode === zipCode
-        ? { variant: "outlined", color: "secondary" }
-        : { variant: "contained" })}
-    >
-      {state}
-    </Button>
+    <Box flexDirection={"row"} key={state} alignItems={"center"}>
+      {showArrow && <StateSelectionArrow />}
+      <Button
+        style={{
+          margin: `.8rem .5rem .8rem ${showArrow ? 0 : "1.5rem"}`,
+          width: "9rem",
+        }}
+        onClick={() => {
+          setZipCode(zipCode);
+        }}
+        size={"large"}
+        key={state}
+        variant={"contained"}
+      >
+        {state}
+      </Button>
+    </Box>
   );
 };
 
-export const LocationSelector = ({
-  zipcode: currentZipCode,
-  setZipcode: setZipCode,
-}: LocationParams) => {
+export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <Box flexDirection={"row"}>
+      <Label variant="h4">
+        <span>Choose location</span>
+      </Label>
       {Object.entries(Locations).map(([state, zipCode]) =>
         renderButton({ state, zipCode, setZipCode, currentZipCode })
       )}
-    </div>
+    </Box>
   );
 };

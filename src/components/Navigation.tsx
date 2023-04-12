@@ -1,21 +1,32 @@
 import { DateSelector } from "./DateSelector";
 import { LocationSelector } from "./LocationSelector";
+import { FC } from "react";
+import { Box } from "./Box";
 
-interface NavigationData {
-  zipcode: any;
-  setZipcode: any;
+type Props = {
   setSelectedDate: any;
-}
+  currentZipCode: any;
+  setZipCode: any;
+  selectedDate: string;
+};
 
-export const Navigation = ({
-  zipcode,
-  setZipcode,
+export const Navigation: FC<Props> = ({
   setSelectedDate,
-}: NavigationData) => {
+  currentZipCode,
+  setZipCode,
+  selectedDate,
+}) => {
   return (
-    <>
-      <LocationSelector zipcode={zipcode} setZipcode={setZipcode} />
-      <DateSelector setSelectedDate={setSelectedDate} />
-    </>
+    <Box flexDirection={"row"} justifyContent={"center"}>
+      <DateSelector
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+      />
+      <div style={{ width: "4rem" }}></div>
+      <LocationSelector
+        currentZipCode={currentZipCode}
+        setZipCode={setZipCode}
+      />
+    </Box>
   );
 };

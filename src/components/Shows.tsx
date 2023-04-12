@@ -19,12 +19,12 @@ interface ShowsDetailsData {
 export const Shows = ({ shows, showDetailsHandler }: ShowsDetailsData) => {
   const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
   return (
-    <Container sx={{ py: 8 }} maxWidth="md">
+    <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
         {shows &&
           !!shows.length &&
           shows.map((show: Show) => (
-            <Grid item key={show.tmsId} xs={12} sm={6} md={4}>
+            <Grid item key={show.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
               <Card
                 sx={{
                   height: "100%",
