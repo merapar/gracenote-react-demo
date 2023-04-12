@@ -17,7 +17,6 @@ export const Navigation: FC<Props> = ({
   setZipCode,
   selectedDate,
 }) => {
-  console.log({ selectedDate });
   return (
     <Box flexDirection={"row"} justifyContent={"center"}>
       <DateSelector

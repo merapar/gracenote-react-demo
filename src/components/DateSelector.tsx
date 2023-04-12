@@ -51,7 +51,6 @@ export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
           }}
           onChange={(value) => {
             setSelectedDate(value);
-            console.log("onChange");
           }}
         />
       </ThemeProvider>
