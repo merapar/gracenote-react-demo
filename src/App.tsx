@@ -84,7 +84,7 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box>
+      <Box pt={3}>
         <Outlet
           context={{
             locationSelector: {

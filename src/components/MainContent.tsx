@@ -57,6 +57,8 @@ export const MainContent = ({ isLoading, data, error }: MainContentData) => {
 
   if (error) content = <ErrorMessage message={error.message} />;
 
+  if (!isLoading && !data && !error) content = <div>NO DATA IS HERE</div>;
+
   if (data && !!data.length && !showDetails)
     content = (
       <>
