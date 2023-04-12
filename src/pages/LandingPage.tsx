@@ -35,8 +35,8 @@ export const LandingPage = () => {
     };
   }, [ApiKeyContextObj.apiKey, selectedDate, currentZipCode]);
 
-  const url = currentZipCode && selectedDate ? baseUrl : "";
-  const url = ApiKeyContextObj.apiKey && zipcode && selectedDate ? baseUrl : "";
+  const url =
+    ApiKeyContextObj.apiKey && currentZipCode && selectedDate ? baseUrl : "";
 
   const { isLoading, data, error }: FetchData = useFetchData(
     url,
