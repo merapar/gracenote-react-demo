@@ -8,10 +8,10 @@ import {
 } from "@mui/material";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ApiKeyContext } from "../store/api-key-context";
+import { getApiKeyContext } from "../store/api-key-context";
 
 export const APIKeyPage = () => {
-  const ApiKeyContextObj = useContext(ApiKeyContext);
+  const ApiKeyContextObj = useContext(getApiKeyContext());
 
   const [apiKeyValue, setApiKeyValue] = useState(ApiKeyContextObj.apiKey);
 
@@ -28,6 +28,7 @@ export const APIKeyPage = () => {
 
   const resetClickHandler = () => {
     ApiKeyContextObj.resetApiKey();
+    setApiKeyValue("");
   };
 
   const buttonClickHandler = () => {
@@ -62,7 +63,7 @@ export const APIKeyPage = () => {
               Reset
             </Button>
             <Button
-              disabled={apiKeyValue.length >= 5}
+              disabled={apiKeyValue.length <= 5}
               variant="contained"
               onClick={buttonClickHandler}
             >
