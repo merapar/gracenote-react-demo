@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gracenote-react-demo/static/css/main.2b77a920.css",
-    "main.js": "/gracenote-react-demo/static/js/main.9c2859fc.js",
+    "main.css": "/gracenote-react-demo/static/css/main.15b5a374.css",
+    "main.js": "/gracenote-react-demo/static/js/main.3707bba0.js",
     "static/js/787.91ea5d09.chunk.js": "/gracenote-react-demo/static/js/787.91ea5d09.chunk.js",
     "static/media/roboto-all-700-normal.woff": "/gracenote-react-demo/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/gracenote-react-demo/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -20,12 +20,12 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/gracenote-react-demo/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/roboto-greek-ext-700-normal.woff2": "/gracenote-react-demo/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/gracenote-react-demo/index.html",
-    "main.2b77a920.css.map": "/gracenote-react-demo/static/css/main.2b77a920.css.map",
-    "main.9c2859fc.js.map": "/gracenote-react-demo/static/js/main.9c2859fc.js.map",
+    "main.15b5a374.css.map": "/gracenote-react-demo/static/css/main.15b5a374.css.map",
+    "main.3707bba0.js.map": "/gracenote-react-demo/static/js/main.3707bba0.js.map",
     "787.91ea5d09.chunk.js.map": "/gracenote-react-demo/static/js/787.91ea5d09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b77a920.css",
-    "static/js/main.9c2859fc.js"
+    "static/css/main.15b5a374.css",
+    "static/js/main.3707bba0.js"
   ]
 }
