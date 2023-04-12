@@ -15,7 +15,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
   apiKey,
-  ApiKeyContext,
+  getApiKeyContext,
   resetApiKey,
   setApiKey,
 } from "./store/api-key-context";
@@ -24,6 +24,8 @@ const emotionCache = createCache({
   key: "gracenote-cache",
   ...(process.env.NODE_ENV === "development" && { stylisPlugins: [] }),
 });
+
+const ApiKeyContext = getApiKeyContext();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

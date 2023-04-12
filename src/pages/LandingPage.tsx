@@ -7,7 +7,7 @@ import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { getTodayDateISO } from "../utils/getTodaysDateISO";
 import { useLocationSelector } from "../App";
-import { ApiKeyContext } from "../store/api-key-context";
+import { getApiKeyContext } from "../store/api-key-context";
 
 interface FetchData {
   isLoading?: boolean;
@@ -16,7 +16,7 @@ interface FetchData {
 }
 
 export const LandingPage = () => {
-  const ApiKeyContextObj = useContext(ApiKeyContext);
+  const ApiKeyContextObj = useContext(getApiKeyContext());
 
   const baseUrl = process.env.REACT_APP_BASE_URL as string;
   const moviesTheatrePathName = process.env
