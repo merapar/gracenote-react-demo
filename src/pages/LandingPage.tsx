@@ -22,7 +22,7 @@ export const LandingPage = () => {
 
   const [selectedDate, setSelectedDate] = useState(getTodayDateISO());
   const {
-    locationSelector: { currentZipCode },
+    locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
 
   const queryString = useMemo(() => {
@@ -43,7 +43,12 @@ export const LandingPage = () => {
 
   return (
     <>
-      <Navigation setSelectedDate={setSelectedDate} />
+      <Navigation
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        setZipCode={setZipCode}
+        currentZipCode={currentZipCode}
+      />
 
       <MainContent isLoading={isLoading} data={data} error={error} />
 

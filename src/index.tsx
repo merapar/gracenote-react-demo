@@ -11,6 +11,8 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
 import { theme } from "./App/theme";
 import { routes } from "./App/routes";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const emotionCache = createCache({
   key: "gracenote-cache",
@@ -22,15 +24,17 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <RouterProvider
-          router={routes}
-          fallbackElement={<CircularProgress />}
-        />
-      </ThemeProvider>
-    </CacheProvider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <RouterProvider
+            router={routes}
+            fallbackElement={<CircularProgress />}
+          />
+        </ThemeProvider>
+      </CacheProvider>
+    </LocalizationProvider>
   </React.StrictMode>
 );
 

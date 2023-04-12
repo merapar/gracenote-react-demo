@@ -9,10 +9,14 @@ const URL_LANDING_PAGE = "/";
 const URL_WHATS_ON_TV = "/whats-on-tv";
 const URL_ABOUT = "/about";
 export const routesConfig = [
-  { title: "SHOWINGS", url: URL_LANDING_PAGE },
-  { title: "ON TV", url: URL_WHATS_ON_TV },
-  { title: "ABOUT", url: URL_ABOUT },
+  { title: "Movies in the Cinema", url: URL_LANDING_PAGE },
+  { title: "Movies on TV", url: URL_WHATS_ON_TV },
+  { title: "About", url: URL_ABOUT },
 ];
+export const getRouteTitleByPath = (path: string) => {
+  return routesConfig.find((value) => value.url === path)?.title;
+};
+
 export const routes = createBrowserRouter(
   [
     {

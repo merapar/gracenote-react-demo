@@ -8,25 +8,34 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { KeyboardEvent, MouseEvent, useState } from "react";
+import {
+  Dispatch,
+  KeyboardEvent,
+  MouseEvent,
+  SetStateAction,
+  useState,
+} from "react";
 import { ScreensMenu, ToggleDrawer } from "./App/ScreensMenu";
 import { horizontalGradient } from "./App/gradients";
-import { Outlet, useOutletContext } from "react-router-dom";
+import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import { Locations } from "./components/LocationSelector";
+import { getRouteTitleByPath } from "./App/routes";
 
 type ContextType = {
   locationSelector: {
     currentZipCode: number;
+    setZipCode: Dispatch<SetStateAction<number>>;
   };
 };
 export const useLocationSelector = () => {
   return useOutletContext<ContextType>();
 };
 function App() {
-  const [currentZipCode, setZipCode] = useState(Locations.California);
+  const [currentZipCode, setZipCode] = useState(Locations["New York"]);
 
-  const [state, setState] = useState({ open: false });
-
+  const [drawerState, setDrawerState] = useState({ open: false });
+  const currentRoute = useLocation();
+  const routeTitle = getRouteTitleByPath(currentRoute.pathname);
   const toggleDrawer: ToggleDrawer =
     (open: boolean) => (event: KeyboardEvent | MouseEvent) => {
       if (
@@ -37,7 +46,7 @@ function App() {
         return;
       }
 
-      setState({ open });
+      setDrawerState({ open });
     };
 
   return (
@@ -65,13 +74,13 @@ function App() {
           </IconButton>
           <Drawer
             anchor={"left"}
-            open={state.open}
+            open={drawerState.open}
             onClose={toggleDrawer(false)}
           >
-            <ScreensMenu {...{ toggleDrawer, setZipCode, currentZipCode }} />
+            <ScreensMenu {...{ toggleDrawer }} />
           </Drawer>
           <Typography variant={"h6"} component={"div"} sx={{ flexGrow: 1 }}>
-            GRACENOTE
+            Gracenote API Demo {">>"} {routeTitle}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -80,6 +89,7 @@ function App() {
           context={{
             locationSelector: {
               currentZipCode,
+              setZipCode,
             },
           }}
         />

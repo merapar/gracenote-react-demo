@@ -7,14 +7,9 @@ import {
   styled,
   Link as MuiLink,
 } from "@mui/material";
-import { KeyboardEvent, MouseEvent } from "react";
+import { FC, KeyboardEvent, MouseEvent } from "react";
 import { verticalGradient } from "./gradients";
 import { Link, useLocation } from "react-router-dom";
-import {
-  LocationSelector,
-  SetZipCodeShape,
-} from "../components/LocationSelector";
-import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { routesConfig } from "./routes";
 
 const ListItemText = styled(MuiListItemText)(({ theme }) => ({
@@ -36,17 +31,11 @@ export type ToggleDrawer = (
   open: boolean
 ) => (event: KeyboardEvent | MouseEvent) => void;
 
-type RenderDrawerMenuParams = {
+type Props = {
   toggleDrawer: ToggleDrawer;
-  currentZipCode: number;
-  setZipCode: SetZipCodeShape;
 };
 
-export const ScreensMenu = ({
-  toggleDrawer,
-  setZipCode,
-  currentZipCode,
-}: RenderDrawerMenuParams) => {
+export const ScreensMenu: FC<Props> = ({ toggleDrawer }) => {
   const closeDrawer = toggleDrawer(false);
   const closeDrawerDelayed = (e: KeyboardEvent | MouseEvent) => {
     setTimeout(closeDrawer, 250, e);
@@ -65,21 +54,6 @@ export const ScreensMenu = ({
       }}
     >
       <List>
-        <ListItem
-          disablePadding
-          onClick={(e) => e.stopPropagation()}
-          sx={{ userSelect: "none", padding: "0 1rem" }}
-        >
-          <ListItemText
-            sx={{ textAlign: "right", fontSize: "1.1rem", margin: ".3rem 0" }}
-          >
-            Your Location <MyLocationIcon sx={{ verticalAlign: "top" }} />
-          </ListItemText>
-        </ListItem>
-        <LocationSelector
-          currentZipCode={currentZipCode}
-          setZipCode={setZipCode}
-        />
         {routesConfig.map(({ title, url }, index) => {
           return (
             <ListItem key={title}>
