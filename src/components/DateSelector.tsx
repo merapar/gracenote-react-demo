@@ -20,6 +20,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          ".MuiButtonBase-root": {
+            color: "#fff",
+          },
+        },
+      },
+    },
   },
 });
 

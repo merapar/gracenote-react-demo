@@ -13,6 +13,24 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          "&.Mui-checked": { color: "#fff" },
+        },
+        checked: {
+          color: "#fff",
+        },
+      },
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
