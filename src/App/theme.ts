@@ -26,9 +26,6 @@ export const theme = createTheme({
           color: "#fff",
           "&.Mui-checked": { color: "#fff" },
         },
-        checked: {
-          color: "#fff",
-        },
       },
     },
     MuiListItemButton: {
