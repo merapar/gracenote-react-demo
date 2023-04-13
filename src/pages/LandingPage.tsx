@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from "react";
+import { FC, useContext, useMemo, useState } from "react";
 import { useFetchData } from "../hooks/useFetchData";
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
@@ -13,7 +13,7 @@ interface FetchData {
   error?: Error;
 }
 
-export const LandingPage = () => {
+export const LandingPage: FC<{}> = () => {
   const ApiKeyContextObj = useContext(getApiKeyContext());
 
   const baseUrl = process.env.REACT_APP_BASE_URL as string;

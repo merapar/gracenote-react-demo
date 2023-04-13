@@ -6,6 +6,7 @@ import { AboutPage } from "../pages/About";
 import React from "react";
 import { RequireApiKey } from "../components/RequireApiKey";
 import { APIKeyPage } from "../pages/APIKeyPage";
+import { MoviesOnTv } from "../pages/MoviesOnTv";
 
 const URL_LANDING_PAGE = "/";
 const URL_WHATS_ON_TV = "/whats-on-tv";
@@ -38,7 +39,11 @@ export const routes = createBrowserRouter(
         },
         {
           path: URL_WHATS_ON_TV,
-          element: <div>TV</div>,
+          element: (
+            <RequireApiKey>
+              <MoviesOnTv />
+            </RequireApiKey>
+          ),
         },
         {
           path: URL_ABOUT,
