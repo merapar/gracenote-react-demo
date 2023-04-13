@@ -1,11 +1,11 @@
 import { useContext, useMemo, useState } from "react";
+import dayjs, { Dayjs } from "dayjs";
+
 import { useFetchData } from "../hooks/useFetchData";
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
-import { Footer } from "../components/Footer";
 import { useLocationSelector } from "../App";
 import { getApiKeyContext } from "../store/api-key-context";
-import dayjs, { Dayjs } from "dayjs";
 
 interface FetchData {
   isLoading?: boolean;
@@ -51,8 +51,6 @@ export const LandingPage = () => {
       />
 
       <MainContent isLoading={isLoading} data={data} error={error} />
-
-      <Footer />
     </>
   );
 };

@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import App from "../App";
 import { ErrorPage } from "../pages/ErrorPage";
 import { LandingPage } from "../pages/LandingPage";
 import { AboutPage } from "../pages/About";
-import React from "react";
 import { RequireApiKey } from "../components/RequireApiKey";
 import { APIKeyPage } from "../pages/APIKeyPage";
 
@@ -11,6 +11,7 @@ const URL_LANDING_PAGE = "/";
 const URL_WHATS_ON_TV = "/whats-on-tv";
 const URL_ABOUT = "/about";
 export const URL_API_KEY_PAGE = "/api-key";
+
 export const routesConfig = [
   { title: "Movies in the Cinema", url: URL_LANDING_PAGE },
   { title: "Movies on TV", url: URL_WHATS_ON_TV },
