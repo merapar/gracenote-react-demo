@@ -3,29 +3,25 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CircularProgress, ThemeProvider } from "@mui/material";
-import reportWebVitals from "./reportWebVitals";
-import "./index.css";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
+
+import reportWebVitals from "./reportWebVitals";
+
+import "./index.css";
+
 import { theme } from "./App/theme";
 import { routes } from "./App/routes";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import {
-  apiKey,
-  getApiKeyContext,
-  resetApiKey,
-  setApiKey,
-} from "./store/api-key-context";
+import { ApiKeyContextProvider } from "./store/ApiKeyContext";
 
 const emotionCache = createCache({
   key: "gracenote-cache",
   ...(process.env.NODE_ENV === "development" && { stylisPlugins: [] }),
 });
-
-const ApiKeyContext = getApiKeyContext();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -36,18 +32,12 @@ root.render(
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <ApiKeyContext.Provider
-            value={{
-              apiKey,
-              setApiKey,
-              resetApiKey,
-            }}
-          >
+          <ApiKeyContextProvider>
             <RouterProvider
               router={routes}
               fallbackElement={<CircularProgress />}
             />
-          </ApiKeyContext.Provider>
+          </ApiKeyContextProvider>
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>

@@ -13,6 +13,21 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          "&.Mui-checked": { color: "#fff" },
+        },
+      },
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
@@ -28,6 +43,27 @@ export const theme = createTheme({
           },
           "&:hover": {
             backgroundColor: "transparent",
+          },
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          background: "none",
+          color: "#fff",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          ".MuiFormLabel-root": {
+            color: "#fff",
+          },
+          ".MuiInputBase-root": {
+            color: "#fff",
           },
         },
       },

@@ -3,6 +3,7 @@ import { LocationSelector } from "./LocationSelector";
 import { Dispatch, FC, SetStateAction } from "react";
 import { Box } from "./Box";
 import { Dayjs } from "dayjs";
+import { styled } from "@mui/material";
 
 type Props = {
   setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
@@ -11,6 +12,19 @@ type Props = {
   selectedDate: Dayjs | null;
 };
 
+const Container = styled(Box)(({ theme }) => {
+  return {
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+      justifyContent: "center",
+    },
+  };
+});
+
 export const Navigation: FC<Props> = ({
   setSelectedDate,
   currentZipCode,
@@ -18,16 +32,16 @@ export const Navigation: FC<Props> = ({
   selectedDate,
 }) => {
   return (
-    <Box flexDirection={"row"} justifyContent={"center"}>
+    <Container>
       <DateSelector
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
       />
-      <div style={{ width: "4rem" }}></div>
+      <div style={{ width: "4rem", height: "1rem" }}></div>
       <LocationSelector
         currentZipCode={currentZipCode}
         setZipCode={setZipCode}
       />
-    </Box>
+    </Container>
   );
 };
