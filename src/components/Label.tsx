@@ -8,4 +8,5 @@ export const Label = styled(Typography)(({ theme }) => ({
   justifyContent: "center",
   color: theme.palette.background.paper,
   padding: theme.spacing(1, 0),
+  textTransform: "capitalize",
 }));

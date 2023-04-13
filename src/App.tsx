@@ -82,7 +82,7 @@ function App() {
             <ScreensMenu {...{ toggleDrawer }} />
           </Drawer>
           <Typography variant={"h6"} component={"div"} sx={{ flexGrow: 1 }}>
-            Gracenote API Demo {">>"} {routeTitle}
+            Gracenote API Demo &ndash; <span>{routeTitle}</span>
           </Typography>
         </Toolbar>
       </AppBar>
