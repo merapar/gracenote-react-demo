@@ -25,10 +25,11 @@ export const MainContent = ({ isLoading, moviesShowings }: MainContentProps) => 
    return (
     <>
       {isLoading && <LinearProgress />}
-      {moviesShowings && !!moviesShowings.length && !showMovieDetails && (
+      {!isLoading && !moviesShowings  && <b>No movies found for your selected date</b>} {/* TODO: Add a better message */}
+      {!isLoading && moviesShowings && !!moviesShowings.length && !showMovieDetails && (
         <Shows shows={moviesShowings} showDetailsHandler={movieDetailsHandler} />
       )}
-      {moviesShowings && !!moviesShowings.length && showMovieDetails && selectedMovie && (
+      {!isLoading && moviesShowings && !!moviesShowings.length && showMovieDetails && selectedMovie && (
         <ShowDetails selectedShow={selectedMovie} showDetailsHandler={movieDetailsHandler} />
       )}
     </>
