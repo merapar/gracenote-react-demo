@@ -1,5 +1,4 @@
-import { Button, styled } from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { FormControlLabel, Radio } from "@mui/material";
 import { Box } from "./Box";
 import { Label } from "./Label";
 import { FC } from "react";
@@ -26,11 +25,6 @@ type RenderButtonParams = {
   setZipCode: SetZipCodeShape;
 };
 
-const StateSelectionArrow = styled(NavigateNextIcon)(({ theme }) => ({
-  color: theme.palette.background.paper,
-  transform: "translateX(3px)",
-}));
-
 const renderButton = ({
   state,
   zipCode,
@@ -40,21 +34,18 @@ const renderButton = ({
   const showArrow = currentZipCode === zipCode;
   return (
     <Box flexDirection={"row"} key={state} alignItems={"center"}>
-      {showArrow && <StateSelectionArrow />}
-      <Button
-        style={{
-          margin: `.8rem .5rem .8rem ${showArrow ? 0 : "1.5rem"}`,
-          width: "9rem",
-        }}
-        onClick={() => {
-          setZipCode(zipCode);
-        }}
-        size={"large"}
-        key={state}
-        variant={"contained"}
-      >
-        {state}
-      </Button>
+      <FormControlLabel
+        value={zipCode}
+        control={
+          <Radio
+            onClick={() => {
+              setZipCode(zipCode);
+            }}
+            checked={showArrow}
+          />
+        }
+        label={state}
+      />
     </Box>
   );
 };
@@ -62,7 +53,7 @@ const renderButton = ({
 export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
   return (
     <Box flexDirection={"row"}>
-      <Label variant="h4">
+      <Label variant="h4" sx={{ mr: "1.5rem" }}>
         <span>Choose location</span>
       </Label>
       {Object.entries(Locations).map(([state, zipCode]) =>
