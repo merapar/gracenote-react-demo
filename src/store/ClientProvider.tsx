@@ -1,10 +1,16 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Alert, Snackbar } from "@mui/material";
 import { AxiosError } from "axios";
 
+import { initApi } from "../api";
+
 export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    initApi();
+  }, []);
 
   const queryClient = useMemo(
     () =>
