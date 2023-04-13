@@ -1,3 +1,5 @@
+import { useContext, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -6,14 +8,17 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { getApiKeyContext } from "../store/api-key-context";
+
+import { ApiKeyContext } from "../store/ApiKeyContext";
 
 export const APIKeyPage = () => {
-  const ApiKeyContextObj = useContext(getApiKeyContext());
+  const { apiKeyValue, onSetApiKey, onResetApiKey } = useContext(ApiKeyContext);
 
-  const [apiKeyValue, setApiKeyValue] = useState(ApiKeyContextObj.apiKey);
+  const [apiKey, setApiKey] = useState(apiKeyValue);
+
+  useEffect(() => {
+    setApiKey(apiKeyValue);
+  }, [apiKeyValue]);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,16 +28,16 @@ export const APIKeyPage = () => {
   const updateValueHandler = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setApiKeyValue(event.target.value);
+    setApiKey(event.target.value);
   };
 
   const resetClickHandler = () => {
-    ApiKeyContextObj.resetApiKey();
-    setApiKeyValue("");
+    setApiKey("");
+    onResetApiKey();
   };
 
   const buttonClickHandler = () => {
-    ApiKeyContextObj.setApiKey(apiKeyValue);
+    onSetApiKey(apiKey);
 
     navigate(from, { replace: true });
   };
@@ -53,7 +58,7 @@ export const APIKeyPage = () => {
             fullWidth
             label="API Key"
             onChange={updateValueHandler}
-            value={apiKeyValue}
+            value={apiKey}
             required
           />
         </Grid>
@@ -63,7 +68,7 @@ export const APIKeyPage = () => {
               Reset
             </Button>
             <Button
-              disabled={apiKeyValue.length <= 5}
+              disabled={apiKey.length <= 5}
               variant="contained"
               onClick={buttonClickHandler}
             >
