@@ -16,19 +16,12 @@ import "./index.css";
 
 import { theme } from "./App/theme";
 import { routes } from "./App/routes";
-import {
-  apiKey,
-  getApiKeyContext,
-  resetApiKey,
-  setApiKey,
-} from "./store/api-key-context";
+import { ApiKeyContextProvider } from "./store/ApiKeyContext";
 
 const emotionCache = createCache({
   key: "gracenote-cache",
   ...(process.env.NODE_ENV === "development" && { stylisPlugins: [] }),
 });
-
-const ApiKeyContext = getApiKeyContext();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -39,18 +32,12 @@ root.render(
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <ApiKeyContext.Provider
-            value={{
-              apiKey,
-              setApiKey,
-              resetApiKey,
-            }}
-          >
+          <ApiKeyContextProvider>
             <RouterProvider
               router={routes}
               fallbackElement={<CircularProgress />}
             />
-          </ApiKeyContext.Provider>
+          </ApiKeyContextProvider>
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>
