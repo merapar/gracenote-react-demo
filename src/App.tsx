@@ -1,4 +1,12 @@
 import {
+  Dispatch,
+  KeyboardEvent,
+  MouseEvent,
+  SetStateAction,
+  useState,
+} from "react";
+import { Outlet, useLocation, useOutletContext } from "react-router-dom";
+import {
   AppBar,
   Box,
   Container,
@@ -8,18 +16,12 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {
-  Dispatch,
-  KeyboardEvent,
-  MouseEvent,
-  SetStateAction,
-  useState,
-} from "react";
+
 import { ScreensMenu, ToggleDrawer } from "./App/ScreensMenu";
 import { horizontalGradient } from "./App/gradients";
-import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import { Locations } from "./components/LocationSelector";
 import { getRouteTitleByPath } from "./App/routes";
+import { Footer } from "./components/Footer";
 
 type ContextType = {
   locationSelector: {
@@ -84,7 +86,7 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box pt={3}>
+      <Box pt={3} pb={3}>
         <Outlet
           context={{
             locationSelector: {
@@ -94,6 +96,7 @@ function App() {
           }}
         />
       </Box>
+      <Footer />
     </Container>
   );
 }
