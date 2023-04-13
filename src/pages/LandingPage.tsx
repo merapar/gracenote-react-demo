@@ -4,7 +4,6 @@ import dayjs, { Dayjs } from "dayjs";
 import { useFetchData } from "../hooks/useFetchData";
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
-import { Footer } from "../components/Footer";
 import { useLocationSelector } from "../App";
 import { ApiKeyContext } from "../store/ApiKeyContext";
 
@@ -50,8 +49,6 @@ export const LandingPage = () => {
       />
 
       <MainContent isLoading={isLoading} data={data} error={error} />
-
-      <Footer />
     </>
   );
 };

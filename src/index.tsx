@@ -3,16 +3,19 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CircularProgress, ThemeProvider } from "@mui/material";
-import reportWebVitals from "./reportWebVitals";
-import "./index.css";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
+
+import reportWebVitals from "./reportWebVitals";
+
+import "./index.css";
+
 import { theme } from "./App/theme";
 import { routes } from "./App/routes";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { ApiKeyContextProvider } from "./store/ApiKeyContext";
 
 const emotionCache = createCache({

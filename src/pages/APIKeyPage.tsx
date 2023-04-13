@@ -44,7 +44,7 @@ export const APIKeyPage = () => {
 
   return (
     <Card>
-      <Grid container direction="column" alignItems="center" pt={3} pb={2}>
+      <Grid container direction="column" alignItems="center" p={3}>
         <Grid item>
           <Typography variant="h5" align="center">
             Please provide your API Key here.
