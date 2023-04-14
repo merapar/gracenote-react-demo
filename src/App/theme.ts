@@ -47,5 +47,26 @@ export const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          background: "none",
+          color: "#fff",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          ".MuiFormLabel-root": {
+            color: "#fff",
+          },
+          ".MuiInputBase-root": {
+            color: "#fff",
+          },
+        },
+      },
+    },
   },
 });
