@@ -11,6 +11,10 @@ export const Locations = {
   "Los Angeles": 90210,
 };
 
+export const zipCodeLocationsMap = Object.fromEntries(
+  Object.entries(Locations).map((location) => location.reverse())
+);
+
 export type SetZipCodeShape = (zipCode: number) => void;
 
 type Props = {
