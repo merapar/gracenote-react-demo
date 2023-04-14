@@ -31,14 +31,7 @@ type LineupObj = {
     name: string;
   };
 };
-interface FetchData {
-  isLoading?: boolean;
-  data?: LineupObj[] | undefined;
-  error?: Error;
-}
-const getLineupId = (lineupObjs: LineupObj[]): string[] => {
-  return lineupObjs.map((obj) => obj.lineupId);
-};
+
 const getLineupForCity =
   (cityName: string) =>
   (lineupObjs: LineupObj[]): LineupObj | void => {

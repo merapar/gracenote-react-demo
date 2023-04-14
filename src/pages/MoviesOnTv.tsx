@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { FC, useContext, useMemo, useState } from "react";
 import { ApiKeyContext } from "../store/ApiKeyContext";
 import dayjs, { Dayjs } from "dayjs";
 import { useLocationSelector } from "../App";
