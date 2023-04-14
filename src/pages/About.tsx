@@ -1,6 +1,5 @@
 import { Container, GlobalStyles, Link, Typography } from "@mui/material";
 import { Box } from "../components/Box";
-import { Anchor } from "@mui/icons-material";
 
 const MakreSureTheFooterIsVisible = () => (
   <GlobalStyles
