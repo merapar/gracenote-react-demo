@@ -17,6 +17,7 @@ import "./index.css";
 import { theme } from "./App/theme";
 import { routes } from "./App/routes";
 import { ApiKeyContextProvider } from "./store/ApiKeyContext";
+import { ClientProvider } from "./store/ClientProvider";
 
 const emotionCache = createCache({
   key: "gracenote-cache",
@@ -33,10 +34,12 @@ root.render(
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <ApiKeyContextProvider>
-            <RouterProvider
-              router={routes}
-              fallbackElement={<CircularProgress />}
-            />
+            <ClientProvider>
+              <RouterProvider
+                router={routes}
+                fallbackElement={<CircularProgress />}
+              />
+            </ClientProvider>
           </ApiKeyContextProvider>
         </ThemeProvider>
       </CacheProvider>
