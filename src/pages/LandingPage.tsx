@@ -30,6 +30,8 @@ export const LandingPage: FC<{}> = () => {
     };
   }, [selectedDate, currentZipCode, apiKeyValue]);
 
+  console.log("queryString>>", queryString);
+
   const { isLoading, data }: FetchData = useGetMoviesShowingsQuery(queryString);
 
   return (
