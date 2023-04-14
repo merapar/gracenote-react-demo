@@ -1,22 +1,21 @@
 import { FC, useContext, useMemo, useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
-import { useFetchData } from "../hooks/useFetchData";
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
 import { useLocationSelector } from "../App";
 import { ApiKeyContext } from "../store/ApiKeyContext";
+import {
+  GetMoviesShowingsQueryResponseType,
+  useGetMoviesShowingsQuery,
+} from "../api/useGetMoviesShowingsQuery";
 
 interface FetchData {
   isLoading?: boolean;
-  data?: [] | undefined;
-  error?: Error;
+  data?: GetMoviesShowingsQueryResponseType;
 }
 
 export const LandingPage: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
-  const baseUrl = process.env.REACT_APP_BASE_URL as string;
-  const moviesTheatrePathName = process.env
-    .REACT_APP_MOVIES_THEATRE_PATH_NAME as string;
 
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
@@ -26,18 +25,13 @@ export const LandingPage: FC<{}> = () => {
   const queryString = useMemo(() => {
     return {
       startDate: selectedDate?.format("YYYY-MM-DD") ?? "",
-      zip: currentZipCode.toString(),
+      zip: currentZipCode,
       api_key: apiKeyValue,
     };
   }, [selectedDate, currentZipCode, apiKeyValue]);
 
-  const url = apiKeyValue && currentZipCode && selectedDate ? baseUrl : "";
+  const { isLoading, data }: FetchData = useGetMoviesShowingsQuery(queryString);
 
-  const { isLoading, data, error }: FetchData = useFetchData(
-    url,
-    moviesTheatrePathName,
-    queryString
-  );
   return (
     <>
       <Navigation
@@ -47,7 +41,7 @@ export const LandingPage: FC<{}> = () => {
         currentZipCode={currentZipCode}
       />
 
-      <MainContent isLoading={isLoading} data={data} error={error} />
+      <MainContent isLoading={isLoading} data={data} />
     </>
   );
 };
