@@ -53,6 +53,7 @@ function App() {
 
   return (
     <Container
+      id={"app-container"}
       disableGutters
       maxWidth={false}
       sx={{ display: "flex", flexDirection: "column" }}
@@ -86,7 +87,7 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box pt={3} pb={3}>
+      <Box pt={3} pb={3} id={"app-outlet"}>
         <Outlet
           context={{
             locationSelector: {
