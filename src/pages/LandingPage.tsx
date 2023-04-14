@@ -1,6 +1,5 @@
-import { useContext, useMemo, useState } from "react";
+import { FC, useContext, useMemo, useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
-
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
 import { useLocationSelector } from "../App";
@@ -15,7 +14,7 @@ interface FetchData {
   data?: GetMoviesShowingsQueryResponseType;
 }
 
-export const LandingPage = () => {
+export const LandingPage: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
 
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());

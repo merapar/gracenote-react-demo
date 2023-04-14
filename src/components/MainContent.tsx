@@ -30,7 +30,7 @@ export interface Show {
   title: string;
   shortDescription: string;
   longDescription: string;
-  showtimes: ShowTimesData;
+  showtimes: TimeAndLocationData[];
 }
 
 // interface MainContentData {
