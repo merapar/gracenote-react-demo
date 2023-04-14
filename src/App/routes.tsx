@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 import App from "../App";
 import { ErrorPage } from "../pages/ErrorPage";
@@ -23,39 +23,36 @@ export const getRouteTitleByPath = (path: string) => {
   return routesConfig.find((value) => value.url === path)?.title;
 };
 
-export const routes = createBrowserRouter(
-  [
-    {
-      element: <App />,
-      errorElement: <ErrorPage />,
+export const routes = createHashRouter([
+  {
+    element: <App />,
+    errorElement: <ErrorPage />,
 
-      children: [
-        {
-          path: URL_LANDING_PAGE,
-          element: (
-            <RequireApiKey>
-              <LandingPage />
-            </RequireApiKey>
-          ),
-        },
-        {
-          path: URL_WHATS_ON_TV,
-          element: (
-            <RequireApiKey>
-              <MoviesOnTv />
-            </RequireApiKey>
-          ),
-        },
-        {
-          path: URL_ABOUT,
-          element: <AboutPage />,
-        },
-        {
-          path: URL_API_KEY_PAGE,
-          element: <APIKeyPage />,
-        },
-      ],
-    },
-  ],
-  { basename: process.env.PUBLIC_URL }
-);
+    children: [
+      {
+        path: URL_LANDING_PAGE,
+        element: (
+          <RequireApiKey>
+            <LandingPage />
+          </RequireApiKey>
+        ),
+      },
+      {
+        path: URL_WHATS_ON_TV,
+        element: (
+          <RequireApiKey>
+            <MoviesOnTv />
+          </RequireApiKey>
+        ),
+      },
+      {
+        path: URL_ABOUT,
+        element: <AboutPage />,
+      },
+      {
+        path: URL_API_KEY_PAGE,
+        element: <APIKeyPage />,
+      },
+    ],
+  },
+]);
