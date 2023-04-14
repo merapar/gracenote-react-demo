@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { LinearProgress } from "@mui/material";
 
-import { ErrorMessage } from "./ErrorMessage";
 import { Shows } from "./Shows";
 import { ShowDetails } from "./ShowDetails";
+// import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
 // import { Hero } from "./Hero";
 
 interface TheatreData {
@@ -33,13 +33,17 @@ export interface Show {
   showtimes: ShowTimesData;
 }
 
-interface MainContentData {
-  isLoading: boolean | undefined;
-  data: Show[] | undefined;
-  error: Error | undefined;
-}
+// interface MainContentData {
+//   isLoading: boolean | undefined;
+//   data: Show[] | undefined;
+// }
 
-export const MainContent = ({ isLoading, data, error }: MainContentData) => {
+// interface FetchData {
+//   isLoading: boolean;
+//   data: GetMoviesShowingsQueryResponseType;
+// }
+
+export const MainContent = ({ isLoading, data }: any) => {
   const [showDetails, setShowDetails] = useState(false);
   const [showId, setShowId] = useState<string>("");
 
@@ -55,9 +59,7 @@ export const MainContent = ({ isLoading, data, error }: MainContentData) => {
 
   if (isLoading) content = <LinearProgress />;
 
-  if (error) content = <ErrorMessage message={error.message} />;
-
-  if (!isLoading && !data && !error) content = <div>NO DATA IS HERE</div>;
+  if (!isLoading && !data) content = <div>NO DATA IS HERE</div>;
 
   if (data && !!data.length && !showDetails)
     content = (
