@@ -47,6 +47,5 @@ const getMoviesShowings = (
   },
 });
 
-export const useGetMoviesShowingsQuery = (params: MoviesShowingsParams) => {
-  return useQuery(getMoviesShowings(params));
-};
+export const useGetMoviesShowingsQuery = (params: MoviesShowingsParams) =>
+  useQuery(getMoviesShowings(params));
