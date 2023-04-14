@@ -124,7 +124,7 @@ export const useGetMoviesOnTvHook = <T = unknown>(
     fetchData();
 
     return () => abortController.abort();
-  }, [baseUrl, options, queryString]);
+  }, [options, queryString]);
 
   return fetchDataState;
 };
