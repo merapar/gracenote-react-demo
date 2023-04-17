@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router-dom";
 
 import App from "../App";
 import { ErrorPage } from "../pages/ErrorPage";
-import { LandingPage } from "../pages/LandingPage";
+import { MoviesOnCinema } from "../pages/MoviesOnCinema";
 import { AboutPage } from "../pages/About";
 import { RequireApiKey } from "../components/RequireApiKey";
 import { APIKeyPage } from "../pages/APIKeyPage";
@@ -33,7 +33,7 @@ export const routes = createHashRouter([
         path: URL_LANDING_PAGE,
         element: (
           <RequireApiKey>
-            <LandingPage />
+            <MoviesOnCinema />
           </RequireApiKey>
         ),
       },

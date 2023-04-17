@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { LinearProgress } from "@mui/material";
 
-import { Shows } from "./Shows";
+import { ContentGallery } from "./ContentGallery";
 import { ShowDetails } from "./ShowDetails";
 // import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
 // import { Hero } from "./Hero";
@@ -66,7 +66,7 @@ export const MainContent = ({ isLoading, data }: any) => {
       <>
         {/* <Hero imageUrl="https://source.unsplash.com/random" /> */}
 
-        <Shows shows={data} showDetailsHandler={showDetailsHandler} />
+        <ContentGallery shows={data} showDetailsHandler={showDetailsHandler} />
       </>
     );
 
