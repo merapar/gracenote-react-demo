@@ -14,7 +14,7 @@ interface FetchData {
   data?: GetMoviesShowingsQueryResponseType;
 }
 
-export const LandingPage: FC<{}> = () => {
+export const MoviesOnCinema: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
 
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());

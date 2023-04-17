@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   Button,
   Container,
@@ -11,12 +12,15 @@ import {
 
 import type { Show } from "./MainContent";
 
-interface ShowsDetailsData {
+interface GalleryProps {
   shows: Show[];
   showDetailsHandler: Function;
 }
 
-export const Shows = ({ shows, showDetailsHandler }: ShowsDetailsData) => {
+export const ContentGallery: FC<GalleryProps> = ({
+  shows,
+  showDetailsHandler,
+}) => {
   const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
