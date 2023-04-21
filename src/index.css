@@ -1,57 +1,61 @@
 :root {
-  --brand-color-01: #4485A8;
-  --brand-color-02: #3C849E;
-  --brand-color-03: #EC6434;
-  --brand-color-04: #E65C2C;
-  --brand-color-05: #3C7C9C;
-  --brand-color-06: #C85874;
+  --brand-color-01: #4485a8;
+  --brand-color-02: #3c849e;
+  --brand-color-03: #ec6434;
+  --brand-color-04: #e65c2c;
+  --brand-color-05: #3c7c9c;
+  --brand-color-06: #c85874;
   --brand-color-07: #447890;
-  --brand-color-08: #3C7C94;
-  --brand-color-09: #DC5C2C;
-  --brand-color-10: #D4542C;
-  --brand-color-11: #3C7491;
-  --brand-color-12: #CC542C;
-  --brand-color-13: #346D8C;
-  --brand-color-14: #346C84;
-  --brand-color-15: #C44C2C;
-  --brand-color-16: #BC4C29;
-  --brand-color-17: #B44C24;
-  --brand-color-18: #34647D;
-  --brand-color-19: #B0442C;
-  --brand-color-20: #2C647C;
-  --brand-color-21: #B44424;
-  --brand-color-22: #346C4C;
-  --brand-color-23: #AC4424;
-  --brand-color-24: #944C3C;
-  --brand-color-25: #2C5C7C;
+  --brand-color-08: #3c7c94;
+  --brand-color-09: #dc5c2c;
+  --brand-color-10: #d4542c;
+  --brand-color-11: #3c7491;
+  --brand-color-12: #cc542c;
+  --brand-color-13: #346d8c;
+  --brand-color-14: #346c84;
+  --brand-color-15: #c44c2c;
+  --brand-color-16: #bc4c29;
+  --brand-color-17: #b44c24;
+  --brand-color-18: #34647d;
+  --brand-color-19: #b0442c;
+  --brand-color-20: #2c647c;
+  --brand-color-21: #b44424;
+  --brand-color-22: #346c4c;
+  --brand-color-23: #ac4424;
+  --brand-color-24: #944c3c;
+  --brand-color-25: #2c5c7c;
   --brand-color-26: #545454;
-  --brand-color-27: #A73C25;
-  --brand-color-28: #A44424;
-  --brand-color-29: #2C5C74;
-  --brand-color-30: #2C566C;
-  --brand-color-31: #9C3C25;
+  --brand-color-27: #a73c25;
+  --brand-color-28: #a44424;
+  --brand-color-29: #2c5c74;
+  --brand-color-30: #2c566c;
+  --brand-color-31: #9c3c25;
   --brand-color-32: #913424;
-  --brand-color-33: #8E3C26;
-  --brand-color-34: #244F64;
-  --brand-color-35: #2C4C64;
-  --brand-color-36: #8C341C;
-  --brand-color-37: #244C5C;
-  --brand-color-38: #84341C;
-  --brand-color-39: #742C1C;
-  --brand-color-40: #24445C;
+  --brand-color-33: #8e3c26;
+  --brand-color-34: #244f64;
+  --brand-color-35: #2c4c64;
+  --brand-color-36: #8c341c;
+  --brand-color-37: #244c5c;
+  --brand-color-38: #84341c;
+  --brand-color-39: #742c1c;
+  --brand-color-40: #24445c;
   --brand-color-41: #244454;
-  --brand-color-42: #1C4454;
-  --brand-color-43: #7C2C1C;
-  --brand-color-44: #6C241C;
-  --brand-color-45: #1C3C54;
+  --brand-color-42: #1c4454;
+  --brand-color-43: #7c2c1c;
+  --brand-color-44: #6c241c;
+  --brand-color-45: #1c3c54;
 }
 
 @media (max-width: 900px) {
-  html { font-size: 16px; }
+  html {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 400px) {
-  html { font-size: 12px; }
+  html {
+    font-size: 12px;
+  }
 }
 html {
   height: 100%;
@@ -61,10 +65,10 @@ body {
   background-size: 100% 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-image: radial-gradient(50% 80% at 71% -5%,
-  var(--brand-color-03) -5%,
-  var(--brand-color-44) 25%,
-  #073AFF00 100%
+  background-image: radial-gradient(
+    50% 80% at 71% -5%,
+    var(--brand-color-03) -5%,
+    var(--brand-color-44) 25%,
+    #073aff00 100%
   );
-
 }

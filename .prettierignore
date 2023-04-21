@@ -1,0 +1,6 @@
+*.svg
+*.md
+*.yml
+node_modules/
+dist/
+
