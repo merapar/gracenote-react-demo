@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 
 import type { Show } from "./MainContent";
+import { IMAGE_BASE_URL } from "../api";
 
 interface GalleryProps {
   shows: Show[];
@@ -21,7 +22,7 @@ export const ContentGallery: FC<GalleryProps> = ({
   shows,
   showDetailsHandler,
 }) => {
-  const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
+  
 
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
@@ -39,7 +40,7 @@ export const ContentGallery: FC<GalleryProps> = ({
               >
                 <CardMedia
                   component="img"
-                  image={`${imageBaseUrl}${show.preferredImage.uri}`}
+                  image={`${IMAGE_BASE_URL}${show.preferredImage.uri}`}
                   alt={show.title}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>

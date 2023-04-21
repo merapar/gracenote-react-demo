@@ -13,6 +13,7 @@ import { Hero } from "./Hero";
 
 import type { Show } from "./MainContent";
 import { ShowTimes } from "./ShowTimes";
+import { IMAGE_BASE_URL } from "../api";
 
 interface ShowDetailsData {
   selectedShow: Show[];
@@ -23,7 +24,6 @@ export const ShowDetails = ({
   selectedShow,
   showDetailsHandler,
 }: ShowDetailsData) => {
-  const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
 
   return (
     <Container maxWidth="md">
@@ -37,7 +37,7 @@ export const ShowDetails = ({
                 flexDirection: "column",
               }}
             >
-              <Hero imageUrl={`${imageBaseUrl}${show.preferredImage.uri}`} />
+              <Hero imageUrl={`${IMAGE_BASE_URL}${show.preferredImage.uri}`} />
               <CardActions>
                 <Button onClick={() => showDetailsHandler("")} size="small">
                   <ArrowBackIosIcon />

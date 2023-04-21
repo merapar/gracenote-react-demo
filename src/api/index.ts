@@ -4,7 +4,7 @@ let client: AxiosInstance;
 
 export const initApi = () => {
   client = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: 'https://data.tmsapi.com/v1.1',
   });
 };
 export const request = async <T>({ ...options }: RawAxiosRequestConfig) => {
@@ -13,3 +13,5 @@ export const request = async <T>({ ...options }: RawAxiosRequestConfig) => {
   }
   return client<T>(options);
 };
+
+export const IMAGE_BASE_URL = "https://demo.tmsimg.com/";

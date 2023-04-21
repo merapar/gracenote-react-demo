@@ -29,10 +29,10 @@ interface LineupsParams {
 const getLineups = (
   params: LineupsParams
 ): UseQueryOptions<GetLineupsQueryResponseType> => ({
-  queryKey: ["lineup/tv", params],
+  queryKey: ["lineups", params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetLineupsQueryResponseType>({
-      url: process.env.REACT_APP_LINEUPS_PATH_NAME,
+      url: 'lineups',
       params,
       signal,
     });
