@@ -1,4 +1,4 @@
-import { FC, useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { ApiKeyContext } from '../store/ApiKeyContext';
 import { useLocationSelector } from '../App';
@@ -9,7 +9,7 @@ import { Lineups } from '../components/Lineups';
 import { zipCodeLocationsMap } from '../components/LocationSelector';
 import { AppDataContext } from '../store/AppDataContext';
 
-export const MoviesOnTv: FC<{}> = () => {
+export const MoviesOnTv = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
   const { selectedDate } = useContext(AppDataContext);
 
