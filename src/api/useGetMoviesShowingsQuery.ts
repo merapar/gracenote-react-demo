@@ -42,7 +42,7 @@ const getMoviesShowings = (
   queryKey: ["movies/showings", params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesShowingsQueryResponseType>({
-      url: process.env.REACT_APP_MOVIES_THEATRE_PATH_NAME,
+      url: 'movies/showings',
       params,
       signal,
     });

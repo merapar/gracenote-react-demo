@@ -96,10 +96,10 @@ interface MoviesOntvParams {
 const getMoviesOnTv = (
   params: MoviesOntvParams
 ): UseQueryOptions<GetMoviesOnTvQueryResponseType> => ({
-  queryKey: ["movies/tv", params],
+  queryKey: ["movies/airings", params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesOnTvQueryResponseType>({
-      url: process.env.REACT_APP_MOVIES_TV_PATH_NAME,
+      url: 'movies/airings',
       params,
       signal,
     });
