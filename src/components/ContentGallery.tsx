@@ -15,7 +15,7 @@ import { IMAGE_BASE_URL } from '../api';
 
 interface GalleryProps {
   shows: Show[];
-  showDetailsHandler: Function;
+  showDetailsHandler: (selectedShowId: string) => void;
 }
 
 export const ContentGallery: FC<GalleryProps> = ({

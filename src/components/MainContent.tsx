@@ -33,17 +33,13 @@ export interface Show {
   showtimes: TimeAndLocationData[];
 }
 
-// interface MainContentData {
-//   isLoading: boolean | undefined;
-//   data: Show[] | undefined;
-// }
-
-// interface FetchData {
-//   isLoading: boolean;
-//   data: GetMoviesShowingsQueryResponseType;
-// }
-
-export const MainContent = ({ isLoading, data }: any) => {
+export const MainContent = ({
+  isLoading,
+  data,
+}: {
+  isLoading: boolean;
+  data: Show[];
+}) => {
   const { showContentDetails, onToggleShowContentDetails } =
     useContext(AppDataContext);
   const [showId, setShowId] = useState<string>('');
