@@ -22,6 +22,7 @@ export const ContentGallery: FC<GalleryProps> = ({
   showDetailsHandler,
 }) => {
   const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
+
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>

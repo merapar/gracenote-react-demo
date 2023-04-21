@@ -1,0 +1,44 @@
+import { useQuery } from "@tanstack/react-query";
+import { UseQueryOptions } from "@tanstack/react-query/src/types";
+
+import { request } from "./index";
+
+interface MSO {
+  id: string;
+  name: string;
+}
+
+export interface GetLineupsQueryResponse {
+  device: string;
+  lineupId: string;
+  location: string;
+  mso: MSO;
+  id: string;
+  type: string;
+}
+
+export type GetLineupsQueryResponseType = GetLineupsQueryResponse[];
+
+interface LineupsParams {
+  startDateTime: string;
+  postalCode: string;
+  api_key: string;
+  country: string;
+}
+
+const getLineups = (
+  params: LineupsParams
+): UseQueryOptions<GetLineupsQueryResponseType> => ({
+  queryKey: ["lineup/tv", params],
+  queryFn: async ({ signal }) => {
+    const { data } = await request<GetLineupsQueryResponseType>({
+      url: process.env.REACT_APP_LINEUPS_PATH_NAME,
+      params,
+      signal,
+    });
+    return data;
+  },
+});
+
+export const useGetLineupsQuery = (params: LineupsParams) =>
+  useQuery(getLineups(params));

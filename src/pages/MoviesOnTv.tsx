@@ -1,43 +1,17 @@
-import { FC, useContext, useMemo, useState } from "react";
+import { FC, useContext, useMemo } from "react";
+
 import { ApiKeyContext } from "../store/ApiKeyContext";
-import dayjs, { Dayjs } from "dayjs";
 import { useLocationSelector } from "../App";
 import { Navigation } from "../components/Navigation";
-import { useGetMoviesOnTvHook } from "./MoviesOnTv/useGetMoviesOnTvHook";
-import { MoviesOnTVDatum } from "./MoviesOnTv/Movies";
-import { MainContent, Show } from "../components/MainContent";
 
-const movieToShowMapper = (movie: MoviesOnTVDatum): Show => {
-  const {
-    program: {
-      longDescription,
-      preferredImage,
-      shortDescription,
-      title,
-      tmsId,
-    },
-    startTime,
-    station,
-  } = movie;
-  return {
-    longDescription,
-    preferredImage,
-    shortDescription,
-    showtimes: [
-      {
-        theatre: { id: "", name: station.callSign },
-        dateTime: startTime,
-      },
-    ],
-    title,
-    tmsId,
-  };
-};
+import { useGetLineupsQuery } from "../api/useGetLineupsQuery";
+import { Lineups } from "../components/Lineups";
+import { zipCodeLocationsMap } from "../components/LocationSelector";
+import { AppDataContext } from "../store/AppDataContext";
 
 export const MoviesOnTv: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
-
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
+  const { selectedDate } = useContext(AppDataContext);
 
   const {
     locationSelector: { currentZipCode, setZipCode },
@@ -52,22 +26,20 @@ export const MoviesOnTv: FC<{}> = () => {
     };
   }, [selectedDate, currentZipCode, apiKeyValue]);
 
-  const { isLoading, data, error } =
-    useGetMoviesOnTvHook<MoviesOnTVDatum[]>(queryString);
+  const cityName = zipCodeLocationsMap[currentZipCode];
+
+  const { data: lineupData, isLoading: isLoadingLineup } =
+    useGetLineupsQuery(queryString);
 
   return (
     <>
-      <Navigation
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        setZipCode={setZipCode}
-        currentZipCode={currentZipCode}
-      />
+      <Navigation setZipCode={setZipCode} currentZipCode={currentZipCode} />
 
-      <MainContent
-        isLoading={isLoading}
-        data={data?.map(movieToShowMapper)}
-        error={error}
+      {/* Limit the content to 1 type in a selected location */}
+      <Lineups
+        // data={lineupData?.filter((lineup) => lineup.location === cityName)}
+        data={lineupData?.find((lineup) => lineup.location === cityName)}
+        isLoading={isLoadingLineup}
       />
     </>
   );
