@@ -9,6 +9,7 @@ import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -18,6 +19,7 @@ import { theme } from "./App/theme";
 import { routes } from "./App/routes";
 import { ApiKeyContextProvider } from "./store/ApiKeyContext";
 import { ClientProvider } from "./store/ClientProvider";
+import { AppDataContextProvider } from "./store/AppDataContext";
 
 const emotionCache = createCache({
   key: "gracenote-cache",
@@ -34,12 +36,15 @@ root.render(
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <ApiKeyContextProvider>
-            <ClientProvider>
-              <RouterProvider
-                router={routes}
-                fallbackElement={<CircularProgress />}
-              />
-            </ClientProvider>
+            <AppDataContextProvider>
+              <ClientProvider>
+                <RouterProvider
+                  router={routes}
+                  fallbackElement={<CircularProgress />}
+                />
+                <ReactQueryDevtools />
+              </ClientProvider>
+            </AppDataContextProvider>
           </ApiKeyContextProvider>
         </ThemeProvider>
       </CacheProvider>

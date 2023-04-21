@@ -1,15 +1,12 @@
 import { DatePicker } from "@mui/x-date-pickers";
-import { Dispatch, FC, SetStateAction } from "react";
-import { Box } from "./Box";
-import { Label } from "./Label";
-import type {} from "@mui/x-date-pickers/themeAugmentation";
+import { useContext } from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Dayjs } from "dayjs";
+import type {} from "@mui/x-date-pickers/themeAugmentation";
 
-type Props = {
-  selectedDate: Dayjs | null;
-  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
-};
+import { Box } from "./Box";
+import { Label } from "./Label";
+import { AppDataContext } from "../store/AppDataContext";
 
 const theme = createTheme({
   components: {
@@ -33,7 +30,9 @@ const theme = createTheme({
   },
 });
 
-export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
+export const DateSelector = () => {
+  const { selectedDate, onSetSelectedDate } = useContext(AppDataContext);
+
   return (
     <Box flexDirection={"row"} sx={{ alignItems: "center" }}>
       <Label variant="h4" sx={{ mr: "1.5rem" }}>
@@ -60,7 +59,8 @@ export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
             },
           }}
           onChange={(value) => {
-            setSelectedDate(value);
+            // To cleanup
+            onSetSelectedDate(value!);
           }}
         />
       </ThemeProvider>

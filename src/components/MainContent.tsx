@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LinearProgress } from "@mui/material";
 
 import { ContentGallery } from "./ContentGallery";
 import { ShowDetails } from "./ShowDetails";
-// import { GetMoviesShowingsQueryResponseType } from "../api/useGetMoviesShowingsQuery";
+import { AppDataContext } from "../store/AppDataContext";
 // import { Hero } from "./Hero";
 
 interface TheatreData {
@@ -44,12 +44,13 @@ export interface Show {
 // }
 
 export const MainContent = ({ isLoading, data }: any) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const { showContentDetails, onToggleShowContentDetails } =
+    useContext(AppDataContext);
   const [showId, setShowId] = useState<string>("");
 
   const showDetailsHandler = (selectedShowId: string) => {
     setShowId(selectedShowId);
-    setShowDetails((state) => !state);
+    onToggleShowContentDetails();
   };
 
   const selectedShow =
@@ -61,7 +62,7 @@ export const MainContent = ({ isLoading, data }: any) => {
 
   if (!isLoading && !data) content = <div>NO DATA IS HERE</div>;
 
-  if (data && !!data.length && !showDetails)
+  if (data && !!data.length && !showContentDetails)
     content = (
       <>
         {/* <Hero imageUrl="https://source.unsplash.com/random" /> */}
@@ -70,7 +71,8 @@ export const MainContent = ({ isLoading, data }: any) => {
       </>
     );
 
-  if (data && !!data.length && showDetails && selectedShow)
+  // if (data && !!data.length && showDetails && selectedShow)
+  if (data && !!data.length && showContentDetails && selectedShow)
     content = (
       <ShowDetails
         selectedShow={selectedShow}

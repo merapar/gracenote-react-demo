@@ -1,7 +1,5 @@
 import { Card, CardContent, Grid, Typography } from "@mui/material";
 
-// import type { ShowTimesData } from "./MainContent";
-
 export const ShowTimes = ({ showtime }: any) => {
   return (
     <Grid container spacing={4}>

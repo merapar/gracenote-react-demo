@@ -1,15 +1,13 @@
-import { DateSelector } from "./DateSelector";
-import { LocationSelector } from "./LocationSelector";
 import { Dispatch, FC, SetStateAction } from "react";
-import { Box } from "./Box";
-import { Dayjs } from "dayjs";
 import { styled } from "@mui/material";
 
+import { DateSelector } from "./DateSelector";
+import { LocationSelector } from "./LocationSelector";
+import { Box } from "./Box";
+
 type Props = {
-  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
   currentZipCode: number;
   setZipCode: Dispatch<SetStateAction<number>>;
-  selectedDate: Dayjs | null;
 };
 
 const Container = styled(Box)(({ theme }) => {
@@ -25,18 +23,11 @@ const Container = styled(Box)(({ theme }) => {
   };
 });
 
-export const Navigation: FC<Props> = ({
-  setSelectedDate,
-  currentZipCode,
-  setZipCode,
-  selectedDate,
-}) => {
+export const Navigation: FC<Props> = ({ currentZipCode, setZipCode }) => {
   return (
     <Container>
-      <DateSelector
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-      />
+      <DateSelector />
+
       <div style={{ width: "4rem", height: "1rem" }}></div>
       <LocationSelector
         currentZipCode={currentZipCode}

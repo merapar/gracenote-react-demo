@@ -3,7 +3,7 @@ import { UseQueryOptions } from "@tanstack/react-query/src/types";
 
 import { request } from "./index";
 
-export type GetMoviesShowingsQueryResponseType = {
+interface GetMoviesShowingsQueryResponse {
   tmsId: string;
   title: string;
   shortDescription: string;
@@ -25,7 +25,10 @@ export type GetMoviesShowingsQueryResponseType = {
     barg: boolean;
     ticketURI: string;
   }[];
-}[];
+}
+
+export type GetMoviesShowingsQueryResponseType =
+  GetMoviesShowingsQueryResponse[];
 
 export type MoviesShowingsParams = {
   startDate: string;

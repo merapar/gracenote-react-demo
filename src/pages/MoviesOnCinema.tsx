@@ -1,9 +1,10 @@
-import { FC, useContext, useMemo, useState } from "react";
-import dayjs, { Dayjs } from "dayjs";
+import { FC, useContext, useMemo } from "react";
+
 import { MainContent } from "../components/MainContent";
 import { Navigation } from "../components/Navigation";
 import { useLocationSelector } from "../App";
 import { ApiKeyContext } from "../store/ApiKeyContext";
+import { AppDataContext } from "../store/AppDataContext";
 import {
   GetMoviesShowingsQueryResponseType,
   useGetMoviesShowingsQuery,
@@ -16,8 +17,8 @@ interface FetchData {
 
 export const MoviesOnCinema: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
+  const { selectedDate } = useContext(AppDataContext);
 
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
@@ -34,12 +35,7 @@ export const MoviesOnCinema: FC<{}> = () => {
 
   return (
     <>
-      <Navigation
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        setZipCode={setZipCode}
-        currentZipCode={currentZipCode}
-      />
+      <Navigation setZipCode={setZipCode} currentZipCode={currentZipCode} />
 
       <MainContent isLoading={isLoading} data={data} />
     </>
