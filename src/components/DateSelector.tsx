@@ -1,28 +1,28 @@
-import { DatePicker } from "@mui/x-date-pickers";
-import { useContext } from "react";
-import { createTheme, ThemeProvider } from "@mui/material";
-import { Dayjs } from "dayjs";
-import type {} from "@mui/x-date-pickers/themeAugmentation";
+import { DatePicker } from '@mui/x-date-pickers';
+import { useContext } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { Dayjs } from 'dayjs';
+import type {} from '@mui/x-date-pickers/themeAugmentation';
 
-import { Box } from "./Box";
-import { Label } from "./Label";
-import { AppDataContext } from "../store/AppDataContext";
+import { Box } from './Box';
+import { Label } from './Label';
+import { AppDataContext } from '../store/AppDataContext';
 
 const theme = createTheme({
   components: {
     MuiDateField: {
       styleOverrides: {
         root: {
-          backgroundColor: "#fff",
+          backgroundColor: '#fff',
         },
       },
     },
     MuiInputAdornment: {
       styleOverrides: {
         root: {
-          color: "#fff",
-          ".MuiButtonBase-root": {
-            color: "#fff",
+          color: '#fff',
+          '.MuiButtonBase-root': {
+            color: '#fff',
           },
         },
       },
@@ -34,8 +34,8 @@ export const DateSelector = () => {
   const { selectedDate, onSetSelectedDate } = useContext(AppDataContext);
 
   return (
-    <Box flexDirection={"row"} sx={{ alignItems: "center" }}>
-      <Label variant="h4" sx={{ mr: "1.5rem" }}>
+    <Box flexDirection={'row'} sx={{ alignItems: 'center' }}>
+      <Label variant="h4" sx={{ mr: '1.5rem' }}>
         <span>Choose Date</span>
       </Label>
       <ThemeProvider theme={theme}>
@@ -46,16 +46,16 @@ export const DateSelector = () => {
             textField: {
               InputProps: {
                 style: {
-                  color: "#fff",
-                  borderColor: "#fff",
-                  borderStyle: "solid",
-                  borderWidth: "1px",
+                  color: '#fff',
+                  borderColor: '#fff',
+                  borderStyle: 'solid',
+                  borderWidth: '1px',
                 },
               },
-              size: "small",
+              size: 'small',
             },
             field: {
-              className: "test",
+              className: 'test',
             },
           }}
           onChange={(value) => {

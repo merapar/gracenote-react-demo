@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { UseQueryOptions } from "@tanstack/react-query/src/types";
+import { useQuery } from '@tanstack/react-query';
+import { UseQueryOptions } from '@tanstack/react-query/src/types';
 
-import { request } from "./index";
+import { request } from './index';
 
 interface MSO {
   id: string;
@@ -27,9 +27,9 @@ interface LineupsParams {
 }
 
 const getLineups = (
-  params: LineupsParams
+  params: LineupsParams,
 ): UseQueryOptions<GetLineupsQueryResponseType> => ({
-  queryKey: ["lineups", params],
+  queryKey: ['lineups', params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetLineupsQueryResponseType>({
       url: 'lineups',

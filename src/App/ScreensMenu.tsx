@@ -6,29 +6,29 @@ import {
   ListItemText as MuiListItemText,
   styled,
   Link as MuiLink,
-} from "@mui/material";
-import { FC, KeyboardEvent, MouseEvent } from "react";
-import { verticalGradient } from "./gradients";
-import { Link, useLocation } from "react-router-dom";
-import { routesConfig } from "./routes";
+} from '@mui/material';
+import { FC, KeyboardEvent, MouseEvent } from 'react';
+import { verticalGradient } from './gradients';
+import { Link, useLocation } from 'react-router-dom';
+import { routesConfig } from './routes';
 
 const ListItemText = styled(MuiListItemText)(({ theme }) => ({
-  margin: "1rem 0",
-  textAlign: "center",
-  fontSize: "1.3rem",
-  fontFamily: "Roboto,Helvetica,Arial,sans-serif",
+  margin: '1rem 0',
+  textAlign: 'center',
+  fontSize: '1.3rem',
+  fontFamily: 'Roboto,Helvetica,Arial,sans-serif',
   fontWeight: 400,
   lineHeight: 1.5,
-  letterSpacing: "0.00938em",
-  display: "block",
+  letterSpacing: '0.00938em',
+  display: 'block',
 }));
 const ListLink: typeof MuiLink = styled(MuiLink)(({ theme }) => ({
-  color: "#fff",
-  textDecoration: "none",
-  width: "100%",
+  color: '#fff',
+  textDecoration: 'none',
+  width: '100%',
 }));
 export type ToggleDrawer = (
-  open: boolean
+  open: boolean,
 ) => (event: KeyboardEvent | MouseEvent) => void;
 
 type Props = {
@@ -49,8 +49,8 @@ export const ScreensMenu: FC<Props> = ({ toggleDrawer }) => {
       sx={{
         background: verticalGradient,
         flex: 1,
-        paddingTop: "2rem",
-        color: "#fff",
+        paddingTop: '2rem',
+        color: '#fff',
       }}
     >
       <List>

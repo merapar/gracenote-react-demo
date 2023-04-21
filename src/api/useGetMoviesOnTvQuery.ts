@@ -1,16 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
-import { UseQueryOptions } from "@tanstack/react-query/src/types";
+import { useQuery } from '@tanstack/react-query';
+import { UseQueryOptions } from '@tanstack/react-query/src/types';
 
-import { request } from "./index";
+import { request } from './index';
 
 enum Qualifier {
-  Cc = "CC",
-  DD51 = "DD 5.1",
-  Dvs = "DVS",
-  Letterbox = "Letterbox",
-  New = "New",
-  Premiere = "Premiere",
-  Stereo = "Stereo",
+  Cc = 'CC',
+  DD51 = 'DD 5.1',
+  Dvs = 'DVS',
+  Letterbox = 'Letterbox',
+  New = 'New',
+  Premiere = 'Premiere',
+  Stereo = 'Stereo',
 }
 type VideoQuality = {
   signalType: string;
@@ -94,9 +94,9 @@ interface MoviesOntvParams {
 }
 
 const getMoviesOnTv = (
-  params: MoviesOntvParams
+  params: MoviesOntvParams,
 ): UseQueryOptions<GetMoviesOnTvQueryResponseType> => ({
-  queryKey: ["movies/airings", params],
+  queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesOnTvQueryResponseType>({
       url: 'movies/airings',

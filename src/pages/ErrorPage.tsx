@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import { useRouteError } from "react-router-dom";
+import { Box } from '@mui/material';
+import { useRouteError } from 'react-router-dom';
 
 export const ErrorPage = () => {
   const error = useRouteError();

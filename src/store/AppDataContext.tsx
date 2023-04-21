@@ -1,5 +1,5 @@
-import dayjs, { Dayjs } from "dayjs";
-import { createContext, useState } from "react";
+import dayjs, { Dayjs } from 'dayjs';
+import { createContext, useState } from 'react';
 
 export const AppDataContext = createContext({
   showContentDetails: false,

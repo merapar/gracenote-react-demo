@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { LinearProgress } from "@mui/material";
+import { useContext, useState } from 'react';
+import { LinearProgress } from '@mui/material';
 
-import { ContentGallery } from "./ContentGallery";
-import { ShowDetails } from "./ShowDetails";
-import { AppDataContext } from "../store/AppDataContext";
+import { ContentGallery } from './ContentGallery';
+import { ShowDetails } from './ShowDetails';
+import { AppDataContext } from '../store/AppDataContext';
 // import { Hero } from "./Hero";
 
 interface TheatreData {
@@ -46,7 +46,7 @@ export interface Show {
 export const MainContent = ({ isLoading, data }: any) => {
   const { showContentDetails, onToggleShowContentDetails } =
     useContext(AppDataContext);
-  const [showId, setShowId] = useState<string>("");
+  const [showId, setShowId] = useState<string>('');
 
   const showDetailsHandler = (selectedShowId: string) => {
     setShowId(selectedShowId);
@@ -54,7 +54,7 @@ export const MainContent = ({ isLoading, data }: any) => {
   };
 
   const selectedShow =
-    showId && data ? data.filter((show: Show) => show.tmsId === showId) : "";
+    showId && data ? data.filter((show: Show) => show.tmsId === showId) : '';
 
   let content;
 

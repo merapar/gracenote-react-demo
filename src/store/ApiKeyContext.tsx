@@ -1,7 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 export const ApiKeyContext = createContext({
-  apiKeyValue: "",
+  apiKeyValue: '',
   onSetApiKey: (key: string) => {},
   onResetApiKey: () => {},
 });
@@ -12,17 +12,17 @@ export const ApiKeyContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [apiKey, setApiKey] = useState(
-    process.env.REACT_APP_API_KEY || localStorage.getItem("api-key") || ""
+    process.env.REACT_APP_API_KEY || localStorage.getItem('api-key') || '',
   );
 
   const setApiKeyHandler = (key: string) => {
-    localStorage.setItem("api-key", key);
+    localStorage.setItem('api-key', key);
     setApiKey(key);
   };
 
   const resetApiKeyHandler = () => {
-    localStorage.removeItem("api-key");
-    setApiKey("");
+    localStorage.removeItem('api-key');
+    setApiKey('');
   };
 
   return (

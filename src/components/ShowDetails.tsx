@@ -6,14 +6,14 @@ import {
   Grid,
   CardActions,
   Typography,
-} from "@mui/material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+} from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-import { Hero } from "./Hero";
+import { Hero } from './Hero';
 
-import type { Show } from "./MainContent";
-import { ShowTimes } from "./ShowTimes";
-import { IMAGE_BASE_URL } from "../api";
+import type { Show } from './MainContent';
+import { ShowTimes } from './ShowTimes';
+import { IMAGE_BASE_URL } from '../api';
 
 interface ShowDetailsData {
   selectedShow: Show[];
@@ -24,7 +24,6 @@ export const ShowDetails = ({
   selectedShow,
   showDetailsHandler,
 }: ShowDetailsData) => {
-
   return (
     <Container maxWidth="md">
       <Grid container pb={5}>
@@ -32,14 +31,14 @@ export const ShowDetails = ({
           <Grid item key={show.tmsId} xs={12}>
             <Card
               sx={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               <Hero imageUrl={`${IMAGE_BASE_URL}${show.preferredImage.uri}`} />
               <CardActions>
-                <Button onClick={() => showDetailsHandler("")} size="small">
+                <Button onClick={() => showDetailsHandler('')} size="small">
                   <ArrowBackIosIcon />
                   Back
                 </Button>

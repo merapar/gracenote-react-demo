@@ -1,7 +1,7 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { useContext } from "react";
-import { ApiKeyContext } from "../store/ApiKeyContext";
-import { URL_API_KEY_PAGE } from "../App/routes";
+import { Navigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { ApiKeyContext } from '../store/ApiKeyContext';
+import { URL_API_KEY_PAGE } from '../App/routes';
 
 export function RequireApiKey({ children }: { children: JSX.Element }) {
   const location = useLocation();

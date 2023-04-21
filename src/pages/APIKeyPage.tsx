@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -7,9 +7,9 @@ import {
   Grid,
   TextField,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import { ApiKeyContext } from "../store/ApiKeyContext";
+import { ApiKeyContext } from '../store/ApiKeyContext';
 
 export const APIKeyPage = () => {
   const { apiKeyValue, onSetApiKey, onResetApiKey } = useContext(ApiKeyContext);
@@ -23,16 +23,16 @@ export const APIKeyPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || '/';
 
   const updateValueHandler = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setApiKey(event.target.value);
   };
 
   const resetClickHandler = () => {
-    setApiKey("");
+    setApiKey('');
     onResetApiKey();
   };
 

@@ -1,4 +1,4 @@
-import { Box, Container, CardMedia } from "@mui/material";
+import { Box, Container, CardMedia } from '@mui/material';
 
 interface HeroData {
   imageUrl: string;

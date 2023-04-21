@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import {
   Button,
   Container,
@@ -8,10 +8,10 @@ import {
   Card,
   CardContent,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import type { Show } from "./MainContent";
-import { IMAGE_BASE_URL } from "../api";
+import type { Show } from './MainContent';
+import { IMAGE_BASE_URL } from '../api';
 
 interface GalleryProps {
   shows: Show[];
@@ -22,8 +22,6 @@ export const ContentGallery: FC<GalleryProps> = ({
   shows,
   showDetailsHandler,
 }) => {
-  
-
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
@@ -33,9 +31,9 @@ export const ContentGallery: FC<GalleryProps> = ({
             <Grid item key={show.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
               <Card
                 sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
                 <CardMedia

@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { UseQueryOptions } from "@tanstack/react-query/src/types";
+import { useQuery } from '@tanstack/react-query';
+import { UseQueryOptions } from '@tanstack/react-query/src/types';
 
-import { request } from "./index";
+import { request } from './index';
 
 interface GetMoviesShowingsQueryResponse {
   tmsId: string;
@@ -37,9 +37,9 @@ export type MoviesShowingsParams = {
 };
 
 const getMoviesShowings = (
-  params: MoviesShowingsParams
+  params: MoviesShowingsParams,
 ): UseQueryOptions<GetMoviesShowingsQueryResponseType> => ({
-  queryKey: ["movies/showings", params],
+  queryKey: ['movies/showings', params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesShowingsQueryResponseType>({
       url: 'movies/showings',

@@ -1,13 +1,13 @@
-import { useContext, useMemo } from "react";
+import { useContext, useMemo } from 'react';
 
-import { GetLineupsQueryResponse } from "../api/useGetLineupsQuery";
+import { GetLineupsQueryResponse } from '../api/useGetLineupsQuery';
 import {
   GetMoviesOnTvQueryResponse,
   useGetMoviesOnTvQuery,
-} from "../api/useGetMoviesOnTvQuery";
-import { MainContent, Show } from "./MainContent";
-import { ApiKeyContext } from "../store/ApiKeyContext";
-import { AppDataContext } from "../store/AppDataContext";
+} from '../api/useGetMoviesOnTvQuery';
+import { MainContent, Show } from './MainContent';
+import { ApiKeyContext } from '../store/ApiKeyContext';
+import { AppDataContext } from '../store/AppDataContext';
 
 const movieToShowMapper = (movie: GetMoviesOnTvQueryResponse): Show => {
   const {
@@ -27,7 +27,7 @@ const movieToShowMapper = (movie: GetMoviesOnTvQueryResponse): Show => {
     shortDescription,
     showtimes: [
       {
-        theatre: { id: "", name: station.callSign },
+        theatre: { id: '', name: station.callSign },
         dateTime: startTime,
       },
     ],
@@ -44,7 +44,7 @@ export const Lineup = ({ lineup }: { lineup: GetLineupsQueryResponse }) => {
     return {
       api_key: apiKeyValue,
       lineupId: lineup.lineupId,
-      startDateTime: selectedDate?.format("YYYY-MM-DD") ?? "",
+      startDateTime: selectedDate?.format('YYYY-MM-DD') ?? '',
     };
   }, [apiKeyValue, lineup.lineupId, selectedDate]);
   const { data, isLoading } = useGetMoviesOnTvQuery(queryString);

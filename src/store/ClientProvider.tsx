@@ -1,12 +1,12 @@
-import { useMemo, useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Alert, Snackbar } from "@mui/material";
-import { AxiosError } from "axios";
+import { useMemo, useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Alert, Snackbar } from '@mui/material';
+import { AxiosError } from 'axios';
 
-import { initApi } from "../api";
+import { initApi } from '../api';
 
 export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
 
   // instantiate axios
   initApi();
@@ -25,18 +25,18 @@ export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
                 (error.response?.status ?? 0) < 600
               ) {
                 setErrorMessage(
-                  `${error.message} (${error.response?.statusText} - ${error.config?.url})`
+                  `${error.message} (${error.response?.statusText} - ${error.config?.url})`,
                 );
               }
             },
           },
         },
       }),
-    []
+    [],
   );
 
   const handleClose = () => {
-    setErrorMessage("");
+    setErrorMessage('');
   };
 
   return (
@@ -47,7 +47,7 @@ export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
         autoHideDuration={5000}
         onClose={handleClose}
       >
-        <Alert sx={{ width: "100%" }} severity="error" onClose={handleClose}>
+        <Alert sx={{ width: '100%' }} severity="error" onClose={handleClose}>
           {errorMessage}
         </Alert>
       </Snackbar>

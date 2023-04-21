@@ -1,33 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import CssBaseline from "@mui/material/CssBaseline";
-import { CircularProgress, ThemeProvider } from "@mui/material";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import createCache from "@emotion/cache";
-import { CacheProvider } from "@emotion/react";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/700.css";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import { CircularProgress, ThemeProvider } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/700.css';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from './reportWebVitals';
 
-import "./index.css";
+import './index.css';
 
-import { theme } from "./App/theme";
-import { routes } from "./App/routes";
-import { ApiKeyContextProvider } from "./store/ApiKeyContext";
-import { ClientProvider } from "./store/ClientProvider";
-import { AppDataContextProvider } from "./store/AppDataContext";
+import { theme } from './App/theme';
+import { routes } from './App/routes';
+import { ApiKeyContextProvider } from './store/ApiKeyContext';
+import { ClientProvider } from './store/ClientProvider';
+import { AppDataContextProvider } from './store/AppDataContext';
 
 const emotionCache = createCache({
-  key: "gracenote-cache",
-  ...(process.env.NODE_ENV === "development" && { stylisPlugins: [] }),
+  key: 'gracenote-cache',
+  ...(process.env.NODE_ENV === 'development' && { stylisPlugins: [] }),
 });
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <React.StrictMode>
@@ -49,7 +49,7 @@ root.render(
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

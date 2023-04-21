@@ -1,17 +1,17 @@
-import { Container, GlobalStyles, Link, Typography } from "@mui/material";
-import { Box } from "../components/Box";
+import { Container, GlobalStyles, Link, Typography } from '@mui/material';
+import { Box } from '../components/Box';
 
 const MakreSureTheFooterIsVisible = () => (
   <GlobalStyles
     styles={{
-      "#root": {
-        height: "100vh",
+      '#root': {
+        height: '100vh',
       },
-      "#app-container": {
-        height: "100%",
+      '#app-container': {
+        height: '100%',
       },
-      "#app-outlet": {
-        height: "100%",
+      '#app-outlet': {
+        height: '100%',
       },
     }}
   />
@@ -19,25 +19,25 @@ const MakreSureTheFooterIsVisible = () => (
 
 export const AboutPage = () => {
   return (
-    <Container sx={{ py: 8, height: "100%" }} maxWidth={false}>
+    <Container sx={{ py: 8, height: '100%' }} maxWidth={false}>
       <MakreSureTheFooterIsVisible />
       <Box
-        flexDirection={"column"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        sx={{ height: "100%" }}
+        flexDirection={'column'}
+        alignItems={'center'}
+        justifyContent={'center'}
+        sx={{ height: '100%' }}
       >
         <Typography
-          fontSize={"1.5rem"}
-          lineHeight={"2.5rem"}
+          fontSize={'1.5rem'}
+          lineHeight={'2.5rem'}
           width={0.5}
-          color={"#fff"}
+          color={'#fff'}
           variant="body1"
           gutterBottom
         >
           This Gracenote API demo has been built by Merapar engineers. If you
-          need help integrating Gracenote APIs you can contact us here{" "}
-          <Link href={"https://merapar.com/contact/"}>
+          need help integrating Gracenote APIs you can contact us here{' '}
+          <Link href={'https://merapar.com/contact/'}>
             https://merapar.com/contact/
           </Link>
         </Typography>

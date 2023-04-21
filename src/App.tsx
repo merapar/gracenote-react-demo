@@ -4,8 +4,8 @@ import {
   MouseEvent,
   SetStateAction,
   useState,
-} from "react";
-import { Outlet, useLocation, useOutletContext } from "react-router-dom";
+} from 'react';
+import { Outlet, useLocation, useOutletContext } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -14,14 +14,14 @@ import {
   IconButton,
   Toolbar,
   Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
-import { ScreensMenu, ToggleDrawer } from "./App/ScreensMenu";
-import { horizontalGradient } from "./App/gradients";
-import { Locations } from "./components/LocationSelector";
-import { getRouteTitleByPath } from "./App/routes";
-import { Footer } from "./components/Footer";
+import { ScreensMenu, ToggleDrawer } from './App/ScreensMenu';
+import { horizontalGradient } from './App/gradients';
+import { Locations } from './components/LocationSelector';
+import { getRouteTitleByPath } from './App/routes';
+import { Footer } from './components/Footer';
 
 type ContextType = {
   locationSelector: {
@@ -33,7 +33,7 @@ export const useLocationSelector = () => {
   return useOutletContext<ContextType>();
 };
 function App() {
-  const [currentZipCode, setZipCode] = useState(Locations["New York"]);
+  const [currentZipCode, setZipCode] = useState(Locations['New York']);
 
   const [drawerState, setDrawerState] = useState({ open: false });
   const currentRoute = useLocation();
@@ -41,9 +41,9 @@ function App() {
   const toggleDrawer: ToggleDrawer =
     (open: boolean) => (event: KeyboardEvent | MouseEvent) => {
       if (
-        event.type === "keydown" &&
-        ((event as KeyboardEvent).key === "Tab" ||
-          (event as KeyboardEvent).key === "Shift")
+        event.type === 'keydown' &&
+        ((event as KeyboardEvent).key === 'Tab' ||
+          (event as KeyboardEvent).key === 'Shift')
       ) {
         return;
       }
@@ -53,17 +53,17 @@ function App() {
 
   return (
     <Container
-      id={"app-container"}
+      id={'app-container'}
       disableGutters
       maxWidth={false}
-      sx={{ display: "flex", flexDirection: "column" }}
+      sx={{ display: 'flex', flexDirection: 'column' }}
     >
       <AppBar
         sx={{
           background: horizontalGradient,
         }}
         component="nav"
-        position={"sticky"}
+        position={'sticky'}
       >
         <Toolbar>
           <IconButton
@@ -76,18 +76,18 @@ function App() {
             <MenuIcon />
           </IconButton>
           <Drawer
-            anchor={"left"}
+            anchor={'left'}
             open={drawerState.open}
             onClose={toggleDrawer(false)}
           >
             <ScreensMenu {...{ toggleDrawer }} />
           </Drawer>
-          <Typography variant={"h6"} component={"div"} sx={{ flexGrow: 1 }}>
+          <Typography variant={'h6'} component={'div'} sx={{ flexGrow: 1 }}>
             Gracenote API Demo &ndash; <span>{routeTitle}</span>
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box pt={3} pb={3} id={"app-outlet"}>
+      <Box pt={3} pb={3} id={'app-outlet'}>
         <Outlet
           context={{
             locationSelector: {

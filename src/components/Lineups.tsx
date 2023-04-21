@@ -5,10 +5,10 @@ import {
   Container,
   Grid,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import { GetLineupsQueryResponse } from "../api/useGetLineupsQuery";
-import { Lineup } from "./Lineup";
+import { GetLineupsQueryResponse } from '../api/useGetLineupsQuery';
+import { Lineup } from './Lineup';
 
 export const Lineups = ({
   data: lineups,

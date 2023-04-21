@@ -1,13 +1,13 @@
-import { FC, useContext, useMemo } from "react";
+import { FC, useContext, useMemo } from 'react';
 
-import { ApiKeyContext } from "../store/ApiKeyContext";
-import { useLocationSelector } from "../App";
-import { Navigation } from "../components/Navigation";
+import { ApiKeyContext } from '../store/ApiKeyContext';
+import { useLocationSelector } from '../App';
+import { Navigation } from '../components/Navigation';
 
-import { useGetLineupsQuery } from "../api/useGetLineupsQuery";
-import { Lineups } from "../components/Lineups";
-import { zipCodeLocationsMap } from "../components/LocationSelector";
-import { AppDataContext } from "../store/AppDataContext";
+import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
+import { Lineups } from '../components/Lineups';
+import { zipCodeLocationsMap } from '../components/LocationSelector';
+import { AppDataContext } from '../store/AppDataContext';
 
 export const MoviesOnTv: FC<{}> = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
@@ -19,10 +19,10 @@ export const MoviesOnTv: FC<{}> = () => {
 
   const queryString = useMemo(() => {
     return {
-      startDateTime: selectedDate?.format("YYYY-MM-DDTHH:mm[Z]") ?? "",
+      startDateTime: selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '',
       postalCode: currentZipCode.toString(),
       api_key: apiKeyValue,
-      country: "USA",
+      country: 'USA',
     };
   }, [selectedDate, currentZipCode, apiKeyValue]);
 

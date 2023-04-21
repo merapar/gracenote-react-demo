@@ -1,5 +1,5 @@
-import { Box as MuiBox, styled } from "@mui/material";
+import { Box as MuiBox, styled } from '@mui/material';
 
 export const Box = styled(MuiBox)(({ theme }) => ({
-  display: "flex",
+  display: 'flex',
 }));

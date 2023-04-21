@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from '@mui/material';
 
 export const ShowTimes = ({ showtime }: any) => {
   return (
@@ -18,9 +18,9 @@ export const ShowTimes = ({ showtime }: any) => {
             >
               <Card
                 sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
                 <CardContent sx={{ flexGrow: 1 }}>
