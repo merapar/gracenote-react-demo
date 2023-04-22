@@ -1,10 +1,12 @@
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ShowTimes = ({ showtime }: any) => {
   return (
     <Grid container spacing={4}>
       {showtime &&
         !!showtime.length &&
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         showtime.map((show: any) => {
           const date = new Date(show.dateTime);
 

@@ -60,6 +60,7 @@ export const DateSelector = () => {
           }}
           onChange={(value) => {
             // To cleanup
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             onSetSelectedDate(value!);
           }}
         />

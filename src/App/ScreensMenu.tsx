@@ -12,6 +12,7 @@ import { verticalGradient } from './gradients';
 import { Link, useLocation } from 'react-router-dom';
 import { routesConfig } from './routes';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ListItemText = styled(MuiListItemText)(({ theme }) => ({
   margin: '1rem 0',
   textAlign: 'center',
@@ -22,6 +23,7 @@ const ListItemText = styled(MuiListItemText)(({ theme }) => ({
   letterSpacing: '0.00938em',
   display: 'block',
 }));
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ListLink: typeof MuiLink = styled(MuiLink)(({ theme }) => ({
   color: '#fff',
   textDecoration: 'none',
@@ -54,7 +56,7 @@ export const ScreensMenu: FC<Props> = ({ toggleDrawer }) => {
       }}
     >
       <List>
-        {routesConfig.map(({ title, url }, index) => {
+        {routesConfig.map(({ title, url }) => {
           return (
             <ListItem key={title}>
               <ListLink component={Link} to={url}>
