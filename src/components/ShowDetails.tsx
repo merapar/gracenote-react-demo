@@ -17,6 +17,7 @@ import { IMAGE_BASE_URL } from '../api';
 
 interface ShowDetailsData {
   selectedShow: Show[];
+  // eslint-disable-next-line @typescript-eslint/ban-types
   showDetailsHandler: Function;
 }
 

@@ -1,4 +1,4 @@
-import { FC, useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { MainContent } from '../components/MainContent';
 import { Navigation } from '../components/Navigation';
@@ -15,7 +15,7 @@ interface FetchData {
   data?: GetMoviesShowingsQueryResponseType;
 }
 
-export const MoviesOnCinema: FC<{}> = () => {
+export const MoviesOnCinema = () => {
   const { apiKeyValue } = useContext(ApiKeyContext);
   const { selectedDate } = useContext(AppDataContext);
 
