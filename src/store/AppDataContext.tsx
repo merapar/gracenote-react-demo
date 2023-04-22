@@ -3,9 +3,12 @@ import { createContext, useState } from 'react';
 
 export const AppDataContext = createContext({
   showContentDetails: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onToggleShowContentDetails: () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onResetShowContentDetails: () => {},
   selectedDate: dayjs(),
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   onSetSelectedDate: (value: Dayjs) => {},
 });
 

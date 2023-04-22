@@ -2,7 +2,9 @@ import { createContext, useState } from 'react';
 
 export const ApiKeyContext = createContext({
   apiKeyValue: '',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
   onSetApiKey: (key: string) => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onResetApiKey: () => {},
 });
 
