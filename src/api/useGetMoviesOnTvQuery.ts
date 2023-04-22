@@ -90,7 +90,7 @@ type GetMoviesOnTvQueryResponseType = GetMoviesOnTvQueryResponse[];
 interface MoviesOntvParams {
   api_key: string;
   lineupId: string;
-  startDateTime: any;
+  startDateTime: string;
 }
 
 const getMoviesOnTv = (

@@ -38,7 +38,7 @@ export const MainContent = ({
   data,
 }: {
   isLoading: boolean;
-  data: Show[];
+  data: Show[] | undefined;
 }) => {
   const { showContentDetails, onToggleShowContentDetails } =
     useContext(AppDataContext);
