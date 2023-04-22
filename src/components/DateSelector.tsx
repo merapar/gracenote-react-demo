@@ -1,7 +1,7 @@
 import { DatePicker } from '@mui/x-date-pickers';
 import { useContext } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
 
 import { Box } from './Box';
@@ -42,6 +42,7 @@ export const DateSelector = () => {
         <DatePicker<Dayjs | null>
           closeOnSelect
           value={selectedDate}
+          minDate={dayjs()}
           slotProps={{
             textField: {
               InputProps: {
