@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Button,
@@ -9,16 +9,12 @@ import {
   Typography,
 } from '@mui/material';
 
-import { ApiKeyContext } from '../store/ApiKeyContext';
+import { useApiKey } from '../store/ApiKeyProvider';
 
 export const APIKeyPage = () => {
-  const { apiKeyValue, onSetApiKey, onResetApiKey } = useContext(ApiKeyContext);
+  const { getApiKey, onSetApiKey, onResetApiKey } = useApiKey();
 
-  const [apiKey, setApiKey] = useState(apiKeyValue);
-
-  useEffect(() => {
-    setApiKey(apiKeyValue);
-  }, [apiKeyValue]);
+  const [apiKey, setApiKey] = useState(getApiKey());
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +34,6 @@ export const APIKeyPage = () => {
 
   const buttonClickHandler = () => {
     onSetApiKey(apiKey);
-
     navigate(from, { replace: true });
   };
 

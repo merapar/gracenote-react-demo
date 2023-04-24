@@ -3,7 +3,7 @@ import { useContext, useMemo } from 'react';
 import { MainContent } from '../components/MainContent';
 import { Navigation } from '../components/Navigation';
 import { useLocationSelector } from '../App';
-import { ApiKeyContext } from '../store/ApiKeyContext';
+import { useApiKey } from '../store/ApiKeyProvider';
 import { AppDataContext } from '../store/AppDataContext';
 import {
   GetMoviesShowingsQueryResponseType,
@@ -16,7 +16,7 @@ interface FetchData {
 }
 
 export const MoviesOnCinema = () => {
-  const { apiKeyValue } = useContext(ApiKeyContext);
+  const { getApiKey } = useApiKey();
   const { selectedDate } = useContext(AppDataContext);
 
   const {
@@ -27,9 +27,9 @@ export const MoviesOnCinema = () => {
     return {
       startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
       zip: currentZipCode,
-      api_key: apiKeyValue,
+      api_key: getApiKey(),
     };
-  }, [selectedDate, currentZipCode, apiKeyValue]);
+  }, [selectedDate, currentZipCode, getApiKey]);
 
   const { isLoading, data }: FetchData = useGetMoviesShowingsQuery(queryString);
 
