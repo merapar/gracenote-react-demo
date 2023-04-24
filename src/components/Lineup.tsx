@@ -2,14 +2,14 @@ import { useContext, useMemo } from 'react';
 
 import { GetLineupsQueryResponse } from '../api/useGetLineupsQuery';
 import {
-  GetMoviesOnTvQueryResponse,
+  GetMoviesAiringsQueryResponse,
   useGetMoviesOnTvQuery,
-} from '../api/useGetMoviesOnTvQuery';
+} from '../api/useGetMoviesAiringsQuery';
 import { MainContent, Show } from './MainContent';
 import { useApiKey } from '../store/ApiKeyProvider';
 import { AppDataContext } from '../store/AppDataContext';
 
-const movieToShowMapper = (movie: GetMoviesOnTvQueryResponse): Show => {
+const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
   const {
     program: {
       longDescription,

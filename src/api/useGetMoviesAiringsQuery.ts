@@ -74,7 +74,7 @@ type Rating = {
   subRating?: string;
 };
 
-export interface GetMoviesOnTvQueryResponse {
+export interface GetMoviesAiringsQueryResponse {
   channels: string[];
   duration: number;
   endTime: string;
@@ -85,20 +85,20 @@ export interface GetMoviesOnTvQueryResponse {
   stationId: string;
 }
 
-type GetMoviesOnTvQueryResponseType = GetMoviesOnTvQueryResponse[];
+type GetMoviesAiringsResponseType = GetMoviesAiringsQueryResponse[];
 
-interface MoviesOntvParams {
+interface MoviesAiringsParams {
   api_key: string;
   lineupId: string;
   startDateTime: string;
 }
 
 const getMoviesOnTv = (
-  params: MoviesOntvParams,
-): UseQueryOptions<GetMoviesOnTvQueryResponseType> => ({
+  params: MoviesAiringsParams,
+): UseQueryOptions<GetMoviesAiringsResponseType> => ({
   queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesOnTvQueryResponseType>({
+    const { data } = await request<GetMoviesAiringsResponseType>({
       url: 'movies/airings',
       params,
       signal,
@@ -107,5 +107,5 @@ const getMoviesOnTv = (
   },
 });
 
-export const useGetMoviesOnTvQuery = (params: MoviesOntvParams) =>
+export const useGetMoviesOnTvQuery = (params: MoviesAiringsParams) =>
   useQuery(getMoviesOnTv(params));
