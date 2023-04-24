@@ -3,7 +3,7 @@ import { useContext, useMemo } from 'react';
 import { GetLineupsQueryResponse } from '../api/useGetLineupsQuery';
 import {
   GetMoviesAiringsQueryResponse,
-  useGetMoviesOnTvQuery,
+  useGetMoviesAirings,
 } from '../api/useGetMoviesAiringsQuery';
 import { MainContent, Show } from './MainContent';
 import { useApiKey } from '../store/ApiKeyProvider';
@@ -47,7 +47,7 @@ export const Lineup = ({ lineup }: { lineup: GetLineupsQueryResponse }) => {
       startDateTime: selectedDate?.format('YYYY-MM-DD') ?? '',
     };
   }, [getApiKey, lineup.lineupId, selectedDate]);
-  const { data, isLoading } = useGetMoviesOnTvQuery(queryString);
+  const { data, isLoading } = useGetMoviesAirings(queryString);
 
   return (
     <MainContent data={data?.map(movieToShowMapper)} isLoading={isLoading} />

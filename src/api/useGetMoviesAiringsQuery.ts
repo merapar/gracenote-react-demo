@@ -93,7 +93,7 @@ interface MoviesAiringsParams {
   startDateTime: string;
 }
 
-const getMoviesOnTv = (
+const getMoviesAirings = (
   params: MoviesAiringsParams,
 ): UseQueryOptions<GetMoviesAiringsResponseType> => ({
   queryKey: ['movies/airings', params],
@@ -108,5 +108,5 @@ const getMoviesOnTv = (
   enabled: !!params.lineupId,
 });
 
-export const useGetMoviesOnTvQuery = (params: MoviesAiringsParams) =>
-  useQuery(getMoviesOnTv(params));
+export const useGetMoviesAirings = (params: MoviesAiringsParams) =>
+  useQuery(getMoviesAirings(params));
