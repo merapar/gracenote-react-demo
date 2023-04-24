@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import App from '../App';
 import { ErrorPage } from '../pages/ErrorPage';
-import { MoviesOnCinema } from '../pages/MoviesOnCinema';
+import { MoviesInCinema } from '../pages/MoviesInCinema';
 import { AboutPage } from '../pages/About';
 import { RequireApiKey } from '../components/RequireApiKey';
 import { APIKeyPage } from '../pages/APIKeyPage';
@@ -33,7 +33,7 @@ export const routes = createBrowserRouter(
           path: URL_LANDING_PAGE,
           element: (
             <RequireApiKey>
-              <MoviesOnCinema />
+              <MoviesInCinema />
             </RequireApiKey>
           ),
         },

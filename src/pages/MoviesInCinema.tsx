@@ -15,7 +15,7 @@ interface FetchData {
   data?: GetMoviesShowingsQueryResponseType;
 }
 
-export const MoviesOnCinema = () => {
+export const MoviesInCinema = () => {
   const { getApiKey } = useApiKey();
   const { selectedDate } = useContext(AppDataContext);
 
