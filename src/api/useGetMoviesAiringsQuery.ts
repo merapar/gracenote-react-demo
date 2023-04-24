@@ -105,6 +105,7 @@ const getMoviesOnTv = (
     });
     return data;
   },
+  enabled: !!params.lineupId,
 });
 
 export const useGetMoviesOnTvQuery = (params: MoviesAiringsParams) =>
