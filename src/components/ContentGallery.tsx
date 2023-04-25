@@ -9,26 +9,38 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
-
-import type { Show } from './MainContent';
 import { IMAGE_BASE_URL } from '../api';
 
-interface GalleryProps {
-  shows: Show[];
+export interface ShowTime {
+  location: string;
+  dateTime: string;
+}
+
+export interface ContentItem {
+  tmsId: string;
+  imageUri: string;
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  showtimes: ShowTime[];
+}
+
+interface Props {
+  contentItems: ContentItem[];
   showDetailsHandler: (selectedShowId: string) => void;
 }
 
-export const ContentGallery: FC<GalleryProps> = ({
-  shows,
+export const ContentGallery: FC<Props> = ({
+  contentItems,
   showDetailsHandler,
 }) => {
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
-        {shows &&
-          !!shows.length &&
-          shows.map((show: Show) => (
-            <Grid item key={show.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
+        {contentItems &&
+          !!contentItems.length &&
+          contentItems.map((item: ContentItem) => (
+            <Grid item key={item.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
               <Card
                 sx={{
                   height: '100%',
@@ -38,18 +50,18 @@ export const ContentGallery: FC<GalleryProps> = ({
               >
                 <CardMedia
                   component="img"
-                  image={`${IMAGE_BASE_URL}${show.preferredImage.uri}`}
-                  alt={show.title}
+                  image={`${IMAGE_BASE_URL}${item.imageUri}`}
+                  alt={item.title}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {show.title}
+                    {item.title}
                   </Typography>
-                  <Typography>{show.shortDescription}</Typography>
+                  <Typography>{item.shortDescription}</Typography>
                 </CardContent>
                 <CardActions>
                   <Button
-                    onClick={() => showDetailsHandler(show.tmsId)}
+                    onClick={() => showDetailsHandler(item.tmsId)}
                     size="small"
                   >
                     View Details

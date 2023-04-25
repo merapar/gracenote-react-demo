@@ -1,68 +1,48 @@
 import { useState } from 'react';
 import { LinearProgress } from '@mui/material';
 
-import { ContentGallery } from './ContentGallery';
+import { ContentGallery, ContentItem } from './ContentGallery';
 import { ShowDetails } from './ShowDetails';
-
-interface TheatreData {
-  id: string;
-  name: string;
-}
-
-interface TimeAndLocationData {
-  theatre: TheatreData;
-  dateTime: string;
-}
-
-export interface ShowTimesData {
-  showtimes: TimeAndLocationData[];
-}
-
-interface PreferredImage {
-  uri: string;
-}
-
-export interface Show {
-  tmsId: string;
-  preferredImage: PreferredImage;
-  title: string;
-  shortDescription: string;
-  longDescription: string;
-  showtimes: TimeAndLocationData[];
-}
 
 export const MainContent = ({
   isLoading,
-  data,
+  contentItems,
 }: {
   isLoading: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any;
+  contentItems: ContentItem[] | undefined;
 }) => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [showId, setShowId] = useState<string>('');
+  const [contentDetails, setContentDetails] = useState(false);
+  const [contentId, setContentId] = useState<string>('');
 
-  const showDetailsHandler = (selectedShowId: string) => {
-    setShowId(selectedShowId);
-    setShowDetails((state) => !state);
+  const contentDetailsHandler = (selectedShowId: string) => {
+    setContentId(selectedShowId);
+    setContentDetails((state) => !state);
   };
 
-  const selectedShow =
-    showId && data ? data.filter((show: Show) => show.tmsId === showId) : '';
+  const selectedContentItem =
+    contentId && contentItems
+      ? contentItems.filter((item: ContentItem) => item.tmsId === contentId)
+      : '';
 
   return (
     <main>
       {isLoading && <LinearProgress />}
-      {!isLoading && !data && <div>NO DATA IS HERE</div>}
-      {data && !!data.length && !showDetails && (
-        <ContentGallery shows={data} showDetailsHandler={showDetailsHandler} />
-      )}
-      {data && !!data.length && showDetails && selectedShow && (
-        <ShowDetails
-          selectedShow={selectedShow}
-          showDetailsHandler={showDetailsHandler}
+      {!isLoading && !contentItems && <div>NO DATA IS HERE</div>}
+      {contentItems && !!contentItems.length && !contentDetails && (
+        <ContentGallery
+          contentItems={contentItems}
+          showDetailsHandler={contentDetailsHandler}
         />
       )}
+      {contentItems &&
+        !!contentItems.length &&
+        contentDetails &&
+        selectedContentItem && (
+          <ShowDetails
+            selectedShow={selectedContentItem}
+            showDetailsHandler={contentDetailsHandler}
+          />
+        )}
     </main>
   );
 };

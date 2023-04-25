@@ -9,9 +9,12 @@ import {
   GetMoviesAiringsQueryResponse,
 } from '../api/useGetMoviesAiringsQuery';
 import dayjs, { Dayjs } from 'dayjs';
-import { MainContent, Show } from '../components/MainContent';
+import { MainContent } from '../components/MainContent';
+import { ContentItem } from '../components/ContentGallery';
 
-const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
+const movieAiringToContentItemMapper = (
+  movieAiring: GetMoviesAiringsQueryResponse,
+): ContentItem => {
   const {
     program: {
       longDescription,
@@ -22,15 +25,15 @@ const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
     },
     startTime,
     station,
-  } = movie;
+  } = movieAiring;
 
   return {
     longDescription,
-    preferredImage,
+    imageUri: preferredImage.uri,
     shortDescription,
     showtimes: [
       {
-        theatre: { id: '', name: station.callSign },
+        location: station.callSign,
         dateTime: startTime,
       },
     ],
@@ -69,7 +72,10 @@ export const MoviesOnTv = () => {
         setZipCode={setZipCode}
         currentZipCode={currentZipCode}
       />
-      <MainContent data={data?.map(movieToShowMapper)} isLoading={isLoading} />
+      <MainContent
+        contentItems={data?.map(movieAiringToContentItemMapper)}
+        isLoading={isLoading}
+      />
     </>
   );
 };
