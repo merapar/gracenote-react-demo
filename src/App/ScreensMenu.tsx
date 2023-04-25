@@ -12,8 +12,7 @@ import { verticalGradient } from './gradients';
 import { Link, useLocation } from 'react-router-dom';
 import { routesConfig } from './routes';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ListItemText = styled(MuiListItemText)(({ theme }) => ({
+const ListItemText = styled(MuiListItemText)(() => ({
   margin: '1rem 0',
   textAlign: 'center',
   fontSize: '1.3rem',
@@ -23,8 +22,8 @@ const ListItemText = styled(MuiListItemText)(({ theme }) => ({
   letterSpacing: '0.00938em',
   display: 'block',
 }));
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ListLink: typeof MuiLink = styled(MuiLink)(({ theme }) => ({
+
+const ListLink: typeof MuiLink = styled(MuiLink)(() => ({
   color: '#fff',
   textDecoration: 'none',
   width: '100%',
