@@ -2,9 +2,10 @@ import axios, { AxiosInstance, RawAxiosRequestConfig } from 'axios';
 
 let client: AxiosInstance;
 
-export const initApi = () => {
+export const initApi = (apiKey: string) => {
   client = axios.create({
     baseURL: 'https://data.tmsapi.com/v1.1',
+    params: { api_key: apiKey },
   });
 };
 

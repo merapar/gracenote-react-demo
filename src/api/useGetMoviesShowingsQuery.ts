@@ -33,7 +33,6 @@ export type GetMoviesShowingsQueryResponseType =
 export type MoviesShowingsParams = {
   startDate: string;
   zip: number;
-  api_key: string;
 };
 
 const getMoviesShowings = (

@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react';
 import { MainContent } from '../components/MainContent';
 import { Navigation } from '../components/Navigation';
 import { useLocationSelector } from '../App';
-import { useApiKey } from '../store/ApiKeyProvider';
+
 import {
   GetMoviesShowingsQueryResponseType,
   useGetMoviesShowingsQuery,
@@ -16,8 +16,6 @@ interface FetchData {
 }
 
 export const MoviesInCinema = () => {
-  const { getApiKey } = useApiKey();
-
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
@@ -26,9 +24,8 @@ export const MoviesInCinema = () => {
     return {
       startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
       zip: currentZipCode,
-      api_key: getApiKey(),
     };
-  }, [selectedDate, currentZipCode, getApiKey]);
+  }, [selectedDate, currentZipCode]);
 
   const { isLoading, data }: FetchData = useGetMoviesShowingsQuery(queryString);
 

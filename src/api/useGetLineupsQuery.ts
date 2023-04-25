@@ -22,7 +22,6 @@ export type GetLineupsQueryResponseType = GetLineupsQueryResponse[];
 interface LineupsParams {
   startDateTime: string;
   postalCode: string;
-  api_key: string;
   country: string;
 }
 

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useApiKey } from '../store/ApiKeyProvider';
 import { useLocationSelector } from '../App';
 import { Navigation } from '../components/Navigation';
 
@@ -41,7 +40,6 @@ const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
 };
 
 export const MoviesOnTv = () => {
-  const { getApiKey } = useApiKey();
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
@@ -52,7 +50,6 @@ export const MoviesOnTv = () => {
   const { data: lineupData } = useGetLineupsQuery({
     startDateTime: startDateTime,
     postalCode: currentZipCode.toString(),
-    api_key: getApiKey(),
     country: 'USA',
   });
 
@@ -60,7 +57,6 @@ export const MoviesOnTv = () => {
   const lineupId = lineupData?.[0].lineupId ?? '';
 
   const { data, isLoading } = useGetMoviesAirings({
-    api_key: getApiKey(),
     lineupId: lineupId,
     startDateTime: startDateTime,
   });

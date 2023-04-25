@@ -88,7 +88,6 @@ export interface GetMoviesAiringsQueryResponse {
 type GetMoviesAiringsResponseType = GetMoviesAiringsQueryResponse[];
 
 interface MoviesAiringsParams {
-  api_key: string;
   lineupId: string;
   startDateTime: string;
 }
