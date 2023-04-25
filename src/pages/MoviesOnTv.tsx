@@ -6,14 +6,14 @@ import { Navigation } from '../components/Navigation';
 import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
 import {
   useGetMoviesAirings,
-  GetMoviesAiringsQueryResponse,
+  MovieAirings,
 } from '../api/useGetMoviesAiringsQuery';
 import dayjs, { Dayjs } from 'dayjs';
 import { MainContent } from '../components/MainContent';
 import { ContentItem } from '../components/ContentGallery';
 
 const movieAiringToContentItemMapper = (
-  movieAiring: GetMoviesAiringsQueryResponse,
+  movieAiring: MovieAirings,
 ): ContentItem => {
   const {
     program: {

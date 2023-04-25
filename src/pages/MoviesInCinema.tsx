@@ -5,7 +5,7 @@ import { Navigation } from '../components/Navigation';
 import { useLocationSelector } from '../App';
 
 import {
-  GetMoviesShowingsQueryResponse,
+  MovieShowings,
   MovieShowTime,
   useGetMoviesShowingsQuery,
 } from '../api/useGetMoviesShowingsQuery';
@@ -22,7 +22,7 @@ const showTimeMapper = (showtime: MovieShowTime): ShowTime => {
 };
 
 const movieShowingToContentItemMapper = (
-  movieShowing: GetMoviesShowingsQueryResponse,
+  movieShowing: MovieShowings,
 ): ContentItem => {
   const {
     tmsId,
