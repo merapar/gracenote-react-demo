@@ -22,13 +22,13 @@ type RenderButtonParams = {
   setZipCode: (zipCode: number) => void;
 };
 
-const renderButton = ({
+const renderRadioButton = ({
   state,
   zipCode,
   setZipCode,
   currentZipCode,
 }: RenderButtonParams) => {
-  const showArrow = currentZipCode === zipCode;
+  const checked = currentZipCode === zipCode;
   return (
     <Box flexDirection={'row'} key={state} alignItems={'center'}>
       <FormControlLabel
@@ -38,7 +38,7 @@ const renderButton = ({
             onClick={() => {
               setZipCode(zipCode);
             }}
-            checked={showArrow}
+            checked={checked}
           />
         }
         label={state}
@@ -59,7 +59,7 @@ export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
         <span>Choose location</span>
       </Label>
       {Object.entries(Locations).map(([state, zipCode]) =>
-        renderButton({ state, zipCode, setZipCode, currentZipCode }),
+        renderRadioButton({ state, zipCode, setZipCode, currentZipCode }),
       )}
     </Box>
   );
