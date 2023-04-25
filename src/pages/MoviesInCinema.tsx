@@ -1,14 +1,14 @@
-import { useContext, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 
 import { MainContent } from '../components/MainContent';
 import { Navigation } from '../components/Navigation';
 import { useLocationSelector } from '../App';
 import { useApiKey } from '../store/ApiKeyProvider';
-import { AppDataContext } from '../store/AppDataContext';
 import {
   GetMoviesShowingsQueryResponseType,
   useGetMoviesShowingsQuery,
 } from '../api/useGetMoviesShowingsQuery';
+import dayjs, { Dayjs } from 'dayjs';
 
 interface FetchData {
   isLoading?: boolean;
@@ -17,12 +17,11 @@ interface FetchData {
 
 export const MoviesInCinema = () => {
   const { getApiKey } = useApiKey();
-  const { selectedDate } = useContext(AppDataContext);
 
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
-
   const queryString = useMemo(() => {
     return {
       startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
@@ -35,7 +34,12 @@ export const MoviesInCinema = () => {
 
   return (
     <>
-      <Navigation setZipCode={setZipCode} currentZipCode={currentZipCode} />
+      <Navigation
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        setZipCode={setZipCode}
+        currentZipCode={currentZipCode}
+      />
 
       <MainContent isLoading={isLoading} data={data} />
     </>

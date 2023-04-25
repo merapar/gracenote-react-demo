@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState } from 'react';
 
 import { useApiKey } from '../store/ApiKeyProvider';
 import { useLocationSelector } from '../App';
@@ -9,7 +9,7 @@ import {
   useGetMoviesAirings,
   GetMoviesAiringsQueryResponse,
 } from '../api/useGetMoviesAiringsQuery';
-import { AppDataContext } from '../store/AppDataContext';
+import dayjs, { Dayjs } from 'dayjs';
 import { MainContent, Show } from '../components/MainContent';
 
 const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
@@ -42,8 +42,7 @@ const movieToShowMapper = (movie: GetMoviesAiringsQueryResponse): Show => {
 
 export const MoviesOnTv = () => {
   const { getApiKey } = useApiKey();
-  const { selectedDate } = useContext(AppDataContext);
-
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
@@ -68,7 +67,12 @@ export const MoviesOnTv = () => {
 
   return (
     <>
-      <Navigation setZipCode={setZipCode} currentZipCode={currentZipCode} />
+      <Navigation
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        setZipCode={setZipCode}
+        currentZipCode={currentZipCode}
+      />
       <MainContent data={data?.map(movieToShowMapper)} isLoading={isLoading} />
     </>
   );
