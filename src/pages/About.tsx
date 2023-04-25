@@ -1,7 +1,7 @@
 import { Container, GlobalStyles, Link, Typography } from '@mui/material';
 import { Box } from '../components/Box';
 
-const MakreSureTheFooterIsVisible = () => (
+const MakeSureTheFooterIsVisible = () => (
   <GlobalStyles
     styles={{
       '#root': {
@@ -20,7 +20,7 @@ const MakreSureTheFooterIsVisible = () => (
 export const AboutPage = () => {
   return (
     <Container sx={{ py: 8, height: '100%' }} maxWidth={false}>
-      <MakreSureTheFooterIsVisible />
+      <MakeSureTheFooterIsVisible />
       <Box
         flexDirection={'column'}
         alignItems={'center'}
