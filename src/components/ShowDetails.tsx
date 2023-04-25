@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -6,10 +7,9 @@ import {
   Grid,
   CardActions,
   Typography,
+  CardMedia,
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-
-import { Hero } from './Hero';
 
 import type { ContentItem } from './ContentGallery';
 import { ShowTimes } from './ShowTimes';
@@ -37,7 +37,16 @@ export const ShowDetails = ({
                 flexDirection: 'column',
               }}
             >
-              <Hero imageUrl={`${IMAGE_BASE_URL}${item.imageUri}`} />
+              <Box sx={{ pt: 8, pb: 6 }}>
+                <Container maxWidth="sm">
+                  <CardMedia
+                    component="img"
+                    image={`${IMAGE_BASE_URL}${item.imageUri}`}
+                    alt="random"
+                  />
+                </Container>
+              </Box>
+
               <CardActions>
                 <Button onClick={() => showDetailsHandler('')} size="small">
                   <ArrowBackIosIcon />
