@@ -15,18 +15,11 @@ export const zipCodeLocationsMap = Object.fromEntries(
   Object.entries(Locations).map((location) => location.reverse()),
 );
 
-export type SetZipCodeShape = (zipCode: number) => void;
-
-type Props = {
-  currentZipCode: number;
-  setZipCode: SetZipCodeShape;
-};
-
 type RenderButtonParams = {
   state: string;
   zipCode: number;
   currentZipCode: number;
-  setZipCode: SetZipCodeShape;
+  setZipCode: (zipCode: number) => void;
 };
 
 const renderButton = ({
@@ -52,6 +45,11 @@ const renderButton = ({
       />
     </Box>
   );
+};
+
+type Props = {
+  currentZipCode: number;
+  setZipCode: (zipCode: number) => void;
 };
 
 export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
