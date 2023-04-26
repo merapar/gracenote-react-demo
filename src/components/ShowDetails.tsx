@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -6,17 +7,16 @@ import {
   Grid,
   CardActions,
   Typography,
+  CardMedia,
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-import { Hero } from './Hero';
-
-import type { Show } from './MainContent';
+import type { ContentItem } from './ContentGallery';
 import { ShowTimes } from './ShowTimes';
 import { IMAGE_BASE_URL } from '../api';
 
 interface ShowDetailsData {
-  selectedShow: Show[];
+  selectedShow: ContentItem[];
   // eslint-disable-next-line @typescript-eslint/ban-types
   showDetailsHandler: Function;
 }
@@ -28,8 +28,8 @@ export const ShowDetails = ({
   return (
     <Container maxWidth="md">
       <Grid container pb={5}>
-        {selectedShow.map((show: Show) => (
-          <Grid item key={show.tmsId} xs={12}>
+        {selectedShow.map((item: ContentItem) => (
+          <Grid item key={item.tmsId} xs={12}>
             <Card
               sx={{
                 height: '100%',
@@ -37,7 +37,16 @@ export const ShowDetails = ({
                 flexDirection: 'column',
               }}
             >
-              <Hero imageUrl={`${IMAGE_BASE_URL}${show.preferredImage.uri}`} />
+              <Box sx={{ pt: 8, pb: 6 }}>
+                <Container maxWidth="sm">
+                  <CardMedia
+                    component="img"
+                    image={`${IMAGE_BASE_URL}${item.imageUri}`}
+                    alt="random"
+                  />
+                </Container>
+              </Box>
+
               <CardActions>
                 <Button onClick={() => showDetailsHandler('')} size="small">
                   <ArrowBackIosIcon />
@@ -47,15 +56,15 @@ export const ShowDetails = ({
 
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="h2">
-                  {show.title}
+                  {item.title}
                 </Typography>
-                <Typography>{show.longDescription}</Typography>
+                <Typography>{item.longDescription}</Typography>
               </CardContent>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   Show Times
                 </Typography>
-                <ShowTimes showtime={show.showtimes} />
+                <ShowTimes showTimes={item.showtimes} />
               </CardContent>
             </Card>
           </Grid>

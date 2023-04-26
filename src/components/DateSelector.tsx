@@ -1,12 +1,10 @@
 import { DatePicker } from '@mui/x-date-pickers';
-import { useContext } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import type {} from '@mui/x-date-pickers/themeAugmentation';
-
+import { Dispatch, FC, SetStateAction } from 'react';
 import { Box } from './Box';
 import { Label } from './Label';
-import { AppDataContext } from '../store/AppDataContext';
+import type {} from '@mui/x-date-pickers/themeAugmentation';
+import { createTheme, ThemeProvider } from '@mui/material';
+import dayjs, { Dayjs } from 'dayjs';
 
 const theme = createTheme({
   components: {
@@ -30,9 +28,12 @@ const theme = createTheme({
   },
 });
 
-export const DateSelector = () => {
-  const { selectedDate, onSetSelectedDate } = useContext(AppDataContext);
+type Props = {
+  selectedDate: Dayjs | null;
+  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
+};
 
+export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
   return (
     <Box flexDirection={'row'} sx={{ alignItems: 'center' }}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>
@@ -60,9 +61,7 @@ export const DateSelector = () => {
             },
           }}
           onChange={(value) => {
-            // To cleanup
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            onSetSelectedDate(value!);
+            setSelectedDate(value);
           }}
         />
       </ThemeProvider>

@@ -1,15 +1,17 @@
 import { useMemo, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Alert, Snackbar } from '@mui/material';
+import { useApiKey } from './ApiKeyProvider';
 import { AxiosError } from 'axios';
 
 import { initApi } from '../api';
 
 const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState('');
+  const { getApiKey } = useApiKey();
 
   // instantiate axios
-  initApi();
+  initApi(getApiKey());
 
   const queryClient = useMemo(
     () =>

@@ -1,81 +1,48 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { LinearProgress } from '@mui/material';
 
-import { ContentGallery } from './ContentGallery';
+import { ContentGallery, ContentItem } from './ContentGallery';
 import { ShowDetails } from './ShowDetails';
-import { AppDataContext } from '../store/AppDataContext';
-// import { Hero } from "./Hero";
-
-interface TheatreData {
-  id: string;
-  name: string;
-}
-
-interface TimeAndLocationData {
-  theatre: TheatreData;
-  dateTime: string;
-}
-
-export interface ShowTimesData {
-  showtimes: TimeAndLocationData[];
-}
-
-interface PreferredImage {
-  uri: string;
-}
-
-export interface Show {
-  tmsId: string;
-  preferredImage: PreferredImage;
-  title: string;
-  shortDescription: string;
-  longDescription: string;
-  showtimes: TimeAndLocationData[];
-}
 
 export const MainContent = ({
   isLoading,
-  data,
+  contentItems,
 }: {
   isLoading: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any;
+  contentItems: ContentItem[] | undefined;
 }) => {
-  const { showContentDetails, onToggleShowContentDetails } =
-    useContext(AppDataContext);
-  const [showId, setShowId] = useState<string>('');
+  const [contentDetails, setContentDetails] = useState(false);
+  const [contentId, setContentId] = useState<string>('');
 
-  const showDetailsHandler = (selectedShowId: string) => {
-    setShowId(selectedShowId);
-    onToggleShowContentDetails();
+  const contentDetailsHandler = (selectedShowId: string) => {
+    setContentId(selectedShowId);
+    setContentDetails((state) => !state);
   };
 
-  const selectedShow =
-    showId && data ? data.filter((show: Show) => show.tmsId === showId) : '';
+  const selectedContentItem =
+    contentId && contentItems
+      ? contentItems.filter((item: ContentItem) => item.tmsId === contentId)
+      : '';
 
-  let content;
-
-  if (isLoading) content = <LinearProgress />;
-
-  if (!isLoading && !data) content = <div>NO DATA IS HERE</div>;
-
-  if (data && !!data.length && !showContentDetails)
-    content = (
-      <>
-        {/* <Hero imageUrl="https://source.unsplash.com/random" /> */}
-
-        <ContentGallery shows={data} showDetailsHandler={showDetailsHandler} />
-      </>
-    );
-
-  // if (data && !!data.length && showDetails && selectedShow)
-  if (data && !!data.length && showContentDetails && selectedShow)
-    content = (
-      <ShowDetails
-        selectedShow={selectedShow}
-        showDetailsHandler={showDetailsHandler}
-      />
-    );
-
-  return <main>{content}</main>;
+  return (
+    <main>
+      {isLoading && <LinearProgress />}
+      {!isLoading && !contentItems && <div>NO DATA IS HERE</div>}
+      {contentItems && !!contentItems.length && !contentDetails && (
+        <ContentGallery
+          contentItems={contentItems}
+          showDetailsHandler={contentDetailsHandler}
+        />
+      )}
+      {contentItems &&
+        !!contentItems.length &&
+        contentDetails &&
+        selectedContentItem && (
+          <ShowDetails
+            selectedShow={selectedContentItem}
+            showDetailsHandler={contentDetailsHandler}
+          />
+        )}
+    </main>
+  );
 };

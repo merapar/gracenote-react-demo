@@ -1,45 +1,80 @@
-import { useContext, useMemo } from 'react';
+import { useState } from 'react';
 
-import { useApiKey } from '../store/ApiKeyProvider';
 import { useLocationSelector } from '../App';
 import { Navigation } from '../components/Navigation';
 
 import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
-import { Lineups } from '../components/Lineups';
-import { zipCodeLocationsMap } from '../components/LocationSelector';
-import { AppDataContext } from '../store/AppDataContext';
+import {
+  useGetMoviesAirings,
+  MovieAirings,
+} from '../api/useGetMoviesAiringsQuery';
+import dayjs, { Dayjs } from 'dayjs';
+import { MainContent } from '../components/MainContent';
+import { ContentItem } from '../components/ContentGallery';
+
+const movieAiringToContentItemMapper = (
+  movieAiring: MovieAirings,
+): ContentItem => {
+  const {
+    program: {
+      longDescription,
+      preferredImage,
+      shortDescription,
+      title,
+      tmsId,
+    },
+    startTime,
+    station,
+  } = movieAiring;
+
+  return {
+    longDescription,
+    imageUri: preferredImage.uri,
+    shortDescription,
+    showtimes: [
+      {
+        location: station.callSign,
+        dateTime: startTime,
+      },
+    ],
+    title,
+    tmsId,
+  };
+};
 
 export const MoviesOnTv = () => {
-  const { getApiKey } = useApiKey();
-  const { selectedDate } = useContext(AppDataContext);
-
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   const {
     locationSelector: { currentZipCode, setZipCode },
   } = useLocationSelector();
 
-  const queryString = useMemo(() => {
-    return {
-      startDateTime: selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '',
-      postalCode: currentZipCode.toString(),
-      api_key: getApiKey(),
-      country: 'USA',
-    };
-  }, [selectedDate, currentZipCode, getApiKey]);
+  const startDateTime = selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '';
 
-  const cityName = zipCodeLocationsMap[currentZipCode];
+  const { data: lineupData } = useGetLineupsQuery({
+    startDateTime: startDateTime,
+    postalCode: currentZipCode.toString(),
+    country: 'USA',
+  });
 
-  const { data: lineupData, isLoading: isLoadingLineup } =
-    useGetLineupsQuery(queryString);
+  // Just select the first lineup for current Zipcode
+  const lineupId = lineupData?.[0].lineupId ?? '';
+
+  const { data, isLoading } = useGetMoviesAirings({
+    lineupId: lineupId,
+    startDateTime: startDateTime,
+  });
 
   return (
     <>
-      <Navigation setZipCode={setZipCode} currentZipCode={currentZipCode} />
-
-      {/* Limit the content to 1 type in a selected location */}
-      <Lineups
-        // data={lineupData?.filter((lineup) => lineup.location === cityName)}
-        data={lineupData?.find((lineup) => lineup.location === cityName)}
-        isLoading={isLoadingLineup}
+      <Navigation
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        setZipCode={setZipCode}
+        currentZipCode={currentZipCode}
+      />
+      <MainContent
+        contentItems={data?.map(movieAiringToContentItemMapper)}
+        isLoading={isLoading}
       />
     </>
   );

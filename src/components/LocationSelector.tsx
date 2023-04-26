@@ -15,27 +15,20 @@ export const zipCodeLocationsMap = Object.fromEntries(
   Object.entries(Locations).map((location) => location.reverse()),
 );
 
-export type SetZipCodeShape = (zipCode: number) => void;
-
-type Props = {
-  currentZipCode: number;
-  setZipCode: SetZipCodeShape;
-};
-
 type RenderButtonParams = {
   state: string;
   zipCode: number;
   currentZipCode: number;
-  setZipCode: SetZipCodeShape;
+  setZipCode: (zipCode: number) => void;
 };
 
-const renderButton = ({
+const renderRadioButton = ({
   state,
   zipCode,
   setZipCode,
   currentZipCode,
 }: RenderButtonParams) => {
-  const showArrow = currentZipCode === zipCode;
+  const checked = currentZipCode === zipCode;
   return (
     <Box flexDirection={'row'} key={state} alignItems={'center'}>
       <FormControlLabel
@@ -45,13 +38,18 @@ const renderButton = ({
             onClick={() => {
               setZipCode(zipCode);
             }}
-            checked={showArrow}
+            checked={checked}
           />
         }
         label={state}
       />
     </Box>
   );
+};
+
+type Props = {
+  currentZipCode: number;
+  setZipCode: (zipCode: number) => void;
 };
 
 export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
@@ -61,7 +59,7 @@ export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
         <span>Choose location</span>
       </Label>
       {Object.entries(Locations).map(([state, zipCode]) =>
-        renderButton({ state, zipCode, setZipCode, currentZipCode }),
+        renderRadioButton({ state, zipCode, setZipCode, currentZipCode }),
       )}
     </Box>
   );
