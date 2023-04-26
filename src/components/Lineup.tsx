@@ -6,7 +6,7 @@ import {
   useGetMoviesOnTvQuery,
 } from '../api/useGetMoviesOnTvQuery';
 import { MainContent, Show } from './MainContent';
-import { ApiKeyContext } from '../store/ApiKeyContext';
+import { useApiKey } from '../store/ApiKeyProvider';
 import { AppDataContext } from '../store/AppDataContext';
 
 const movieToShowMapper = (movie: GetMoviesOnTvQueryResponse): Show => {
@@ -37,16 +37,16 @@ const movieToShowMapper = (movie: GetMoviesOnTvQueryResponse): Show => {
 };
 
 export const Lineup = ({ lineup }: { lineup: GetLineupsQueryResponse }) => {
-  const { apiKeyValue } = useContext(ApiKeyContext);
+  const { getApiKey } = useApiKey();
   const { selectedDate } = useContext(AppDataContext);
 
   const queryString = useMemo(() => {
     return {
-      api_key: apiKeyValue,
+      api_key: getApiKey(),
       lineupId: lineup.lineupId,
       startDateTime: selectedDate?.format('YYYY-MM-DD') ?? '',
     };
-  }, [apiKeyValue, lineup.lineupId, selectedDate]);
+  }, [getApiKey, lineup.lineupId, selectedDate]);
   const { data, isLoading } = useGetMoviesOnTvQuery(queryString);
 
   return (

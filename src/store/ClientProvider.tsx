@@ -5,7 +5,7 @@ import { AxiosError } from 'axios';
 
 import { initApi } from '../api';
 
-export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
+const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   // instantiate axios
@@ -54,3 +54,5 @@ export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
     </QueryClientProvider>
   );
 };
+
+export default ClientProvider;

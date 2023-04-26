@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 
-import { ApiKeyContext } from '../store/ApiKeyContext';
+import { useApiKey } from '../store/ApiKeyProvider';
 import { useLocationSelector } from '../App';
 import { Navigation } from '../components/Navigation';
 
@@ -10,7 +10,7 @@ import { zipCodeLocationsMap } from '../components/LocationSelector';
 import { AppDataContext } from '../store/AppDataContext';
 
 export const MoviesOnTv = () => {
-  const { apiKeyValue } = useContext(ApiKeyContext);
+  const { getApiKey } = useApiKey();
   const { selectedDate } = useContext(AppDataContext);
 
   const {
@@ -21,10 +21,10 @@ export const MoviesOnTv = () => {
     return {
       startDateTime: selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '',
       postalCode: currentZipCode.toString(),
-      api_key: apiKeyValue,
+      api_key: getApiKey(),
       country: 'USA',
     };
-  }, [selectedDate, currentZipCode, apiKeyValue]);
+  }, [selectedDate, currentZipCode, getApiKey]);
 
   const cityName = zipCodeLocationsMap[currentZipCode];
 
