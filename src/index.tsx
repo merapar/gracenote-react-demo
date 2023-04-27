@@ -17,7 +17,6 @@ import './index.css';
 
 import { theme } from './App/theme';
 import { routes } from './App/routes';
-import ApiKeyProvider from './store/ApiKeyProvider';
 import ClientProvider from './store/ClientProvider';
 
 const emotionCache = createCache({
@@ -34,15 +33,13 @@ root.render(
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <ApiKeyProvider>
-            <ClientProvider>
-              <RouterProvider
-                router={routes}
-                fallbackElement={<CircularProgress />}
-              />
-              <ReactQueryDevtools />
-            </ClientProvider>
-          </ApiKeyProvider>
+          <ClientProvider>
+            <RouterProvider
+              router={routes}
+              fallbackElement={<CircularProgress />}
+            />
+            <ReactQueryDevtools />
+          </ClientProvider>
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>

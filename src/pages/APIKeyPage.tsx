@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Button,
@@ -8,13 +7,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-
-import { useApiKey } from '../store/ApiKeyProvider';
+import { getApiKey, setApiKey, initApi } from '../api';
+import { useState } from 'react';
 
 export const APIKeyPage = () => {
-  const { getApiKey, onSetApiKey, onResetApiKey } = useApiKey();
-
-  const [apiKey, setApiKey] = useState(getApiKey());
+  const [key, setKey] = useState(getApiKey());
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,16 +21,13 @@ export const APIKeyPage = () => {
   const updateValueHandler = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setApiKey(event.target.value);
+    setKey(event.target.value);
   };
 
-  const resetClickHandler = () => {
-    setApiKey('');
-    onResetApiKey();
-  };
+  const submitClickHandler = () => {
+    setApiKey(key);
+    initApi(key);
 
-  const buttonClickHandler = () => {
-    onSetApiKey(apiKey);
     navigate(from, { replace: true });
   };
 
@@ -53,19 +47,16 @@ export const APIKeyPage = () => {
             fullWidth
             label="API Key"
             onChange={updateValueHandler}
-            value={apiKey}
+            value={key}
             required
           />
         </Grid>
         <Grid item>
           <CardActions>
-            <Button variant="outlined" onClick={resetClickHandler}>
-              Reset
-            </Button>
             <Button
-              disabled={apiKey.length <= 5}
+              disabled={key.length <= 5}
               variant="contained"
-              onClick={buttonClickHandler}
+              onClick={submitClickHandler}
             >
               Submit
             </Button>
