@@ -7,7 +7,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { getApiKey, setApiKey, initApi } from '../api';
+import { getApiKey, setApiKey } from '../api';
 import { useState } from 'react';
 
 export const APIKeyPage = () => {
@@ -26,8 +26,6 @@ export const APIKeyPage = () => {
 
   const submitClickHandler = () => {
     setApiKey(key);
-    initApi(key);
-
     navigate(from, { replace: true });
   };
 

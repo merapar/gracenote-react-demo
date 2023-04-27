@@ -3,12 +3,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Alert, Snackbar } from '@mui/material';
 import { AxiosError } from 'axios';
 
-import { initApi, getApiKey } from '../api';
+import { initApi } from '../api';
 
 const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState('');
   // instantiate axios
-  initApi(getApiKey());
+  initApi();
 
   const queryClient = useMemo(
     () =>

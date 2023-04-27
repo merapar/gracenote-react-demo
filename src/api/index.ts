@@ -9,16 +9,17 @@ export const getApiKey = () =>
 
 export const setApiKey = (key: string) => {
   localStorage.setItem(STORAGE_KEY_FOR_API_KEY, key);
+  initApi();
 };
 
 let client: AxiosInstance;
 
-export const initApi = (apiKey: string) => {
+export const initApi = () => {
   client = axios.create({
     baseURL: 'https://data.tmsapi.com/v1.1',
-    params: { api_key: apiKey },
+    params: { api_key: getApiKey() },
   });
-  console.log(`Api client initialized with key ${apiKey}`);
+  console.log(`Api client initialized with key ${getApiKey()}`);
 };
 
 export const request = async <T>({ ...options }: RawAxiosRequestConfig) => {
