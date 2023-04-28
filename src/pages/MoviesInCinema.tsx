@@ -1,16 +1,12 @@
-import { useState } from 'react';
-
-import { MainContent } from '../components/MainContent';
-import { Navigation } from '../components/Navigation';
-import { useLocationSelector } from '../App';
+import { ContentDashboard } from '../components/ContentDashboard';
 
 import {
   MovieShowings,
   MovieShowTime,
   useGetMoviesShowingsQuery,
 } from '../api/useGetMoviesShowingsQuery';
-import dayjs, { Dayjs } from 'dayjs';
 import { ContentItem, ShowTime } from '../components/ContentGallery';
+import { useOutletContext } from 'react-router-dom';
 
 const showTimeMapper = (showtime: MovieShowTime): ShowTime => {
   const { dateTime, theatre: theatre } = showtime;
@@ -47,26 +43,18 @@ const movieShowingToContentItemMapper = (
 };
 
 export const MoviesInCinema = () => {
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
-  const {
-    locationSelector: { currentZipCode, setZipCode },
-  } = useLocationSelector();
+  const [selectedDate, zipCode] =
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    useOutletContext<Array<any>>();
 
   const { isLoading, data } = useGetMoviesShowingsQuery({
     startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
-    zip: currentZipCode,
+    zip: zipCode,
   });
 
   return (
     <>
-      <Navigation
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        setZipCode={setZipCode}
-        currentZipCode={currentZipCode}
-      />
-
-      <MainContent
+      <ContentDashboard
         isLoading={isLoading}
         contentItems={data?.map(movieShowingToContentItemMapper)}
       />

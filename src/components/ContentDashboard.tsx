@@ -4,7 +4,7 @@ import { LinearProgress } from '@mui/material';
 import { ContentGallery, ContentItem } from './ContentGallery';
 import { ShowDetails } from './ShowDetails';
 
-export const MainContent = ({
+export const ContentDashboard = ({
   isLoading,
   contentItems,
 }: {

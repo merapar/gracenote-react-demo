@@ -21,14 +21,14 @@ const Container = styled(Box)(({ theme }) => {
 type Props = {
   selectedDate: Dayjs | null;
   setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
-  currentZipCode: number;
+  zipCode: number;
   setZipCode: Dispatch<SetStateAction<number>>;
 };
 
-export const Navigation: FC<Props> = ({
+export const ParamSelector: FC<Props> = ({
   selectedDate,
   setSelectedDate,
-  currentZipCode,
+  zipCode,
   setZipCode,
 }) => {
   return (
@@ -38,10 +38,7 @@ export const Navigation: FC<Props> = ({
         setSelectedDate={setSelectedDate}
       />
       <div style={{ width: '4rem', height: '1rem' }}></div>
-      <LocationSelector
-        currentZipCode={currentZipCode}
-        setZipCode={setZipCode}
-      />
+      <LocationSelector currentZipCode={zipCode} setZipCode={setZipCode} />
     </Container>
   );
 };

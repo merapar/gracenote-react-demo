@@ -1,16 +1,11 @@
-import { useState } from 'react';
-
-import { useLocationSelector } from '../App';
-import { Navigation } from '../components/Navigation';
-
 import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
 import {
   useGetMoviesAirings,
   MovieAirings,
 } from '../api/useGetMoviesAiringsQuery';
-import dayjs, { Dayjs } from 'dayjs';
-import { MainContent } from '../components/MainContent';
+import { ContentDashboard } from '../components/ContentDashboard';
 import { ContentItem } from '../components/ContentGallery';
+import { useOutletContext } from 'react-router-dom';
 
 const movieAiringToContentItemMapper = (
   movieAiring: MovieAirings,
@@ -43,16 +38,15 @@ const movieAiringToContentItemMapper = (
 };
 
 export const MoviesOnTv = () => {
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
-  const {
-    locationSelector: { currentZipCode, setZipCode },
-  } = useLocationSelector();
+  const [selectedDate, zipCode] =
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    useOutletContext<Array<any>>();
 
   const startDateTime = selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '';
 
   const { data: lineupData } = useGetLineupsQuery({
     startDateTime: startDateTime,
-    postalCode: currentZipCode.toString(),
+    postalCode: zipCode.toString(),
     country: 'USA',
   });
 
@@ -66,13 +60,7 @@ export const MoviesOnTv = () => {
 
   return (
     <>
-      <Navigation
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        setZipCode={setZipCode}
-        currentZipCode={currentZipCode}
-      />
-      <MainContent
+      <ContentDashboard
         contentItems={data?.map(movieAiringToContentItemMapper)}
         isLoading={isLoading}
       />

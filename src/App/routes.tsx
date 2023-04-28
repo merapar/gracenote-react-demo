@@ -7,6 +7,7 @@ import { AboutPage } from '../pages/About';
 import { RequireApiKey } from '../components/RequireApiKey';
 import { APIKeyPage } from '../pages/APIKeyPage';
 import { MoviesOnTv } from '../pages/MoviesOnTv';
+import WithParamSelector from '../components/WithParamSelector';
 
 const URL_MOVIES_IN_CINEMA = '/movies-in-cinema';
 const URL_MOVIES_ON_TV = '/movies-on-tv';
@@ -34,20 +35,25 @@ export const routes = createBrowserRouter(
           element: <Navigate to={URL_MOVIES_IN_CINEMA} replace />,
         },
         {
-          path: URL_MOVIES_IN_CINEMA,
-          element: (
-            <RequireApiKey>
-              <MoviesInCinema />
-            </RequireApiKey>
-          ),
-        },
-        {
-          path: URL_MOVIES_ON_TV,
-          element: (
-            <RequireApiKey>
-              <MoviesOnTv />
-            </RequireApiKey>
-          ),
+          element: <WithParamSelector />,
+          children: [
+            {
+              path: URL_MOVIES_IN_CINEMA,
+              element: (
+                <RequireApiKey>
+                  <MoviesInCinema />
+                </RequireApiKey>
+              ),
+            },
+            {
+              path: URL_MOVIES_ON_TV,
+              element: (
+                <RequireApiKey>
+                  <MoviesOnTv />
+                </RequireApiKey>
+              ),
+            },
+          ],
         },
         {
           path: URL_ABOUT,

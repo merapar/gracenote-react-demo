@@ -1,11 +1,5 @@
-import {
-  Dispatch,
-  KeyboardEvent,
-  MouseEvent,
-  SetStateAction,
-  useState,
-} from 'react';
-import { Outlet, useLocation, useOutletContext } from 'react-router-dom';
+import { KeyboardEvent, MouseEvent, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -23,18 +17,8 @@ import { Locations } from './components/LocationSelector';
 import { getRouteTitleByPath } from './App/routes';
 import { Footer } from './components/Footer';
 
-type ContextType = {
-  locationSelector: {
-    currentZipCode: number;
-    setZipCode: Dispatch<SetStateAction<number>>;
-  };
-};
-export const useLocationSelector = () => {
-  return useOutletContext<ContextType>();
-};
 function App() {
   const [currentZipCode, setZipCode] = useState(Locations['New York']);
-
   const [drawerState, setDrawerState] = useState({ open: false });
   const currentRoute = useLocation();
   const routeTitle = getRouteTitleByPath(currentRoute.pathname);
