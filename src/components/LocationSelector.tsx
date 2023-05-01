@@ -16,50 +16,58 @@ export const zipCodeLocationsMap = Object.fromEntries(
 );
 
 type RenderButtonParams = {
-  state: string;
+  city: string;
   zipCode: number;
-  currentZipCode: number;
-  setZipCode: (zipCode: number) => void;
+  selectedZipCode: number;
+  setSelectedZipCode: (zipCode: number) => void;
 };
 
 const renderRadioButton = ({
-  state,
+  city,
   zipCode,
-  setZipCode,
-  currentZipCode,
+  setSelectedZipCode,
+  selectedZipCode,
 }: RenderButtonParams) => {
-  const checked = currentZipCode === zipCode;
+  const checked = selectedZipCode === zipCode;
   return (
-    <Box flexDirection={'row'} key={state} alignItems={'center'}>
+    <Box flexDirection={'row'} key={city} alignItems={'center'}>
       <FormControlLabel
         value={zipCode}
         control={
           <Radio
             onClick={() => {
-              setZipCode(zipCode);
+              setSelectedZipCode(zipCode);
             }}
             checked={checked}
           />
         }
-        label={state}
+        label={city}
       />
     </Box>
   );
 };
 
 type Props = {
-  currentZipCode: number;
-  setZipCode: (zipCode: number) => void;
+  selectedZipCode: number;
+  setSelectedZipCode: (zipCode: number) => void;
 };
 
-export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
+export const LocationSelector: FC<Props> = ({
+  selectedZipCode,
+  setSelectedZipCode,
+}) => {
   return (
     <Box flexDirection={'row'}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>
         <span>Choose location</span>
       </Label>
-      {Object.entries(Locations).map(([state, zipCode]) =>
-        renderRadioButton({ state, zipCode, setZipCode, currentZipCode }),
+      {Object.entries(Locations).map(([city, zipCode]) =>
+        renderRadioButton({
+          city,
+          zipCode,
+          setSelectedZipCode,
+          selectedZipCode,
+        }),
       )}
     </Box>
   );

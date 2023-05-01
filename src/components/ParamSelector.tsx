@@ -38,7 +38,10 @@ export const ParamSelector: FC<Props> = ({
         setSelectedDate={setSelectedDate}
       />
       <div style={{ width: '4rem', height: '1rem' }}></div>
-      <LocationSelector currentZipCode={zipCode} setZipCode={setZipCode} />
+      <LocationSelector
+        selectedZipCode={zipCode}
+        setSelectedZipCode={setZipCode}
+      />
     </Container>
   );
 };
