@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { ScreensMenu, ToggleDrawer } from './App/ScreensMenu';
+import { DrawerMenu, ToggleDrawer } from './App/DrawerMenu';
 import { horizontalGradient } from './App/gradients';
 import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
@@ -62,7 +62,7 @@ function App() {
             open={drawerState.open}
             onClose={toggleDrawer(false)}
           >
-            <ScreensMenu {...{ toggleDrawer }} />
+            <DrawerMenu {...{ toggleDrawer }} />
           </Drawer>
           <Typography variant={'h6'} component={'div'} sx={{ flexGrow: 1 }}>
             Gracenote API Demo &ndash; <span>{routeTitle}</span>

@@ -36,7 +36,7 @@ type Props = {
   toggleDrawer: ToggleDrawer;
 };
 
-export const ScreensMenu: FC<Props> = ({ toggleDrawer }) => {
+export const DrawerMenu: FC<Props> = ({ toggleDrawer }) => {
   const closeDrawer = toggleDrawer(false);
   const closeDrawerDelayed = (e: KeyboardEvent | MouseEvent) => {
     setTimeout(closeDrawer, 250, e);
