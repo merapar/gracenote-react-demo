@@ -21,15 +21,20 @@ const URL_ABOUT = '/about';
 export const URL_API_KEY_PAGE = '/api-key';
 export const URL_CONTENT_DETAILS = '/content-details';
 
-export const routesConfig = [
+export const drawerRoutesConfig = [
   { title: 'Movies in the Cinema', url: URL_MOVIES_IN_CINEMA },
   { title: 'Movies on TV', url: URL_MOVIES_ON_TV },
   { title: 'About', url: URL_ABOUT },
   { title: 'API Key Page', url: URL_API_KEY_PAGE },
+];
+
+const allRoutesConfig = [
+  ...drawerRoutesConfig,
   { title: 'Content Details', url: URL_CONTENT_DETAILS },
 ];
+
 export const getRouteTitleByPath = (path: string) => {
-  return routesConfig.find((value) => value.url === path)?.title;
+  return allRoutesConfig.find((value) => value.url === path)?.title;
 };
 
 export const router = createBrowserRouter(

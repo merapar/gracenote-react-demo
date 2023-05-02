@@ -10,7 +10,7 @@ import {
 import { FC, KeyboardEvent, MouseEvent } from 'react';
 import { verticalGradient } from './gradients';
 import { Link, useLocation } from 'react-router-dom';
-import { routesConfig } from './router';
+import { drawerRoutesConfig } from './router';
 
 const ListItemText = styled(MuiListItemText)(() => ({
   margin: '1rem 0',
@@ -55,7 +55,7 @@ export const DrawerMenu: FC<Props> = ({ toggleDrawer }) => {
       }}
     >
       <List>
-        {routesConfig.map(({ title, url }) => {
+        {drawerRoutesConfig.map(({ title, url }) => {
           return (
             <ListItem key={title}>
               <ListLink component={Link} to={url}>
