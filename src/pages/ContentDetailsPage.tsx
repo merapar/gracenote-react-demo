@@ -12,7 +12,6 @@ import { ShowTimes } from '../components/ShowTimes';
 
 export const ContenDetailsPage = () => {
   const { contentDetails } = useLocation().state;
-  console.log(contentDetails);
 
   return (
     <Container maxWidth="md">
