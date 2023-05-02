@@ -13,12 +13,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { ScreensMenu, ToggleDrawer } from './App/ScreensMenu';
 import { horizontalGradient } from './App/gradients';
-import { Locations } from './components/LocationSelector';
 import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
 
 function App() {
-  const [currentZipCode, setZipCode] = useState(Locations['New York']);
   const [drawerState, setDrawerState] = useState({ open: false });
   const currentRoute = useLocation();
   const routeTitle = getRouteTitleByPath(currentRoute.pathname);
@@ -72,14 +70,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Box pt={3} pb={3} id={'app-outlet'}>
-        <Outlet
-          context={{
-            locationSelector: {
-              currentZipCode,
-              setZipCode,
-            },
-          }}
-        />
+        <Outlet />
       </Box>
       <Footer />
     </Container>
