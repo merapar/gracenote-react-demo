@@ -1,3 +1,4 @@
+import { Dayjs } from 'dayjs';
 import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
 import {
   useGetMoviesAirings,
@@ -38,9 +39,7 @@ const movieAiringToContentItemMapper = (
 };
 
 export const MoviesOnTv = () => {
-  const [selectedDate, zipCode] =
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    useOutletContext<Array<any>>();
+  const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
   const startDateTime = selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '';
 

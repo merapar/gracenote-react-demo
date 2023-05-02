@@ -7,6 +7,7 @@ import {
 } from '../api/useGetMoviesShowingsQuery';
 import { ContentItem, ShowTime } from '../components/ContentGallery';
 import { useOutletContext } from 'react-router-dom';
+import { Dayjs } from 'dayjs';
 
 const showTimeMapper = (showtime: MovieShowTime): ShowTime => {
   const { dateTime, theatre: theatre } = showtime;
@@ -43,9 +44,7 @@ const movieShowingToContentItemMapper = (
 };
 
 export const MoviesInCinema = () => {
-  const [selectedDate, zipCode] =
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    useOutletContext<Array<any>>();
+  const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
   const { isLoading, data } = useGetMoviesShowingsQuery({
     startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
