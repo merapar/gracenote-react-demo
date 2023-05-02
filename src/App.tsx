@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ScreensMenu, ToggleDrawer } from './App/ScreensMenu';
 import { horizontalGradient } from './App/gradients';
 import { Locations } from './components/LocationSelector';
-import { getRouteTitleByPath } from './App/routes';
+import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
 
 function App() {

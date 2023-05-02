@@ -16,7 +16,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 import { theme } from './App/theme';
-import { routes } from './App/routes';
+import { router } from './App/router';
 import ClientProvider from './store/ClientProvider';
 
 const emotionCache = createCache({
@@ -35,7 +35,7 @@ root.render(
           <CssBaseline />
           <ClientProvider>
             <RouterProvider
-              router={routes}
+              router={router}
               fallbackElement={<CircularProgress />}
             />
             <ReactQueryDevtools />
