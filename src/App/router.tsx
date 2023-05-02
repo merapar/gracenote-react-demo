@@ -13,17 +13,20 @@ import { RequireApiKey } from '../components/RequireApiKey';
 import { APIKeyPage } from '../pages/APIKeyPage';
 import { MoviesOnTv } from '../pages/MoviesOnTv';
 import WithParamSelector from '../components/WithParamSelector';
+import { ContenDetailsPage } from '../pages/ContentDetailsPage';
 
 const URL_MOVIES_IN_CINEMA = '/movies-in-cinema';
 const URL_MOVIES_ON_TV = '/movies-on-tv';
 const URL_ABOUT = '/about';
 export const URL_API_KEY_PAGE = '/api-key';
+export const URL_CONTENT_DETAILS = '/content-item';
 
 export const routesConfig = [
   { title: 'Movies in the Cinema', url: URL_MOVIES_IN_CINEMA },
   { title: 'Movies on TV', url: URL_MOVIES_ON_TV },
   { title: 'About', url: URL_ABOUT },
   { title: 'API Key Page', url: URL_API_KEY_PAGE },
+  { title: 'Content Details', url: URL_CONTENT_DETAILS },
 ];
 export const getRouteTitleByPath = (path: string) => {
   return routesConfig.find((value) => value.url === path)?.title;
@@ -51,6 +54,7 @@ export const router = createBrowserRouter(
           }
         />
       </Route>
+      <Route path={URL_CONTENT_DETAILS} element={<ContenDetailsPage />} />
       <Route path={URL_ABOUT} element={<AboutPage />} />
       <Route path={URL_API_KEY_PAGE} element={<APIKeyPage />} />
     </Route>,

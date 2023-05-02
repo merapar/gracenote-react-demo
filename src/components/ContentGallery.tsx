@@ -18,22 +18,15 @@ export interface ContentItem {
 
 interface Props {
   contentItems: ContentItem[];
-  showDetailsHandler: (selectedShowId: string) => void;
 }
 
-export const ContentGallery: FC<Props> = ({
-  contentItems,
-  showDetailsHandler,
-}) => {
+export const ContentGallery: FC<Props> = ({ contentItems }) => {
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
         {contentItems?.map((item: ContentItem) => (
           <Grid item key={item.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
-            <ContentCard
-              contentItem={item}
-              showDetailsHandler={showDetailsHandler}
-            />
+            <ContentCard contentItem={item} />
           </Grid>
         ))}
       </Grid>
