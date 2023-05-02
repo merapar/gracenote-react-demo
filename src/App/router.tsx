@@ -19,7 +19,7 @@ const URL_MOVIES_IN_CINEMA = '/movies-in-cinema';
 const URL_MOVIES_ON_TV = '/movies-on-tv';
 const URL_ABOUT = '/about';
 export const URL_API_KEY_PAGE = '/api-key';
-export const URL_CONTENT_DETAILS = '/content-item';
+export const URL_CONTENT_DETAILS = '/content-details';
 
 export const routesConfig = [
   { title: 'Movies in the Cinema', url: URL_MOVIES_IN_CINEMA },
