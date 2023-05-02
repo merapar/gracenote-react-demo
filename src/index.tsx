@@ -16,10 +16,8 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 import { theme } from './App/theme';
-import { routes } from './App/routes';
-import ApiKeyProvider from './store/ApiKeyProvider';
+import { router } from './App/router';
 import ClientProvider from './store/ClientProvider';
-import { AppDataContextProvider } from './store/AppDataContext';
 
 const emotionCache = createCache({
   key: 'gracenote-cache',
@@ -35,17 +33,13 @@ root.render(
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <ApiKeyProvider>
-            <AppDataContextProvider>
-              <ClientProvider>
-                <RouterProvider
-                  router={routes}
-                  fallbackElement={<CircularProgress />}
-                />
-                <ReactQueryDevtools />
-              </ClientProvider>
-            </AppDataContextProvider>
-          </ApiKeyProvider>
+          <ClientProvider>
+            <RouterProvider
+              router={router}
+              fallbackElement={<CircularProgress />}
+            />
+            <ReactQueryDevtools />
+          </ClientProvider>
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>

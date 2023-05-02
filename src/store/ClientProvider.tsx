@@ -7,7 +7,6 @@ import { initApi } from '../api';
 
 const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState('');
-
   // instantiate axios
   initApi();
 

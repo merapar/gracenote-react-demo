@@ -74,7 +74,7 @@ type Rating = {
   subRating?: string;
 };
 
-export interface GetMoviesOnTvQueryResponse {
+export interface MovieAirings {
   channels: string[];
   duration: number;
   endTime: string;
@@ -85,27 +85,28 @@ export interface GetMoviesOnTvQueryResponse {
   stationId: string;
 }
 
-type GetMoviesOnTvQueryResponseType = GetMoviesOnTvQueryResponse[];
+type GetMoviesAiringsResponseType = MovieAirings[];
 
-interface MoviesOntvParams {
-  api_key: string;
+interface MoviesAiringsParams {
   lineupId: string;
   startDateTime: string;
 }
 
-const getMoviesOnTv = (
-  params: MoviesOntvParams,
-): UseQueryOptions<GetMoviesOnTvQueryResponseType> => ({
+const getMoviesAirings = (
+  params: MoviesAiringsParams,
+): UseQueryOptions<GetMoviesAiringsResponseType> => ({
   queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesOnTvQueryResponseType>({
+    const { data } = await request<GetMoviesAiringsResponseType>({
       url: 'movies/airings',
       params,
       signal,
     });
-    return data;
+    // Fix Gracenote API bug where it returns an empty array instead of an empty object
+    return data.length ? data : [];
   },
+  enabled: !!params.lineupId,
 });
 
-export const useGetMoviesOnTvQuery = (params: MoviesOntvParams) =>
-  useQuery(getMoviesOnTv(params));
+export const useGetMoviesAirings = (params: MoviesAiringsParams) =>
+  useQuery(getMoviesAirings(params));

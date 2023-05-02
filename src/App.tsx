@@ -1,11 +1,5 @@
-import {
-  Dispatch,
-  KeyboardEvent,
-  MouseEvent,
-  SetStateAction,
-  useState,
-} from 'react';
-import { Outlet, useLocation, useOutletContext } from 'react-router-dom';
+import { KeyboardEvent, MouseEvent, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -17,24 +11,12 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { ScreensMenu, ToggleDrawer } from './App/ScreensMenu';
+import { DrawerMenu, ToggleDrawer } from './App/DrawerMenu';
 import { horizontalGradient } from './App/gradients';
-import { Locations } from './components/LocationSelector';
-import { getRouteTitleByPath } from './App/routes';
+import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
 
-type ContextType = {
-  locationSelector: {
-    currentZipCode: number;
-    setZipCode: Dispatch<SetStateAction<number>>;
-  };
-};
-export const useLocationSelector = () => {
-  return useOutletContext<ContextType>();
-};
 function App() {
-  const [currentZipCode, setZipCode] = useState(Locations['New York']);
-
   const [drawerState, setDrawerState] = useState({ open: false });
   const currentRoute = useLocation();
   const routeTitle = getRouteTitleByPath(currentRoute.pathname);
@@ -80,7 +62,7 @@ function App() {
             open={drawerState.open}
             onClose={toggleDrawer(false)}
           >
-            <ScreensMenu {...{ toggleDrawer }} />
+            <DrawerMenu {...{ toggleDrawer }} />
           </Drawer>
           <Typography variant={'h6'} component={'div'} sx={{ flexGrow: 1 }}>
             Gracenote API Demo &ndash; <span>{routeTitle}</span>
@@ -88,14 +70,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Box pt={3} pb={3} id={'app-outlet'}>
-        <Outlet
-          context={{
-            locationSelector: {
-              currentZipCode,
-              setZipCode,
-            },
-          }}
-        />
+        <Outlet />
       </Box>
       <Footer />
     </Container>

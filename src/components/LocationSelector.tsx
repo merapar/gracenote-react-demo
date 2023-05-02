@@ -15,53 +15,59 @@ export const zipCodeLocationsMap = Object.fromEntries(
   Object.entries(Locations).map((location) => location.reverse()),
 );
 
-export type SetZipCodeShape = (zipCode: number) => void;
-
-type Props = {
-  currentZipCode: number;
-  setZipCode: SetZipCodeShape;
-};
-
 type RenderButtonParams = {
-  state: string;
+  city: string;
   zipCode: number;
-  currentZipCode: number;
-  setZipCode: SetZipCodeShape;
+  selectedZipCode: number;
+  setSelectedZipCode: (zipCode: number) => void;
 };
 
-const renderButton = ({
-  state,
+const renderRadioButton = ({
+  city,
   zipCode,
-  setZipCode,
-  currentZipCode,
+  setSelectedZipCode,
+  selectedZipCode,
 }: RenderButtonParams) => {
-  const showArrow = currentZipCode === zipCode;
+  const checked = selectedZipCode === zipCode;
   return (
-    <Box flexDirection={'row'} key={state} alignItems={'center'}>
+    <Box flexDirection={'row'} key={city} alignItems={'center'}>
       <FormControlLabel
         value={zipCode}
         control={
           <Radio
             onClick={() => {
-              setZipCode(zipCode);
+              setSelectedZipCode(zipCode);
             }}
-            checked={showArrow}
+            checked={checked}
           />
         }
-        label={state}
+        label={city}
       />
     </Box>
   );
 };
 
-export const LocationSelector: FC<Props> = ({ currentZipCode, setZipCode }) => {
+type Props = {
+  selectedZipCode: number;
+  setSelectedZipCode: (zipCode: number) => void;
+};
+
+export const LocationSelector: FC<Props> = ({
+  selectedZipCode,
+  setSelectedZipCode,
+}) => {
   return (
     <Box flexDirection={'row'}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>
         <span>Choose location</span>
       </Label>
-      {Object.entries(Locations).map(([state, zipCode]) =>
-        renderButton({ state, zipCode, setZipCode, currentZipCode }),
+      {Object.entries(Locations).map(([city, zipCode]) =>
+        renderRadioButton({
+          city,
+          zipCode,
+          setSelectedZipCode,
+          selectedZipCode,
+        }),
       )}
     </Box>
   );

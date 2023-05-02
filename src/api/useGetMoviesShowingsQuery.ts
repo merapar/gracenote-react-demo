@@ -3,7 +3,17 @@ import { UseQueryOptions } from '@tanstack/react-query/src/types';
 
 import { request } from './index';
 
-interface GetMoviesShowingsQueryResponse {
+export type MovieShowTime = {
+  theatre: {
+    id: number;
+    name: string;
+  };
+  dateTime: string;
+  barg: boolean;
+  ticketURI: string;
+};
+
+export interface MovieShowings {
   tmsId: string;
   title: string;
   shortDescription: string;
@@ -16,24 +26,14 @@ interface GetMoviesShowingsQueryResponse {
     text: string;
     primary: boolean;
   };
-  showtimes: {
-    theatre: {
-      id: number;
-      name: string;
-    };
-    dateTime: string;
-    barg: boolean;
-    ticketURI: string;
-  }[];
+  showtimes: MovieShowTime[];
 }
 
-export type GetMoviesShowingsQueryResponseType =
-  GetMoviesShowingsQueryResponse[];
+type GetMoviesShowingsQueryResponseType = MovieShowings[];
 
 export type MoviesShowingsParams = {
   startDate: string;
   zip: number;
-  api_key: string;
 };
 
 const getMoviesShowings = (
@@ -46,7 +46,8 @@ const getMoviesShowings = (
       params,
       signal,
     });
-    return data;
+    // Fix Gracenote API bug where it returns an empty array instead of an empty object
+    return data.length ? data : [];
   },
 });
 

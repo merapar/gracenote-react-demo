@@ -1,19 +1,18 @@
 import { Card, CardContent, Grid, Typography } from '@mui/material';
+import { ShowTime } from './ContentGallery';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const ShowTimes = ({ showtime }: any) => {
+export const ShowTimes = ({ showTimes }: { showTimes: ShowTime[] }) => {
   return (
     <Grid container spacing={4}>
-      {showtime &&
-        !!showtime.length &&
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        showtime.map((show: any) => {
-          const date = new Date(show.dateTime);
+      {showTimes &&
+        !!showTimes.length &&
+        showTimes.map((showtime) => {
+          const date = new Date(showtime.dateTime);
 
           return (
             <Grid
               item
-              key={show.theatre.id + show.dateTime}
+              key={showtime.location + showtime.dateTime}
               xs={12}
               sm={6}
               md={4}
@@ -29,7 +28,7 @@ export const ShowTimes = ({ showtime }: any) => {
                   <Typography gutterBottom variant="h6" component="h2">
                     {date.toLocaleString()}
                   </Typography>
-                  <Typography>{show.theatre.name}</Typography>
+                  <Typography>{showtime.location}</Typography>
                 </CardContent>
               </Card>
             </Grid>

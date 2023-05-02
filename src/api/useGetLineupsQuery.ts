@@ -8,7 +8,7 @@ interface MSO {
   name: string;
 }
 
-export interface GetLineupsQueryResponse {
+export interface Lineup {
   device: string;
   lineupId: string;
   location: string;
@@ -17,12 +17,11 @@ export interface GetLineupsQueryResponse {
   type: string;
 }
 
-export type GetLineupsQueryResponseType = GetLineupsQueryResponse[];
+export type GetLineupsQueryResponseType = Lineup[];
 
 interface LineupsParams {
   startDateTime: string;
   postalCode: string;
-  api_key: string;
   country: string;
 }
 
@@ -36,7 +35,8 @@ const getLineups = (
       params,
       signal,
     });
-    return data;
+    // Fix Gracenote API bug where it returns an empty array instead of an empty object
+    return data.length ? data : [];
   },
 });
 
