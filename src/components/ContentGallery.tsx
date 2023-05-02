@@ -28,16 +28,14 @@ export const ContentGallery: FC<Props> = ({
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
-        {contentItems &&
-          !!contentItems.length &&
-          contentItems.map((item: ContentItem) => (
-            <Grid item key={item.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
-              <ContentCard
-                contentItem={item}
-                showDetailsHandler={showDetailsHandler}
-              />
-            </Grid>
-          ))}
+        {contentItems?.map((item: ContentItem) => (
+          <Grid item key={item.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
+            <ContentCard
+              contentItem={item}
+              showDetailsHandler={showDetailsHandler}
+            />
+          </Grid>
+        ))}
       </Grid>
     </Container>
   );

@@ -46,7 +46,8 @@ const getMoviesShowings = (
       params,
       signal,
     });
-    return data;
+    // Fix Gracenote API bug where it returns an empty array instead of an empty object
+    return data.length ? data : [];
   },
 });
 

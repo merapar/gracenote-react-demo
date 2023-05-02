@@ -37,7 +37,7 @@ const movieShowingToContentItemMapper = (
     imageUri: preferredImage.uri,
     showtimes: [],
   };
-  item.showtimes = showtimes.map(showTimeMapper);
+  item.showtimes = showtimes?.map(showTimeMapper);
 
   return item;
 };
@@ -56,7 +56,9 @@ export const MoviesInCinema = () => {
     <>
       <ContentDashboard
         isLoading={isLoading}
-        contentItems={data?.map(movieShowingToContentItemMapper)}
+        contentItems={
+          data?.length ? data?.map(movieShowingToContentItemMapper) : []
+        }
       />
     </>
   );
