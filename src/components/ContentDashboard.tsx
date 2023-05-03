@@ -15,7 +15,7 @@ export const ContentDashboard = ({
         sx={{ mt: 2, visibility: isLoading ? 'visible' : 'hidden' }}
       />
       <ContentGallery contentItems={contentItems} />
-      {!isLoading && !contentItems.length && (
+      {!isLoading && !contentItems && (
         <Box display={'flex'} justifyContent={'center'}>
           <Alert severity="error">
             No data found for this date and location
