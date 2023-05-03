@@ -11,10 +11,10 @@ import { MoviesInCinema } from '../pages/MoviesInCinema';
 import { AboutPage } from '../pages/About';
 import { RequireApiKey } from '../components/RequireApiKey';
 import { APIKeyPage } from '../pages/APIKeyPage';
-import { MoviesOnTv } from '../pages/MoviesOnTV';
+import { MoviesOnTv } from '../pages/MoviesOnTv';
 import WithParamSelector from '../components/WithParamSelector';
 import { ContenDetailsPage } from '../pages/ContentDetailsPage';
-import { SportsOnTv } from '../pages/SportsOnTV';
+import { SportsOnTv } from '../pages/SportsOnTv';
 
 const URL_MOVIES_IN_CINEMA = '/movies-in-cinema';
 const URL_MOVIES_ON_TV = '/movies-on-tv';

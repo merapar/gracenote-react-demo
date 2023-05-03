@@ -105,5 +105,5 @@ const getSportsAirings = (
   enabled: !!params.lineupId,
 });
 
-export const useGetSportsAirings = (params: SportsAiringsParams) =>
+export const useGetSportsAiringsQuery = (params: SportsAiringsParams) =>
   useQuery(getSportsAirings(params));

@@ -106,5 +106,5 @@ const getMoviesAirings = (
   enabled: !!params.lineupId,
 });
 
-export const useGetMoviesAirings = (params: MoviesAiringsParams) =>
+export const useGetMoviesAiringsQuery = (params: MoviesAiringsParams) =>
   useQuery(getMoviesAirings(params));
