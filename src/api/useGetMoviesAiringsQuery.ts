@@ -74,7 +74,7 @@ type Rating = {
   subRating?: string;
 };
 
-export interface MovieAirings {
+export type MovieAirings = {
   channels: string[];
   duration: number;
   endTime: string;
@@ -83,22 +83,19 @@ export interface MovieAirings {
   startTime: string;
   station: Station;
   stationId: string;
-}
+};
 
-type GetMoviesAiringsResponseType = MovieAirings[];
-
-interface MoviesAiringsParams {
+type MoviesAiringsParams = {
   lineupId: string;
   startDateTime: string;
-}
+};
 
 const getMoviesAirings = (
   params: MoviesAiringsParams,
-): UseQueryOptions<GetMoviesAiringsResponseType> => ({
-  keepPreviousData: true,
+): UseQueryOptions<MovieAirings[]> => ({
   queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesAiringsResponseType>({
+    const { data } = await request<MovieAirings[]>({
       url: 'movies/airings',
       params,
       signal,
