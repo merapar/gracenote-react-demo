@@ -39,6 +39,7 @@ export type MoviesShowingsParams = {
 const getMoviesShowings = (
   params: MoviesShowingsParams,
 ): UseQueryOptions<GetMoviesShowingsQueryResponseType> => ({
+  keepPreviousData: true,
   queryKey: ['movies/showings', params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesShowingsQueryResponseType>({
@@ -47,7 +48,7 @@ const getMoviesShowings = (
       signal,
     });
     // Fix Gracenote API bug where it returns an empty array instead of an empty object
-    return data.length ? data : [];
+    return Array.isArray(data) ? data : [];
   },
 });
 

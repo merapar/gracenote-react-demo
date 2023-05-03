@@ -1,4 +1,4 @@
-import { Alert, LinearProgress, Snackbar } from '@mui/material';
+import { Alert, Box, LinearProgress } from '@mui/material';
 
 import { ContentGallery, ContentItem } from './ContentGallery';
 
@@ -7,19 +7,21 @@ export const ContentDashboard = ({
   contentItems,
 }: {
   isLoading: boolean;
-  contentItems: ContentItem[] | undefined;
+  contentItems: ContentItem[];
 }) => {
   return (
     <main>
-      {isLoading && <LinearProgress />}
-      {!isLoading && contentItems?.length && (
-        <ContentGallery contentItems={contentItems} />
+      <LinearProgress
+        sx={{ mt: 2, visibility: isLoading ? 'visible' : 'hidden' }}
+      />
+      <ContentGallery contentItems={contentItems} />
+      {!isLoading && !contentItems.length && (
+        <Box display={'flex'} justifyContent={'center'}>
+          <Alert severity="error">
+            No data found for this date and location
+          </Alert>
+        </Box>
       )}
-      <Snackbar open={!isLoading && !contentItems?.length}>
-        <Alert sx={{ width: '100%' }} severity="error">
-          No data found for this date and location
-        </Alert>
-      </Snackbar>
     </main>
   );
 };

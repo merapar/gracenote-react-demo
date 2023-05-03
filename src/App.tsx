@@ -11,16 +11,17 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { DrawerMenu, ToggleDrawer } from './App/DrawerMenu';
+import { DrawerMenu } from './App/DrawerMenu';
 import { horizontalGradient } from './App/gradients';
 import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
 
 function App() {
-  const [drawerState, setDrawerState] = useState({ open: false });
+  const [drawerState, setDrawerState] = useState(false);
   const currentRoute = useLocation();
   const routeTitle = getRouteTitleByPath(currentRoute.pathname);
-  const toggleDrawer: ToggleDrawer =
+
+  const toggleDrawer =
     (open: boolean) => (event: KeyboardEvent | MouseEvent) => {
       if (
         event.type === 'keydown' &&
@@ -29,8 +30,7 @@ function App() {
       ) {
         return;
       }
-
-      setDrawerState({ open });
+      setDrawerState(open);
     };
 
   return (
@@ -59,10 +59,10 @@ function App() {
           </IconButton>
           <Drawer
             anchor={'left'}
-            open={drawerState.open}
+            open={drawerState}
             onClose={toggleDrawer(false)}
           >
-            <DrawerMenu {...{ toggleDrawer }} />
+            <DrawerMenu onClose={toggleDrawer(false)} />
           </Drawer>
           <Typography variant={'h6'} component={'div'} sx={{ flexGrow: 1 }}>
             Gracenote API Demo &ndash; <span>{routeTitle}</span>

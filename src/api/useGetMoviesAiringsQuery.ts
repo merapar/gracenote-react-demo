@@ -95,6 +95,7 @@ interface MoviesAiringsParams {
 const getMoviesAirings = (
   params: MoviesAiringsParams,
 ): UseQueryOptions<GetMoviesAiringsResponseType> => ({
+  keepPreviousData: true,
   queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
     const { data } = await request<GetMoviesAiringsResponseType>({
@@ -103,7 +104,7 @@ const getMoviesAirings = (
       signal,
     });
     // Fix Gracenote API bug where it returns an empty array instead of an empty object
-    return data.length ? data : [];
+    return Array.isArray(data) ? data : [];
   },
   enabled: !!params.lineupId,
 });

@@ -7,7 +7,7 @@ import {
   styled,
   Link as MuiLink,
 } from '@mui/material';
-import { FC, KeyboardEvent, MouseEvent } from 'react';
+import { KeyboardEvent, MouseEvent } from 'react';
 import { verticalGradient } from './gradients';
 import { Link, useLocation } from 'react-router-dom';
 import { drawerRoutesConfig } from './router';
@@ -28,18 +28,14 @@ const ListLink: typeof MuiLink = styled(MuiLink)(() => ({
   textDecoration: 'none',
   width: '100%',
 }));
-export type ToggleDrawer = (
-  open: boolean,
-) => (event: KeyboardEvent | MouseEvent) => void;
 
-type Props = {
-  toggleDrawer: ToggleDrawer;
-};
-
-export const DrawerMenu: FC<Props> = ({ toggleDrawer }) => {
-  const closeDrawer = toggleDrawer(false);
+export const DrawerMenu = ({
+  onClose,
+}: {
+  onClose: (event: KeyboardEvent | MouseEvent) => void;
+}) => {
   const closeDrawerDelayed = (e: KeyboardEvent | MouseEvent) => {
-    setTimeout(closeDrawer, 250, e);
+    setTimeout(onClose, 250, e);
   };
   const currentRoute = useLocation();
   return (

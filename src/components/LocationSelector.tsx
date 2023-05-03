@@ -1,7 +1,5 @@
-import { FormControlLabel, Radio } from '@mui/material';
-import { Box } from './Box';
+import { FormControlLabel, Radio, Stack } from '@mui/material';
 import { Label } from './Label';
-import { FC } from 'react';
 
 export const Locations = {
   // East Meadow,
@@ -30,7 +28,7 @@ const renderRadioButton = ({
 }: RenderButtonParams) => {
   const checked = selectedZipCode === zipCode;
   return (
-    <Box flexDirection={'row'} key={city} alignItems={'center'}>
+    <Stack key={city} direction={'row'} alignItems={'center'}>
       <FormControlLabel
         value={zipCode}
         control={
@@ -43,21 +41,19 @@ const renderRadioButton = ({
         }
         label={city}
       />
-    </Box>
+    </Stack>
   );
 };
 
-type Props = {
-  selectedZipCode: number;
-  setSelectedZipCode: (zipCode: number) => void;
-};
-
-export const LocationSelector: FC<Props> = ({
+export const LocationSelector = ({
   selectedZipCode,
   setSelectedZipCode,
+}: {
+  selectedZipCode: number;
+  setSelectedZipCode: (zipCode: number) => void;
 }) => {
   return (
-    <Box flexDirection={'row'}>
+    <Stack direction={'row'}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>
         <span>Choose location</span>
       </Label>
@@ -69,6 +65,6 @@ export const LocationSelector: FC<Props> = ({
           selectedZipCode,
         }),
       )}
-    </Box>
+    </Stack>
   );
 };

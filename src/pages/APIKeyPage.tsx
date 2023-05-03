@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import { getApiKey, setApiKey } from '../api';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 export const APIKeyPage = () => {
   const [key, setKey] = useState(getApiKey());
@@ -19,7 +19,7 @@ export const APIKeyPage = () => {
   const from = location.state?.from?.pathname || '/';
 
   const updateValueHandler = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setKey(event.target.value);
   };

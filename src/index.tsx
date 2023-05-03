@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -28,7 +28,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
@@ -43,7 +43,7 @@ root.render(
         </ThemeProvider>
       </CacheProvider>
     </LocalizationProvider>
-  </React.StrictMode>,
+  </StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

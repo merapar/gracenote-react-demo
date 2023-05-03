@@ -1,9 +1,8 @@
 import { DatePicker } from '@mui/x-date-pickers';
-import { Dispatch, FC, SetStateAction } from 'react';
-import { Box } from './Box';
+import { Dispatch, SetStateAction } from 'react';
 import { Label } from './Label';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, Stack, ThemeProvider } from '@mui/material';
 import dayjs, { Dayjs } from 'dayjs';
 
 const theme = createTheme({
@@ -28,14 +27,15 @@ const theme = createTheme({
   },
 });
 
-type Props = {
+export const DateSelector = ({
+  setSelectedDate,
+  selectedDate,
+}: {
   selectedDate: Dayjs | null;
   setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
-};
-
-export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
+}) => {
   return (
-    <Box flexDirection={'row'} sx={{ alignItems: 'center' }}>
+    <Stack direction={'row'} alignItems={'center'}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>
         <span>Choose Date</span>
       </Label>
@@ -65,6 +65,6 @@ export const DateSelector: FC<Props> = ({ setSelectedDate, selectedDate }) => {
           }}
         />
       </ThemeProvider>
-    </Box>
+    </Stack>
   );
 };
