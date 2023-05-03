@@ -2,19 +2,19 @@ import { Container, Grid } from '@mui/material';
 
 import ContentCard from './ContentCard';
 
-export interface ShowTime {
+export type ShowTime = {
   location: string;
   dateTime: string;
-}
+};
 
-export interface ContentItem {
+export type ContentItem = {
   tmsId: string;
   imageUri: string;
   title: string;
   shortDescription: string;
   longDescription: string;
   showtimes: ShowTime[];
-}
+};
 
 export const filterContentItemsPredicate = (
   item: ContentItem,
