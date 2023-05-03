@@ -5,7 +5,11 @@ export const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <Stack sx={{ color: 'background.paper', p: 2 }} component="footer">
+    <Stack
+      sx={{ color: 'background.paper', p: 2 }}
+      component="footer"
+      direction="column"
+    >
       <Typography variant="h6" align="center" gutterBottom>
         Oops!
       </Typography>
