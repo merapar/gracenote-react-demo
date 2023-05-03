@@ -1,2 +1,5 @@
-chrome
-settings.json
+*
+!*/
+
+# track this file
+!.launch.json

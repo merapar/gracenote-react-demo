@@ -11,6 +11,7 @@ enum Qualifier {
   New = 'New',
   Premiere = 'Premiere',
   Stereo = 'Stereo',
+  Live = 'Live',
 }
 type VideoQuality = {
   signalType: string;
@@ -33,27 +34,25 @@ type Station = {
 type Program = {
   tmsId: string;
   rootId: string;
+  seriesId: string;
+  sportsId: string;
   subType: string;
   title: string;
-  releaseYear: number;
-  releaseDate: string;
+  eventTitle: string;
+  gameDate: string;
+  gameTime: string;
+  gameTimeZone: string;
   titleLang: string;
   descriptionLang: string;
   entityType: string;
   genres: string[];
   longDescription: string;
   shortDescription: string;
-  topCast: string[];
-  directors?: string[];
-  qualityRating?: QualityRating;
   ratings?: Rating[];
   preferredImage: ProgramPreferredImage;
   audience?: string;
 };
-type QualityRating = {
-  ratingsBody: string;
-  value: string;
-};
+
 type ProgramPreferredImage = {
   width: string;
   height: string;
@@ -74,37 +73,37 @@ type Rating = {
   subRating?: string;
 };
 
-export type MovieAirings = {
-  channels: string[];
-  duration: number;
-  endTime: string;
-  program: Program;
-  qualifiers: Qualifier[];
+export type SportAirings = {
   startTime: string;
+  endTime: string;
+  duration: number;
+  qualifiers: Qualifier[];
+  channels: string[];
+  program: Program;
   station: Station;
   stationId: string;
 };
 
-type MoviesAiringsParams = {
+type SportsAiringsParams = {
   lineupId: string;
   startDateTime: string;
 };
 
-const getMoviesAirings = (
-  params: MoviesAiringsParams,
-): UseQueryOptions<MovieAirings[]> => ({
-  queryKey: ['movies/airings', params],
+const getSportsAirings = (
+  params: SportsAiringsParams,
+): UseQueryOptions<SportAirings[]> => ({
+  queryKey: ['sports/all/events/airings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<MovieAirings[]>({
-      url: 'movies/airings',
+    const { data } = await request<SportAirings[]>({
+      url: 'sports/all/events/airings',
       params,
       signal,
     });
     // Fix Gracenote API bug where it returns an empty array instead of an empty object
-    return Array.isArray(data) ? data : [];
+    return data.length ? data : [];
   },
   enabled: !!params.lineupId,
 });
 
-export const useGetMoviesAirings = (params: MoviesAiringsParams) =>
-  useQuery(getMoviesAirings(params));
+export const useGetSportsAirings = (params: SportsAiringsParams) =>
+  useQuery(getSportsAirings(params));

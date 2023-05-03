@@ -17,17 +17,19 @@ const Container = styled(Stack)(({ theme }) => {
   };
 });
 
+export type ParamSelectorPropsType = {
+  selectedDate: Dayjs | null;
+  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
+  zipCode: number;
+  setZipCode: Dispatch<SetStateAction<number>>;
+};
+
 export const ParamSelector = ({
   selectedDate,
   setSelectedDate,
   zipCode,
   setZipCode,
-}: {
-  selectedDate: Dayjs | null;
-  setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
-  zipCode: number;
-  setZipCode: Dispatch<SetStateAction<number>>;
-}) => {
+}: ParamSelectorPropsType) => {
   return (
     <Container>
       <DateSelector

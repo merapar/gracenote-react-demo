@@ -14,9 +14,11 @@ import { APIKeyPage } from '../pages/APIKeyPage';
 import { MoviesOnTv } from '../pages/MoviesOnTv';
 import WithParamSelector from '../components/WithParamSelector';
 import { ContenDetailsPage } from '../pages/ContentDetailsPage';
+import { SportsOnTv } from '../pages/SportsOnTV';
 
 const URL_MOVIES_IN_CINEMA = '/movies-in-cinema';
 const URL_MOVIES_ON_TV = '/movies-on-tv';
+const URL_SPORTS_ON_TV = '/sports-on-tv';
 const URL_ABOUT = '/about';
 export const URL_API_KEY_PAGE = '/api-key';
 export const URL_CONTENT_DETAILS = '/content-details';
@@ -24,6 +26,7 @@ export const URL_CONTENT_DETAILS = '/content-details';
 export const drawerRoutesConfig = [
   { title: 'Movies in the Cinema', url: URL_MOVIES_IN_CINEMA },
   { title: 'Movies on TV', url: URL_MOVIES_ON_TV },
+  { title: 'Sports on TV', url: URL_SPORTS_ON_TV },
   { title: 'About', url: URL_ABOUT },
   { title: 'API Key Page', url: URL_API_KEY_PAGE },
 ];
@@ -55,6 +58,14 @@ export const router = createBrowserRouter(
           element={
             <RequireApiKey>
               <MoviesOnTv />
+            </RequireApiKey>
+          }
+        />
+        <Route
+          path={URL_SPORTS_ON_TV}
+          element={
+            <RequireApiKey>
+              <SportsOnTv />
             </RequireApiKey>
           }
         />

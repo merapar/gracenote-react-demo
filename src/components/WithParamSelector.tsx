@@ -1,12 +1,9 @@
-import { Outlet } from 'react-router-dom';
-import { ParamSelector } from './ParamSelector';
-import dayjs, { Dayjs } from 'dayjs';
-import { useState } from 'react';
-import { Locations } from './LocationSelector';
+import { Outlet, useOutletContext } from 'react-router-dom';
+import { ParamSelector, ParamSelectorPropsType } from './ParamSelector';
 
 export default function WithParamSelector() {
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
-  const [zipCode, setZipCode] = useState<number>(Locations['New York']);
+  const { selectedDate, setSelectedDate, zipCode, setZipCode } =
+    useOutletContext<ParamSelectorPropsType>();
 
   return (
     <div>

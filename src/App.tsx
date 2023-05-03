@@ -15,8 +15,21 @@ import { DrawerMenu } from './App/DrawerMenu';
 import { horizontalGradient } from './App/gradients';
 import { getRouteTitleByPath } from './App/router';
 import { Footer } from './components/Footer';
+import { Locations } from './components/LocationSelector';
+import dayjs, { Dayjs } from 'dayjs';
+import { ParamSelectorPropsType } from './components/ParamSelector';
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
+  const [zipCode, setZipCode] = useState<number>(Locations['New York']);
+
+  const paramSelectorContext: ParamSelectorPropsType = {
+    selectedDate,
+    setSelectedDate,
+    zipCode,
+    setZipCode,
+  };
+
   const [drawerState, setDrawerState] = useState(false);
   const currentRoute = useLocation();
   const routeTitle = getRouteTitleByPath(currentRoute.pathname);
@@ -70,7 +83,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Box pt={3} pb={3} id={'app-outlet'}>
-        <Outlet />
+        <Outlet context={paramSelectorContext} />
       </Box>
       <Footer />
     </Container>

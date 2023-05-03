@@ -13,7 +13,7 @@ export type MovieShowTime = {
   ticketURI: string;
 };
 
-export interface MovieShowings {
+export type MovieShowings = {
   tmsId: string;
   title: string;
   shortDescription: string;
@@ -27,9 +27,7 @@ export interface MovieShowings {
     primary: boolean;
   };
   showtimes: MovieShowTime[];
-}
-
-type GetMoviesShowingsQueryResponseType = MovieShowings[];
+};
 
 export type MoviesShowingsParams = {
   startDate: string;
@@ -38,11 +36,10 @@ export type MoviesShowingsParams = {
 
 const getMoviesShowings = (
   params: MoviesShowingsParams,
-): UseQueryOptions<GetMoviesShowingsQueryResponseType> => ({
-  keepPreviousData: true,
+): UseQueryOptions<MovieShowings[]> => ({
   queryKey: ['movies/showings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesShowingsQueryResponseType>({
+    const { data } = await request<MovieShowings[]>({
       url: 'movies/showings',
       params,
       signal,

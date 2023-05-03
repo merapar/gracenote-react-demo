@@ -3,34 +3,30 @@ import { UseQueryOptions } from '@tanstack/react-query/src/types';
 
 import { request } from './index';
 
-interface MSO {
+type MSO = {
   id: string;
   name: string;
-}
+};
 
-export interface Lineup {
+export type Lineup = {
   device: string;
   lineupId: string;
   location: string;
   mso: MSO;
   id: string;
   type: string;
-}
+};
 
-export type GetLineupsQueryResponseType = Lineup[];
-
-interface LineupsParams {
+type LineupsParams = {
   startDateTime: string;
   postalCode: string;
   country: string;
-}
+};
 
-const getLineups = (
-  params: LineupsParams,
-): UseQueryOptions<GetLineupsQueryResponseType> => ({
+const getLineups = (params: LineupsParams): UseQueryOptions<Lineup[]> => ({
   queryKey: ['lineups', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetLineupsQueryResponseType>({
+    const { data } = await request<Lineup[]>({
       url: 'lineups',
       params,
       signal,
