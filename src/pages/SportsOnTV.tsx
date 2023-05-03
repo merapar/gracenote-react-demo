@@ -1,9 +1,5 @@
 import { Dayjs } from 'dayjs';
-import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
-import {
-  useGetSportsAirings,
-  SportAirings,
-} from '../api/useGetSportsAiringsQuery';
+import { SportAirings } from '../api/useGetSportsAiringsQuery';
 import { ContentDashboard } from '../components/ContentDashboard';
 import {
   ContentItem,
@@ -11,6 +7,7 @@ import {
 } from '../components/ContentGallery';
 import { useOutletContext } from 'react-router-dom';
 import { useMemo } from 'react';
+import { useGetSportsOnTV } from '../hooks/useGetSportsOnTV';
 
 const sportAiringToContentItemMapper = (
   sportAiring: SportAirings,
@@ -45,20 +42,9 @@ const sportAiringToContentItemMapper = (
 export const SportsOnTv = () => {
   const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
-  const startDateTime = selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '';
-
-  const { data: lineupData } = useGetLineupsQuery({
-    startDateTime: startDateTime,
-    postalCode: zipCode.toString(),
-    country: 'USA',
-  });
-
-  // Just select the first lineup for current Zipcode
-  const lineupId = lineupData?.[0].lineupId ?? '';
-
-  const { data, isFetching } = useGetSportsAirings({
-    lineupId: lineupId,
-    startDateTime: startDateTime,
+  const { data, isFetching } = useGetSportsOnTV({
+    zip: zipCode,
+    startDateTime: selectedDate,
   });
 
   const items = useMemo(

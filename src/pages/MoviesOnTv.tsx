@@ -1,9 +1,5 @@
 import { Dayjs } from 'dayjs';
-import { useGetLineupsQuery } from '../api/useGetLineupsQuery';
-import {
-  useGetMoviesAirings,
-  MovieAirings,
-} from '../api/useGetMoviesAiringsQuery';
+import { MovieAirings } from '../api/useGetMoviesAiringsQuery';
 import { ContentDashboard } from '../components/ContentDashboard';
 import {
   ContentItem,
@@ -11,6 +7,7 @@ import {
 } from '../components/ContentGallery';
 import { useOutletContext } from 'react-router-dom';
 import { useMemo } from 'react';
+import { useGetMoviesOnTV } from '../hooks/useGetMoviesOnTV';
 
 const movieAiringToContentItemMapper = ({
   program,
@@ -38,20 +35,9 @@ const movieAiringToContentItemMapper = ({
 export const MoviesOnTv = () => {
   const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
-  const startDateTime = selectedDate?.format('YYYY-MM-DDTHH:mm[Z]') ?? '';
-
-  const { data: lineupData } = useGetLineupsQuery({
-    startDateTime: startDateTime,
-    postalCode: zipCode.toString(),
-    country: 'USA',
-  });
-
-  // Just select the first lineup for current Zipcode
-  const lineupId = lineupData?.[0].lineupId ?? '';
-
-  const { data, isFetching } = useGetMoviesAirings({
-    lineupId: lineupId,
-    startDateTime: startDateTime,
+  const { data, isFetching } = useGetMoviesOnTV({
+    zip: zipCode,
+    startDateTime: selectedDate,
   });
 
   const items = useMemo(

@@ -11,7 +11,7 @@ import { MoviesInCinema } from '../pages/MoviesInCinema';
 import { AboutPage } from '../pages/About';
 import { RequireApiKey } from '../components/RequireApiKey';
 import { APIKeyPage } from '../pages/APIKeyPage';
-import { MoviesOnTv } from '../pages/MoviesOnTv';
+import { MoviesOnTv } from '../pages/MoviesOnTV';
 import WithParamSelector from '../components/WithParamSelector';
 import { ContenDetailsPage } from '../pages/ContentDetailsPage';
 import { SportsOnTv } from '../pages/SportsOnTV';

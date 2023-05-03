@@ -19,7 +19,7 @@ export type Lineup = {
 
 type LineupsParams = {
   startDateTime: string;
-  postalCode: string;
+  postalCode: number;
   country: string;
 };
 
