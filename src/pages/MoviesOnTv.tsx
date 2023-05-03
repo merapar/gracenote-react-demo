@@ -5,23 +5,20 @@ import {
   MovieAirings,
 } from '../api/useGetMoviesAiringsQuery';
 import { ContentDashboard } from '../components/ContentDashboard';
-import { ContentItem } from '../components/ContentGallery';
+import {
+  ContentItem,
+  filterContentItemsPredicate,
+} from '../components/ContentGallery';
 import { useOutletContext } from 'react-router-dom';
+import { useMemo } from 'react';
 
-const movieAiringToContentItemMapper = (
-  movieAiring: MovieAirings,
-): ContentItem => {
-  const {
-    program: {
-      longDescription,
-      preferredImage,
-      shortDescription,
-      title,
-      tmsId,
-    },
-    startTime,
-    station,
-  } = movieAiring;
+const movieAiringToContentItemMapper = ({
+  program,
+  startTime,
+  station,
+}: MovieAirings): ContentItem => {
+  const { longDescription, preferredImage, shortDescription, title, tmsId } =
+    program;
 
   return {
     longDescription,
@@ -52,17 +49,18 @@ export const MoviesOnTv = () => {
   // Just select the first lineup for current Zipcode
   const lineupId = lineupData?.[0].lineupId ?? '';
 
-  const { data, isLoading } = useGetMoviesAirings({
+  const { data, isFetching } = useGetMoviesAirings({
     lineupId: lineupId,
     startDateTime: startDateTime,
   });
 
-  return (
-    <>
-      <ContentDashboard
-        contentItems={data?.map(movieAiringToContentItemMapper)}
-        isLoading={isLoading}
-      />
-    </>
+  const items = useMemo(
+    () =>
+      data
+        ?.map(movieAiringToContentItemMapper)
+        .filter(filterContentItemsPredicate) ?? [],
+    [data],
   );
+
+  return <ContentDashboard isLoading={isFetching} contentItems={items} />;
 };

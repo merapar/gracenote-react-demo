@@ -1,5 +1,10 @@
-import { Container, GlobalStyles, Link, Typography } from '@mui/material';
-import { Box } from '../components/Box';
+import {
+  Container,
+  GlobalStyles,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 const MakeSureTheFooterIsVisible = () => (
   <GlobalStyles
@@ -21,8 +26,8 @@ export const AboutPage = () => {
   return (
     <Container sx={{ py: 8, height: '100%' }} maxWidth={false}>
       <MakeSureTheFooterIsVisible />
-      <Box
-        flexDirection={'column'}
+      <Stack
+        direction={'column'}
         alignItems={'center'}
         justifyContent={'center'}
         sx={{ height: '100%' }}
@@ -41,7 +46,7 @@ export const AboutPage = () => {
             https://merapar.com/contact/
           </Link>
         </Typography>
-      </Box>
+      </Stack>
     </Container>
   );
 };

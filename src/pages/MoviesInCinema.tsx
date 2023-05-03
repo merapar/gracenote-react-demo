@@ -2,63 +2,51 @@ import { ContentDashboard } from '../components/ContentDashboard';
 
 import {
   MovieShowings,
-  MovieShowTime,
   useGetMoviesShowingsQuery,
 } from '../api/useGetMoviesShowingsQuery';
-import { ContentItem, ShowTime } from '../components/ContentGallery';
+import {
+  ContentItem,
+  filterContentItemsPredicate,
+} from '../components/ContentGallery';
 import { useOutletContext } from 'react-router-dom';
 import { Dayjs } from 'dayjs';
+import { useMemo } from 'react';
 
-const showTimeMapper = (showtime: MovieShowTime): ShowTime => {
-  const { dateTime, theatre: theatre } = showtime;
-
-  return {
-    location: theatre.name,
-    dateTime,
-  };
-};
-
-const movieShowingToContentItemMapper = (
-  movieShowing: MovieShowings,
-): ContentItem => {
-  const {
-    tmsId,
-    title,
-    shortDescription,
-    longDescription,
-    preferredImage,
-    showtimes: showtimes,
-  } = movieShowing;
-
-  const item: ContentItem = {
-    tmsId,
-    title,
-    shortDescription,
-    longDescription,
-    imageUri: preferredImage.uri,
-    showtimes: [],
-  };
-  item.showtimes = showtimes?.map(showTimeMapper);
-
-  return item;
-};
+const movieShowingToContentItemMapper = ({
+  tmsId,
+  title,
+  shortDescription,
+  longDescription,
+  preferredImage,
+  showtimes,
+}: MovieShowings): ContentItem => ({
+  tmsId,
+  title,
+  shortDescription,
+  longDescription,
+  imageUri: preferredImage.uri,
+  showtimes:
+    showtimes?.map(({ dateTime, theatre }) => ({
+      location: theatre.name,
+      dateTime,
+    })) ?? [],
+});
 
 export const MoviesInCinema = () => {
   const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
-  const { isLoading, data } = useGetMoviesShowingsQuery({
+  const { data, isFetching } = useGetMoviesShowingsQuery({
     startDate: selectedDate?.format('YYYY-MM-DD') ?? '',
     zip: zipCode,
   });
 
-  return (
-    <>
-      <ContentDashboard
-        isLoading={isLoading}
-        contentItems={
-          data?.length ? data?.map(movieShowingToContentItemMapper) : []
-        }
-      />
-    </>
+  const items = useMemo(
+    () =>
+      data
+        ?.map(movieShowingToContentItemMapper)
+        .filter(filterContentItemsPredicate) ?? [],
+    [data],
   );
+
+  return <ContentDashboard isLoading={isFetching} contentItems={items} />;
 };
