@@ -1,3 +1,4 @@
+import React from 'react';
 import { Dayjs } from 'dayjs';
 import { ContentDashboard } from '../components/ContentDashboard';
 import { useOutletContext } from 'react-router-dom';

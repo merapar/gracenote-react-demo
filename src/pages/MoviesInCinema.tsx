@@ -1,7 +1,7 @@
+import React from 'react';
 import { ContentDashboard } from '../components/ContentDashboard';
 import { useOutletContext } from 'react-router-dom';
 import { Dayjs } from 'dayjs';
-
 import { useGetMoviesInCinema } from '../hooks/useMoviesInCinema';
 
 export const MoviesInCinema = () => {
