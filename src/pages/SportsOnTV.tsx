@@ -2,12 +2,12 @@ import React from 'react';
 import { Dayjs } from 'dayjs';
 import { ContentDashboard } from '../components/ContentDashboard';
 import { useOutletContext } from 'react-router-dom';
-import { useGetSportsOnTV } from '../hooks/useGetSportsOnTv';
+import { useGetSportsOnTv } from '../hooks/useGetSportsOnTv';
 
 export const SportsOnTv = () => {
   const [selectedDate, zipCode] = useOutletContext<[Dayjs, number]>();
 
-  const { contentItems, isLoading } = useGetSportsOnTV({
+  const { contentItems, isLoading } = useGetSportsOnTv({
     zip: zipCode,
     startDateTime: selectedDate,
   });

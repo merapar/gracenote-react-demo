@@ -40,7 +40,7 @@ const sportAiringToContentItemMapper = (
   };
 };
 
-export const useGetSportsOnTV = ({
+export const useGetSportsOnTv = ({
   startDateTime,
   zip,
 }: {
