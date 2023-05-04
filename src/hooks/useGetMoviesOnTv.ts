@@ -4,10 +4,7 @@ import {
   MovieAirings,
   useGetMoviesAiringsQuery,
 } from '../api/useGetMoviesAiringsQuery';
-import {
-  ContentItem,
-  filterContentItemsPredicate,
-} from '../components/ContentGallery';
+import { ContentItem } from '../components/ContentGallery';
 import { useMemo } from 'react';
 
 const movieAiringToContentItemMapper = ({
@@ -56,10 +53,7 @@ export const useGetMoviesOnTv = ({
   });
 
   const contentItems = useMemo(
-    () =>
-      data
-        ?.map(movieAiringToContentItemMapper)
-        .filter(filterContentItemsPredicate) ?? [],
+    () => data?.map(movieAiringToContentItemMapper) ?? [],
     [data],
   );
   return { contentItems, isLoading };

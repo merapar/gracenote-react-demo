@@ -4,10 +4,7 @@ import {
   SportAirings,
   useGetSportsAiringsQuery,
 } from '../api/useGetSportsAiringsQuery';
-import {
-  ContentItem,
-  filterContentItemsPredicate,
-} from '../components/ContentGallery';
+import { ContentItem } from '../components/ContentGallery';
 import { useMemo } from 'react';
 
 const sportAiringToContentItemMapper = (
@@ -63,10 +60,7 @@ export const useGetSportsOnTv = ({
   });
 
   const contentItems = useMemo(
-    () =>
-      data
-        ?.map(sportAiringToContentItemMapper)
-        .filter(filterContentItemsPredicate) ?? [],
+    () => data?.map(sportAiringToContentItemMapper) ?? [],
     [data],
   );
   return { contentItems, isLoading };

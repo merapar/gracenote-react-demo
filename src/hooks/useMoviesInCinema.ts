@@ -4,10 +4,7 @@ import {
   useGetMoviesShowingsQuery,
 } from '../api/useGetMoviesShowingsQuery';
 import { useMemo } from 'react';
-import {
-  ContentItem,
-  filterContentItemsPredicate,
-} from '../components/ContentGallery';
+import { ContentItem } from '../components/ContentGallery';
 
 const movieShowingToContentItemMapper = ({
   tmsId,
@@ -42,10 +39,7 @@ export const useGetMoviesInCinema = ({
   });
 
   const contentItems = useMemo(
-    () =>
-      data
-        ?.map(movieShowingToContentItemMapper)
-        .filter(filterContentItemsPredicate) ?? [],
+    () => data?.map(movieShowingToContentItemMapper) ?? [],
     [data],
   );
   return { contentItems, isLoading };

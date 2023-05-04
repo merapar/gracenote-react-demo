@@ -16,14 +16,6 @@ export type ContentItem = {
   showtimes: ShowTime[];
 };
 
-export const filterContentItemsPredicate = (
-  item: ContentItem,
-  index: number,
-  items: ContentItem[],
-) => {
-  return items.findIndex((i) => i.tmsId === item.tmsId) === index;
-};
-
 export const ContentGallery = ({
   contentItems,
 }: {
