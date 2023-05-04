@@ -1,8 +1,22 @@
 import { Typography, Stack } from '@mui/material';
-import { useRouteError } from 'react-router-dom';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 export const ErrorPage = () => {
   const error = useRouteError();
+
+  let errorMessage: string;
+
+  if (isRouteErrorResponse(error)) {
+    // error is type `ErrorResponse`
+    errorMessage = error.error?.message || error.statusText;
+  } else if (error instanceof Error) {
+    errorMessage = error.message;
+  } else if (typeof error === 'string') {
+    errorMessage = error;
+  } else {
+    console.error(error);
+    errorMessage = 'Unknown error';
+  }
 
   return (
     <Stack
@@ -27,10 +41,7 @@ export const ErrorPage = () => {
         color="background.paper"
         component="p"
       >
-        {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (error as any).statusText || (error as any).message
-        }
+        {errorMessage}
       </Typography>
     </Stack>
   );
