@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The project is automatically deployed to [https://merapar.github.io/gracenote-react-demo/](https://merapar.github.io/gracenote-react-demo/) on every push to the `main` branch.
 
+You need a Gracenote API key to run the demo. You can get one from Gracenote
+
 ## Available Scripts
 
-Before running the app copy the `.env.example` to `.env` and fill in the GraceNote API key. Don not commit the `.env` file.
+Before running the app copy the `.env.example` to `.env` and you fill in the GraceNote API key. Do not commit the `.env` file. If you do not fill in the API key the web app will ask you for one
 
 In the project directory, you can run:
 
