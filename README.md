@@ -8,7 +8,7 @@ You need a Gracenote API key to run the demo. You can get one from Gracenote
 
 ## Available Scripts
 
-Before running the app copy the `.env.example` to `.env` and you fill in the GraceNote API key. Do not commit the `.env` file. If you do not fill in the API key the web app will ask you for one
+Before running the app copy the `.env.example` to `.env` and you can fill in the GraceNote API key. Otherwise the app will open a window where you can fill in the API key. You can obtain an API key from Gracenote. Do not commit the `.env` file. If you do not fill in the API key the web app will ask you for one
 
 In the project directory, you can run:
 
